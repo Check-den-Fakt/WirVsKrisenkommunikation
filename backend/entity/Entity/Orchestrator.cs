@@ -12,7 +12,7 @@ namespace Entity
     public static class Orchestrator
     {
         [FunctionName("Orchestrator")]
-        public static async Task<List<string>> RunOrchestrator(
+        public static async Task<string> RunOrchestrator(
             [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
             var outputs = new List<string>();
@@ -38,18 +38,12 @@ namespace Entity
             //    // handling of error codes goes here
             //}
 
-            return outputs;
-        }
+            var resultTwiter = "[ {\"Key\":\"reinigung\", \"Tweeter\": { } }]";
+
+            string output = "{\"InternalHitCount\" : " + resultCountDb + ",  \"TwitterHitCount\" : " + resultTwiter + " }";
 
 
-
-
-
-        [FunctionName("Orchestrator_Hello")]
-        public static string SayHello([ActivityTrigger] string name, ILogger log)
-        {
-            log.LogInformation($"Saying hello to {name}.");
-            return $"Hello {name}!";
+            return output;
         }
 
         [FunctionName("Orchestrator_HttpStart")]
