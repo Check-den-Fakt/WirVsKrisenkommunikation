@@ -11,7 +11,13 @@ export class NavMenu extends Component {
     return (
     // <Navbar bg="primary" variant="dark">
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/">Check the Fact</Navbar.Brand>
+        <Navbar.Brand href="/"><img
+        alt=""
+        src="/logo.svg"
+        width="30"
+        height="30"
+        className="d-inline-block align-top"
+      />check-den-fakt.de</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
