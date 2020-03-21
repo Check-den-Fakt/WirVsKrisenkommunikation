@@ -13,9 +13,10 @@ code {
 }
 
 .display-4 {
-  font-family: Serif;
+  font-family: 'Vollkorn', serif;
+  color: #333;
 }
 
 .lead {
-  font-family: 'Open Sans';
+  font-family: Open Sans;
 }
