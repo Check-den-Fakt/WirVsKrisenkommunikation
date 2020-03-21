@@ -10,7 +10,6 @@ export default function Sources() {
                 <div className="raw">
                     <div className="text-center">
                         <div className="arrow">
-                            <i className="material-icons">trending_up</i>
                         </div>
                     </div>
                 </div>
