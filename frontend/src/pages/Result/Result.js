@@ -37,6 +37,7 @@ export default function Result({ result }) {
       <div className="text-center">
           <Diagram className="text-center" />
       </div> */}
+      <a href="/about">Wer wir sind</a>
     </div>
   );
 }

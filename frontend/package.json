@@ -14,7 +14,7 @@
     "react-share": "^4.1.0",
     "serve": "^11.3.0"
   },
-  "proxy": "https://we-komorchstrator-func.azurewebsites.net",
+  "proxy": "https://prod-56.westeurope.logic.azure.com:443",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

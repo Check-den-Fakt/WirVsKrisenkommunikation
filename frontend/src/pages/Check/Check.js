@@ -9,7 +9,9 @@ export default function Check() {
   const [checkResult, setCheckResult] = useState(null);
 
   const handleSendData = async (data) => {
-    const response = await fetchAPI.getData(apisdk.VALIDATE, data);
+    console.log(data);
+    const response = await fetchAPI.postData(apisdk.VALIDATE, data);
+    console.log(response);
     setCheckResult(response);
   } 
 
