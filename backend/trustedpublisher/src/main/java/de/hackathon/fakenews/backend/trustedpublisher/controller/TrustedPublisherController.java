@@ -1,6 +1,5 @@
 package de.hackathon.fakenews.backend.trustedpublisher.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import de.hackathon.fakenews.backend.trustedpublisher.domain.PublisherDTO;
 import de.hackathon.fakenews.backend.trustedpublisher.domain.TrustedAnswerDTO;
 import de.hackathon.fakenews.backend.trustedpublisher.domain.TrustedPublisherDTO;
@@ -9,7 +8,6 @@ import de.hackathon.fakenews.backend.trustedpublisher.entities.TrustUri;
 import de.hackathon.fakenews.backend.trustedpublisher.exception.ElementNotFoundException;
 import de.hackathon.fakenews.backend.trustedpublisher.repositories.PublisherRepository;
 import de.hackathon.fakenews.backend.trustedpublisher.repositories.TrustUriRepository;
-import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +51,6 @@ public class TrustedPublisherController {
         TrustedAnswerDTO trustedAnswerDTO = new TrustedAnswerDTO(possiblePublisher.get(0).trustScore);
 
         return trustedAnswerDTO;
-
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
