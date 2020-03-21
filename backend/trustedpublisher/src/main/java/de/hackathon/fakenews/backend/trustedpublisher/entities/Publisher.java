@@ -1,9 +1,6 @@
 package de.hackathon.fakenews.backend.trustedpublisher.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -15,6 +12,7 @@ public class Publisher {
 
     public double trustScore;
 
+    @OneToMany
     public List<TrustUri> knownUris;
 
     public long getId() {
