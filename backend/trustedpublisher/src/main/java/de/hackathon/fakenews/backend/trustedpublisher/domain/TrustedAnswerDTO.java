@@ -1,14 +1,20 @@
 package de.hackathon.fakenews.backend.trustedpublisher.domain;
 
+import java.math.BigDecimal;
+
 public class TrustedAnswerDTO {
 
-    public Double trustScore;
+    public BigDecimal trustScore;
 
-    public Double getTrustScore() {
+    public TrustedAnswerDTO(BigDecimal trustScore) {
+        this.trustScore = trustScore;
+    }
+
+    public BigDecimal getTrustScore() {
         return trustScore;
     }
 
-    public void setTrustScore(Double trustScore) {
+    public void setTrustScore(BigDecimal trustScore) {
         this.trustScore = trustScore;
     }
 }
