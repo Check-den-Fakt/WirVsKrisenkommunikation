@@ -1,4 +1,7 @@
 from flask import Flask, escape, request
+import os
+from dotenv import load_dotenv
+load_dotenv(verbose=True)
 
 app = Flask(__name__)
 
@@ -13,4 +16,5 @@ def health():
 @app.route('/check')
 def textcheck():
     # TODO check url or content
-    return f'Check!'
+    DATABASE_URL = os.getenv("DATABASE_URL")
+    return f'Check {DATABASE_URL}!'
