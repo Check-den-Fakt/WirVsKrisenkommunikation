@@ -7,13 +7,9 @@ import { Button } from 'react-bootstrap';
 window.id = 0;
 
 export default class Report extends Component {
-<<<<<<< HEAD
   state = {
     text: ''
   }
-=======
-
->>>>>>> cb1fc01fb842b6859ceec0bb2c52c07e1118b22d
 
   render () {
     const { text } = this.state; 

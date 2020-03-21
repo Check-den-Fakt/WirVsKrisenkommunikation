@@ -10,9 +10,7 @@ export class NavMenu extends Component {
   render () {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-<<<<<<< HEAD
         <Navbar.Brand href="/">Check den Fakt!</Navbar.Brand>
-=======
         <Navbar.Brand href="/"><img
         alt=""
         src="/logo.svg"
@@ -20,7 +18,6 @@ export class NavMenu extends Component {
         height="30"
         className="d-inline-block align-top"
       />check-den-fakt.de</Navbar.Brand>
->>>>>>> cb1fc01fb842b6859ceec0bb2c52c07e1118b22d
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
