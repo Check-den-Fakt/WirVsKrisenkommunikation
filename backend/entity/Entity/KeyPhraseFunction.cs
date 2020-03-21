@@ -10,16 +10,16 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Azure.WebJobs.Extensions.DurableTask;
 
 namespace Entity
 {
-    public static class Function1
+    public static class KeyPhraseFunction
     {
         private static RestSharp.RestClient client;
 
-        [FunctionName("Validate")]
-        public static async Task<HttpResponseMessage> Validate(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] Request request,
+        [FunctionName("ExtractKeyPhrase")]
+        public static async Task<string> Validate([ActivityTrigger] string request,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
@@ -38,7 +38,7 @@ namespace Entity
                 {
                     id = "1",
                     language = "de",
-                    text = request.Text 
+                    text = request 
                 };
 
                 var requestObject = new RootObject 
@@ -50,7 +50,7 @@ namespace Entity
 
                 var response = await client.ExecuteAsync(restRequest).ConfigureAwait(false);
 
-                return new HttpResponseMessage(System.Net.HttpStatusCode.OK) { Content = new StringContent(response.Content, Encoding.UTF8, "application/json") };
+                return response.Content;
             }
             catch (Exception ex)
             {
