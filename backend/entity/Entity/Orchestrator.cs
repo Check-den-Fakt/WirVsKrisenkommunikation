@@ -17,14 +17,33 @@ namespace Entity
         {
             var outputs = new List<string>();
 
-            // Replace "hello" with the name of your Durable Activity Function.
-            outputs.Add(await context.CallActivityAsync<string>("Orchestrator_Hello", "Tokyo"));
-            outputs.Add(await context.CallActivityAsync<string>("Orchestrator_Hello", "Seattle"));
-            outputs.Add(await context.CallActivityAsync<string>("Orchestrator_Hello", "London"));
+            Request requestData = context.GetInput<Request>();
 
-            // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
+            // Get Key Phrase from Azure Cognitive Services
+            var keyPhraseResponse = await context.CallActivityAsync<string>("ExtractKeyPhrase", requestData.Text);
+
+            //CognitionKeyResponse keyPhraseObject = JsonConvert.DeserializeObject<CognitionKeyResponse>(keyPhraseResponse);
+
+            // Add to DB
+            await context.CallActivityAsync<string>("CosmosOutput", keyPhraseResponse);
+
+            // Count DB
+            var resultCountDb = await context.CallActivityAsync<string>("CosmosSearch", keyPhraseResponse);
+
+            // Get Twitter API
+            //DurableHttpResponse response = await context.CallHttpAsync(HttpMethod.Get, new System.Uri(""));
+
+            //if ((int)response.StatusCode >= 400)
+            //{
+            //    // handling of error codes goes here
+            //}
+
             return outputs;
         }
+
+
+
+
 
         [FunctionName("Orchestrator_Hello")]
         public static string SayHello([ActivityTrigger] string name, ILogger log)
@@ -35,12 +54,13 @@ namespace Entity
 
         [FunctionName("Orchestrator_HttpStart")]
         public static async Task<HttpResponseMessage> HttpStart(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestMessage req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestMessage req,
             [DurableClient] IDurableOrchestrationClient starter,
             ILogger log)
         {
             // Function input comes from the request content.
-            string instanceId = await starter.StartNewAsync("Orchestrator", null);
+            object eventData = await req.Content.ReadAsAsync<Request>();
+            string instanceId = await starter.StartNewAsync("Orchestrator", eventData);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
