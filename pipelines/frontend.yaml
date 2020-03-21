@@ -67,17 +67,18 @@ stages:
         command: 'custom'
         workingDir: '$(Build.SourcesDirectory)/frontend'
         customCommand: 'run build'
-    - task: CopyFiles@2
-      displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
-      inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)/build'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-    - task: PublishPipelineArtifact@1
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
       inputs:
-        targetPath: $(System.DefaultWorkingDirectory)/build
-        artifact: 'drop'
-        publishLocation: 'pipeline'
+        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
+        replaceExistingArchive: true
+
+    - publish: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
+      artifact: drop
 
 - stage: Deploy
   displayName: Deploy stage
@@ -100,5 +101,5 @@ stages:
               appType: webAppLinux
               appName: $(webAppName)
               runtimeStack: 'NODE|12'
-              packageForLinux: $(Pipeline.Workspace)/drop
+              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run serve'
