@@ -1,5 +1,7 @@
 package de.hackathon.fakenews.backend.trustedpublisher.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import de.hackathon.fakenews.backend.trustedpublisher.domain.PublisherDTO;
 import de.hackathon.fakenews.backend.trustedpublisher.domain.TrustedAnswerDTO;
 import de.hackathon.fakenews.backend.trustedpublisher.domain.TrustedPublisherDTO;
 import de.hackathon.fakenews.backend.trustedpublisher.entities.Publisher;
@@ -7,6 +9,7 @@ import de.hackathon.fakenews.backend.trustedpublisher.entities.TrustUri;
 import de.hackathon.fakenews.backend.trustedpublisher.exception.ElementNotFoundException;
 import de.hackathon.fakenews.backend.trustedpublisher.repositories.PublisherRepository;
 import de.hackathon.fakenews.backend.trustedpublisher.repositories.TrustUriRepository;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,7 @@ public class TrustedPublisherController {
 
     PublisherRepository publisherRepository;
     TrustUriRepository trustUriRepository;
+    ModelMapper modelMapper = new ModelMapper();
 
     TrustedPublisherController(@Autowired PublisherRepository publisherRepository, @Autowired TrustUriRepository trustUriRepository) {
         this.publisherRepository = publisherRepository;
@@ -53,9 +57,15 @@ public class TrustedPublisherController {
 
     }
 
-    @GetMapping
-    public Iterable<Publisher> getAll() {
-        return publisherRepository.findAll();
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<PublisherDTO> getAll() {
+        return publisherRepository.findAll().stream().map(TrustedPublisherController::convertToDto).collect(Collectors.toList());
     }
 
+    private static PublisherDTO convertToDto(Publisher publisher) {
+        return new PublisherDTO(
+                publisher.title,
+                publisher.trustScore,
+                publisher.getKnownUris().stream().map(TrustUri::getUrl).collect(Collectors.toList()));
+    }
 }
