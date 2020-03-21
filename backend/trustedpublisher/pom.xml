@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<azure.version>2.2.0</azure.version>
+		<openapi.version>1.2.15</openapi.version>
 	</properties>
 
 	<dependencies>
@@ -54,13 +55,14 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>${openapi.version}</version>
 		</dependency>
-
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-webmvc-core</artifactId>
+			<version>${openapi.version}</version>
 		</dependency>
 
 		<dependency>
