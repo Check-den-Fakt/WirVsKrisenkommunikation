@@ -12,7 +12,7 @@ variables:
   azureSubscription: '144e7092-f976-4fc0-bf0e-57e2de0863ed'
   
   # Web app name
-  webAppName: 'we-komfront-web'
+  webAppName: 'we-komfront-web2'
   
   # Environment name
   environmentName: 'prod'
