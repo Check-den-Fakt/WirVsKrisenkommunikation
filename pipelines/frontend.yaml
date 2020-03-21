@@ -100,7 +100,4 @@ stages:
               azureSubscription: $(azureSubscription)
               WebAppName: $(webAppName)
               appType: webAppLinux
-              appName: $(webAppName)
-#              runtimeStack: 'NODE|12'
-              package: '$(System.DefaultWorkingDirectory)/build'
-#              startUpCommand: 'npm run serve'
+              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
