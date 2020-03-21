@@ -68,13 +68,18 @@ stages:
         workingDir: '$(Build.SourcesDirectory)/frontend'
         customCommand: 'run build'
 
-    - task: PublishBuildArtifacts@1
-      displayName: 'publish'
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
       inputs:
-        pathToPublish: '$(Build.SourcesDirectory)/frontend'
-        artifact: drop
+        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend'
         includeRootFolder: false
-        
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
+        replaceExistingArchive: true
+
+    - publish: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
+      artifact: drop
+
 - stage: Deploy
   displayName: Deploy stage
   dependsOn: Build
@@ -98,3 +103,4 @@ stages:
               runtimeStack: 'NODE|12'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run serve'
+  
