@@ -12,6 +12,7 @@ import './App.css';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import { Layout } from './components/Layout';
+import Check from './pages/Check/Check';
 
 function App() {
   return (
@@ -21,8 +22,11 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/">
+          <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/">
+            <Check />
           </Route>
         </Switch>
       </Router>
