@@ -1,8 +1,7 @@
 package de.hackathon.fakenews.backend.trustedpublisher.repositories;
 
-import java.util.List;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import de.hackathon.fakenews.backend.trustedpublisher.entities.Publisher;
 
-public interface PublisherRepository extends CrudRepository<Publisher, Long> {
+public interface PublisherRepository extends JpaRepository<Publisher, Long> {
 }
