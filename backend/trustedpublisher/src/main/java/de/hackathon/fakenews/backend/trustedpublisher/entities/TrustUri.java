@@ -4,11 +4,13 @@ import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name = "url")
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 public class TrustUri {
 
