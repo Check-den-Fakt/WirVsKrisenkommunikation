@@ -71,7 +71,7 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
-        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend/'
+        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend/build'
         includeRootFolder: false
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
@@ -94,12 +94,13 @@ stages:
       runOnce:
         deploy:
           steps:            
-          - task: AzureWebApp@1
+          - task: AzureRmWebAppDeployment@3
             displayName: 'Azure Web App Deploy: we-komfront-web'
             inputs:
               azureSubscription: $(azureSubscription)
+              WebAppName: $(webAppName)
               appType: webAppLinux
               appName: $(webAppName)
-              runtimeStack: 'NODE|12'
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run serve'
+#              runtimeStack: 'NODE|12'
+              package: '$(System.DefaultWorkingDirectory)/build'
+#              startUpCommand: 'npm run serve'
