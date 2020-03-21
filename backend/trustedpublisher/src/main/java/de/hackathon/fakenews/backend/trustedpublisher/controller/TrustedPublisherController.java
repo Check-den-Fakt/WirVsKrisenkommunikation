@@ -8,6 +8,7 @@ import de.hackathon.fakenews.backend.trustedpublisher.entities.TrustUri;
 import de.hackathon.fakenews.backend.trustedpublisher.exception.ElementNotFoundException;
 import de.hackathon.fakenews.backend.trustedpublisher.repositories.PublisherRepository;
 import de.hackathon.fakenews.backend.trustedpublisher.repositories.TrustUriRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@Slf4j
 public class TrustedPublisherController {
 
     private final static Logger log = LoggerFactory.getLogger(TrustedPublisherController.class);
@@ -31,24 +34,44 @@ public class TrustedPublisherController {
         this.trustUriRepository = trustUriRepository;
     }
 
+    private static PublisherDTO convertToDto(Publisher publisher) {
+        return new PublisherDTO(
+                publisher.title,
+                publisher.trustScore,
+                publisher.getKnownUris().stream().map(TrustUri::getUrl).collect(Collectors.toList()));
+    }
+
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public TrustedAnswerDTO getTrustScore(@RequestBody final TrustedPublisherDTO trustedPublisherDTO) {
 
         log.info(trustedPublisherDTO.toString());
 
-        List<Publisher> possiblePublisher = trustUriRepository.findAllByUrl(trustedPublisherDTO.getUri()).stream().map(TrustUri::getPublisher).collect(
-                Collectors.toList());
+        final String parsableUri = trustedPublisherDTO.getUri().startsWith("http") ? trustedPublisherDTO.getUri() : "https://" + trustedPublisherDTO.getUri();
+        final URI uri = URI.create(parsableUri);
+        final String hostname = uri.getHost();
+        final String fqdn;
+        try {
+            fqdn = hostname.startsWith("www.") ? hostname.substring(4) : hostname;
+        } catch (NullPointerException e) {
+            throw new ElementNotFoundException();
+        }
+        final List<TrustUri> possibleUris = trustUriRepository.findAllByUrlStartingWith(fqdn);
+        final String uriWithoutProtocol = uri.getHost() + uri.getPath();
+        log.debug(uriWithoutProtocol);
+        final List<Publisher> matchingPublishers = possibleUris.stream().filter(uriCandidate ->
+                uriWithoutProtocol.toString().startsWith(uriCandidate.url))
+                .map(TrustUri::getPublisher).collect(Collectors.toList());
 
-        if (possiblePublisher.isEmpty()) {
+        if (matchingPublishers.isEmpty()) {
             throw new ElementNotFoundException();
         }
 
-        if (possiblePublisher.size() > 1) {
+        if (matchingPublishers.size() > 1) {
             throw new RuntimeException("Too Many");
         }
 
-        TrustedAnswerDTO trustedAnswerDTO = new TrustedAnswerDTO(possiblePublisher.get(0).trustScore);
+        TrustedAnswerDTO trustedAnswerDTO = new TrustedAnswerDTO(matchingPublishers.get(0).trustScore);
 
         return trustedAnswerDTO;
     }
@@ -56,12 +79,5 @@ public class TrustedPublisherController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<PublisherDTO> getAll() {
         return publisherRepository.findAll().stream().map(TrustedPublisherController::convertToDto).collect(Collectors.toList());
-    }
-
-    private static PublisherDTO convertToDto(Publisher publisher) {
-        return new PublisherDTO(
-                publisher.title,
-                publisher.trustScore,
-                publisher.getKnownUris().stream().map(TrustUri::getUrl).collect(Collectors.toList()));
     }
 }
