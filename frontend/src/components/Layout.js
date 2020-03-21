@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavMenu } from './NavMenu';
+import { Footer } from './Footer';
 import { Container } from 'react-bootstrap';
 
 export class Layout extends Component {
@@ -12,6 +13,7 @@ export class Layout extends Component {
         <Container>
           {this.props.children}
         </Container>
+          <Footer />
       </div>
     );
   }
