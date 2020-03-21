@@ -12,10 +12,10 @@ variables:
   azureSubscription: '144e7092-f976-4fc0-bf0e-57e2de0863ed'
   
   # Web app name
-  webAppName: ''
+  webAppName: 'we-komfront-web'
   
   # Environment name
-  environmentName: ''
+  environmentName: 'prod'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
