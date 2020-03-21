@@ -9,7 +9,7 @@ export default function Check() {
         <h1></h1>
         <div className="container">
             <div className="raw">
-               <div className="bar">
+               <div className="text-center">
                 <Diagram />
                </div>
             </div>
