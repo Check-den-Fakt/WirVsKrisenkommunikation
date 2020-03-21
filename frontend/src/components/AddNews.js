@@ -29,14 +29,7 @@ export class AddNews extends Component {
     const { text } = this.state; 
     return (
     <Form>
-      {/* <Form.Group controlId="exampleForm.ControlInput1">
-        <Form.Label>Url</Form.Label>
-        <Form.Control 
-          onChange={(e, ee) => this.onChangeValue('url', e, ee)} 
-          type="url" 
-          placeholder="name@example.com" 
-        />
-      </Form.Group> */}
+
       <Form.Group controlId="exampleForm.ControlTextarea1">
         <Form.Label></Form.Label>
         <Form.Control
@@ -51,7 +44,7 @@ export class AddNews extends Component {
         onClick={this.handleSubmit} 
         variant="primary"
       >
-        Nachricht überprüfen
+        Nachricht checken
       </Button>
     </Form>
     );
