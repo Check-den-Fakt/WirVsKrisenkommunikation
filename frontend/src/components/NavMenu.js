@@ -9,12 +9,12 @@ import { NavDropdown } from 'react-bootstrap';
 export class NavMenu extends Component {
   render () {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
         <Navbar.Brand href="/"><img
         alt=""
-        src="../img/header_logo_lite.svg"
-        width="30"
-        height="30"
+        src="/img/header_logo_lite.svg"
+        width="200"
+        height="60"
         className="d-inline-block align-top"
       /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
