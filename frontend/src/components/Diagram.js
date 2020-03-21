@@ -13,7 +13,7 @@ export class Diagram extends Component {
     const value = 50;
 
     return (
-      <CircularProgressbar className="progressbar" value={value} maxValue={1} text={`${value}%`} />
+      <CircularProgressbar className="progressbar" value={value} maxValue={100} text={`${value}%`} />
     );
   }
 }
