@@ -71,7 +71,7 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
-        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend/'
+        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend/build'
         includeRootFolder: false
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
@@ -100,6 +100,6 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              runtimeStack: 'NODE|12'
+#              runtimeStack: 'NODE|12'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run serve'
+#              startUpCommand: 'npm run serve'
