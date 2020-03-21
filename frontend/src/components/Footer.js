@@ -12,8 +12,8 @@ export class Footer extends Component {
 
                         </div>
                         <div className="col">
-                            <Nav.Link href="/impressum">Impressum</Nav.Link>
-                            <Nav.Link href="/datenschutzerklaerung">Datenschutzerklärung</Nav.Link>
+                            <a href="/impressum">Impressum </a>
+                            <a href="/datenschutzerklaerung">Datenschutzerklärung</a>
                         </div>
                         <div className="col">
                             <span className="text-muted">Copyright© 2020</span>

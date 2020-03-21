@@ -43,14 +43,14 @@ function App() {
           <Route path="/trending">
             <Trending />
           </Route>
-          <Route path="/">
-            <Landing />
-          </Route>
           <Route path="/impressum">
             <Impressum />
           </Route>
           <Route path="/datenschutzerklaerung">
             <Datenschutzerklaerung />
+          </Route>
+          <Route path="/">
+            <Landing />
           </Route>
         </Switch>
       </Router>
