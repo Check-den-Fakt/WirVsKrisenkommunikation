@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "db59ff20-bbda-4c19-a433-d5f11767ea07"
+        },
+        "name": {
+            "value": "we-komorchstrator-func"
+        },
+        "location": {
+            "value": "West Europe"
+        },
+        "hostingEnvironment": {
+            "value": ""
+        },
+        "hostingPlanName": {
+            "value": "ASP-wekomorchestratorrg-8146"
+        },
+        "serverFarmResourceGroup": {
+            "value": "we-komorchestrator-rg"
+        },
+        "alwaysOn": {
+            "value": false
+        },
+        "storageAccountName": {
+            "value": "wekomorchestratorfuncsa"
+        },
+        "linuxFxVersion": {
+            "value": ""
+        },
+        "sku": {
+            "value": "Dynamic"
+        },
+        "skuCode": {
+            "value": "Y1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        }
+    }
+}
