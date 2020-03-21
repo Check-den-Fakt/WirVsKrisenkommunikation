@@ -13,7 +13,8 @@ namespace Entity
     {
         [FunctionName("Orchestrator")]
         public static async Task<string> RunOrchestrator(
-            [OrchestrationTrigger] IDurableOrchestrationContext context)
+            [OrchestrationTrigger] IDurableOrchestrationContext context,
+            ILogger log)
         {
             var outputs = new List<string>();
 
@@ -21,14 +22,17 @@ namespace Entity
 
             // Get Key Phrase from Azure Cognitive Services
             var keyPhraseResponse = await context.CallActivityAsync<string>("ExtractKeyPhrase", requestData.Text);
+            log.LogInformation("Completed ExtractKeyPhrase");
 
             //CognitionKeyResponse keyPhraseObject = JsonConvert.DeserializeObject<CognitionKeyResponse>(keyPhraseResponse);
 
             // Add to DB
             await context.CallActivityAsync<string>("CosmosOutput", keyPhraseResponse);
+            log.LogInformation("Completed CosmosOutput");
 
             // Count DB
             var resultCountDb = await context.CallActivityAsync<string>("CosmosSearch", keyPhraseResponse);
+            log.LogInformation("Completed CosmosSearch");
 
             // Get Twitter API
             //DurableHttpResponse response = await context.CallHttpAsync(HttpMethod.Get, new System.Uri(""));
