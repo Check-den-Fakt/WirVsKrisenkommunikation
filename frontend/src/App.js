@@ -14,6 +14,9 @@ import About from './pages/About/About';
 import { Layout } from './components/Layout';
 import Check from './pages/Check/Check';
 import Result from './pages/Result/Result';
+import Trending from './pages/Trending/Trending';
+import Landing from './pages/Landing/Landing';
+import Report from './pages/Report/Report';
 
 function App() {
   return (
@@ -28,9 +31,18 @@ function App() {
           </Route>
           <Route path="/result">
             <Result />
+          </Route>          
+          <Route path="/report">
+            <Report />
+          </Route>
+          <Route path="/check">
+            <Check />
+          </Route>
+          <Route path="/trending">
+            <Trending />
           </Route>
           <Route path="/">
-            <Check />
+            <Landing />
           </Route>
         </Switch>
       </Router>

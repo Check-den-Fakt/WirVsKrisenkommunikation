@@ -9,12 +9,14 @@ export class NavMenu extends Component {
   render () {
     return (
     <Navbar bg="primary" variant="dark">
-      <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+      <Navbar.Brand href="#home">Check the Fact</Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/about">About</Nav.Link>
+        <Nav.Link href="/">Landing</Nav.Link>
         <Nav.Link href="/check">Check</Nav.Link>
         <Nav.Link href="/result">Result</Nav.Link>
+        <Nav.Link href="/report">Report</Nav.Link>
+        <Nav.Link href="/trending">Trending</Nav.Link>
+        <Nav.Link href="/about">About</Nav.Link>
       </Nav>
       {/*<Form inline>
         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
