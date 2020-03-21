@@ -11,12 +11,14 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
+import Rules from './pages/Rules/Rules';
 import { Layout } from './components/Layout';
 import Check from './pages/Check/Check';
 import Result from './pages/Result/Result';
 import Trending from './pages/Trending/Trending';
 import Landing from './pages/Landing/Landing';
 import Report from './pages/Report/Report';
+import Sources from './pages/Sources/Sources';
 import Impressum from "./pages/Impressum/Impressum";
 import Datenschutzerklaerung from "./pages/Datenschutzerklaerung/Datenschutzerklaerung";
 
@@ -27,6 +29,9 @@ function App() {
         <Switch>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/rules">
+            <Rules />
           </Route>
           <Route path="/home">
             <Home />
@@ -42,6 +47,9 @@ function App() {
           </Route>
           <Route path="/trending">
             <Trending />
+          </Route>
+          <Route path="/sources">
+            <Sources />
           </Route>
           <Route path="/impressum">
             <Impressum />

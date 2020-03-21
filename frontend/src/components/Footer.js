@@ -5,7 +5,7 @@ import {Nav} from "react-bootstrap";
 export class Footer extends Component {
     render () {
         return (
-            <footer className="footer">
+            <footer className="footer mt-5 mb-5">
                 <div className="container">
                     <div className="row">
                         <div className="col">
