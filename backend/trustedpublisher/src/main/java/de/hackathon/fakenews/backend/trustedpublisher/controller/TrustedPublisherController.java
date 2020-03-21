@@ -3,13 +3,16 @@ package de.hackathon.fakenews.backend.trustedpublisher.controller;
 import de.hackathon.fakenews.backend.trustedpublisher.domain.TrustedAnswerDTO;
 import de.hackathon.fakenews.backend.trustedpublisher.domain.TrustedPublisherDTO;
 import de.hackathon.fakenews.backend.trustedpublisher.entities.Publisher;
+import de.hackathon.fakenews.backend.trustedpublisher.exception.ElementNotFoundException;
 import de.hackathon.fakenews.backend.trustedpublisher.repositories.PublisherRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
@@ -25,6 +28,7 @@ public class TrustedPublisherController {
     PublisherRepository publisherRepository;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.OK)
     public TrustedAnswerDTO getTrustScore(@RequestBody TrustedPublisherDTO trustedPublisherDTO){
 
         log.info(trustedPublisherDTO.toString());
@@ -32,7 +36,7 @@ public class TrustedPublisherController {
         List<Publisher>  possiblePublisher = publisherRepository.findAllByKnownUrisContaining(trustedPublisherDTO.getUri());
 
         if (possiblePublisher.isEmpty()){
-            throw new NoSuchElementException();
+            throw new ElementNotFoundException();
         }
 
         if (possiblePublisher.size()>1){

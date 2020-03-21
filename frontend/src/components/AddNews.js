@@ -23,17 +23,6 @@ export class AddNews extends Component {
 
   render () {
     return (
-
-  <div className="container">
-    <div className="row">
-      <div className="col-md-3 col-sm-6">
-        <div className="progress blue">
-          <span className="progress-left">
-              <span className="progress-bar"></span>
-          </span>
-        </div>
-      </div>
-    </div>
     <Form>
       {/* <Form.Group controlId="exampleForm.ControlInput1">
         <Form.Label>Url</Form.Label>
@@ -56,7 +45,6 @@ export class AddNews extends Component {
         Nachricht überprüfen
       </Button>
     </Form>
-        </div>
     );
   }
 }
