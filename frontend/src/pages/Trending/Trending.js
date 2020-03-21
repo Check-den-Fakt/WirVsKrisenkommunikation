@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Trending.css'
 
 export default function Trending() {
     // Declare a new state variable, which we'll call "count"
@@ -9,8 +10,7 @@ export default function Trending() {
                 <div className="raw">
                     <div className="text-center">
                         <div className="arrow">
-                        <i className="material-icons">face</i>
-                            <i className="arrow_drop_up">test</i>
+                        <i className="material-icons">trending_up</i>
                         </div>
                     </div>
                 </div>

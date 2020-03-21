@@ -9,6 +9,7 @@ import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './logo.svg';
 import './App.css';
+import './pages/main.css';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import { Layout } from './components/Layout';
