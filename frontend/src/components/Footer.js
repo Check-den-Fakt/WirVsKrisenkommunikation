@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Nav} from "react-bootstrap";
+
 
 export class Footer extends Component {
     render () {
@@ -10,8 +12,8 @@ export class Footer extends Component {
 
                         </div>
                         <div className="col">
-                            <a href="/">Impressum</a>
-                            <a href="/">Datenschutzerklärung</a>
+                            <Nav.Link href="/impressum">Impressum</Nav.Link>
+                            <Nav.Link href="/datenschutzerklaerung">Datenschutzerklärung</Nav.Link>
                         </div>
                         <div className="col">
                             <span className="text-muted">Copyright© 2020</span>

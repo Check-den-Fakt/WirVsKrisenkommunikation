@@ -17,6 +17,8 @@ import Result from './pages/Result/Result';
 import Trending from './pages/Trending/Trending';
 import Landing from './pages/Landing/Landing';
 import Report from './pages/Report/Report';
+import Impressum from "./pages/Impressum/Impressum";
+import Datenschutzerklaerung from "./pages/Rechtliches/Datenschutzerklaerung";
 
 function App() {
   return (
@@ -43,6 +45,12 @@ function App() {
           </Route>
           <Route path="/">
             <Landing />
+          </Route>
+          <Route path="/impressum">
+            <Impressum />
+          </Route>
+          <Route path="/datenschutzerklaerung">
+            <Datenschutzerklaerung />
           </Route>
         </Switch>
       </Router>
