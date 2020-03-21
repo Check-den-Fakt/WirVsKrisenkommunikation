@@ -20,6 +20,9 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
+  # Image name
+  imageName: 'wirvsvirus.azurecr.io/frontend'
+
 stages:
 - stage: ARM
   displayName: Deploy ARM
@@ -68,17 +71,13 @@ stages:
         workingDir: '$(Build.SourcesDirectory)/frontend'
         customCommand: 'run build'
 
-    - task: ArchiveFiles@2
-      displayName: 'Archive files'
+    - task: Docker@2
+      displayName: Build Image
       inputs:
-        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend'
-        includeRootFolder: false
-        archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
-        replaceExistingArchive: true
-
-    - publish: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
-      artifact: drop
+        command: buildAndPush
+        repository: $(imageName)
+        dockerfile: frontend/Dockerfile
+        containerRegistry: $(dockerRegistryServiceConnection)
 
 - stage: Deploy
   displayName: Deploy stage
