@@ -27,7 +27,6 @@ public class TrustedPublisherController {
 
     PublisherRepository publisherRepository;
     TrustUriRepository trustUriRepository;
-    ModelMapper modelMapper = new ModelMapper();
 
     TrustedPublisherController(@Autowired PublisherRepository publisherRepository, @Autowired TrustUriRepository trustUriRepository) {
         this.publisherRepository = publisherRepository;
