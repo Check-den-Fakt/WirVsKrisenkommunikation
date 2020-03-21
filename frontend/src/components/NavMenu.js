@@ -15,6 +15,7 @@ export class NavMenu extends Component {
         <Nav.Link href="/about">About</Nav.Link>
         <Nav.Link href="/check">Check</Nav.Link>
         <Nav.Link href="/result">Result</Nav.Link>
+        <Nav.Link href="/trending">Trending</Nav.Link>
       </Nav>
       {/*<Form inline>
         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
