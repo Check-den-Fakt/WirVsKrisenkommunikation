@@ -3,14 +3,18 @@ import { AddNews } from '../../components/AddNews';
 import { Diagram } from '../../components/Diagram';
 import { ProgressBar } from 'react-bootstrap';
 
+<<<<<<< HEAD
 export default function Impressum({ result }) {
+=======
+export default function Impressum({ impressum }) {
+>>>>>>> 278b5a89500daf8b3dad5a9b0d438e9943f630ce
   // Declare a new state variable, which we'll call "count"
   return (
     <div>
         <h1>Impressum</h1>
 
         <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
-        <p>CCheck the Fact<br />
+        <p>Check the Fact<br />
             Musterstra&szlig;e 111<br />
             90210 Musterstadt</p>
 

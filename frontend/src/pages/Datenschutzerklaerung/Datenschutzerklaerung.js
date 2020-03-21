@@ -3,7 +3,7 @@ import { AddNews } from '../../components/AddNews';
 import { Diagram } from '../../components/Diagram';
 import { ProgressBar } from 'react-bootstrap';
 
-export default function Datenschutzerklaerung({ result }) {
+export default function Datenschutzerklaerung({ Datenschutzerklaerung }) {
   // Declare a new state variable, which we'll call "count"
   return (
     <div>
