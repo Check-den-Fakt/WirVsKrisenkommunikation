@@ -8,7 +8,11 @@ export default function Trending() {
             <div className="container">
                 <div className="raw">
                     <div className="text-center">
-                        <div className="arrow"></div>
+                        <div className="arrow">
+                        <i class="material-icons">&#xE87C;</i>
+
+                            <i className="arrow_drop_up">test</i>
+                        </div>
                     </div>
                 </div>
             </div>
