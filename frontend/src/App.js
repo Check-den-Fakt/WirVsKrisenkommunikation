@@ -13,6 +13,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import { Layout } from './components/Layout';
 import Check from './pages/Check/Check';
+import Result from './pages/Result/Result';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/result">
+            <Result />
           </Route>
           <Route path="/">
             <Check />
