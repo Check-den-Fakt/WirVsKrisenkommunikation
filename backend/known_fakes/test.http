@@ -1,6 +1,6 @@
 POST http://localhost:5000/check
 Content-Type: application/json
 
-{"mydata": "mydata"}
+{"text": "150 Milliarden Euro - die Bundesregierung will mit einem Nachtragshaushalt die Folgen der Corona-Pandemie abfedern. Die Summe sei Teil eines größeren Maßnahmenpakets, kündigte Finanzminister Scholz an."}
 
 ###
