@@ -19,3 +19,20 @@ code {
   font-family: 'Open Sans', sans-serif;
   color: #565D64;
 }
+
+/*Hier werden die schrägen Elemente generiert*/
+/*Positive Steigung*/
+.polygon-up {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(0% + 2vw));
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(0% + 2vw));
+  padding: 5%;
+  margin-top: -2vw;
+}
+
+/*Negative Steigung*/
+.polygon-down{
+  clip-path: polygon(100% calc(0% + 2vw), 100% 100%, 0 100%, 0 0);
+  -webkit-clip-path: polygon(100% calc(0% + 2vw), 100% 100%, 0 100%, 0 0);
+  margin-top: -2vw;
+  padding: 5%;
+}
