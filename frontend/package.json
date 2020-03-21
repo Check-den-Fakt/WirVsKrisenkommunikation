@@ -9,13 +9,15 @@
     "react-circular-progressbar": "^2.0.3",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "serve": "^11.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve": "serve build"
   },
   "eslintConfig": {
     "extends": "react-app"

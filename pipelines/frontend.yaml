@@ -71,7 +71,7 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
-        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend'
+        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend/'
         includeRootFolder: false
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
@@ -102,4 +102,4 @@ stages:
               appName: $(webAppName)
               runtimeStack: 'NODE|12'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run start'
+              startUpCommand: 'npm run serve'
