@@ -73,7 +73,7 @@ stages:
       inputs:
         azureSubscription: $(azureSubscription)
         WebAppName: $(webAppName)
-        Package: '$(Build.SourcesDirectory)/build'
+        Package: '$(System.DefaultWorkingDirectory/build'
 #
 #    - task: ArchiveFiles@2
 #      displayName: 'Archive files'
