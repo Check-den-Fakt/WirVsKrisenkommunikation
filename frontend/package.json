@@ -12,6 +12,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-share": "^4.1.0",
+    "reaptcha": "^1.7.2",
     "serve": "^11.3.0"
   },
   "proxy": "https://we-komorchstrator-func.azurewebsites.net",

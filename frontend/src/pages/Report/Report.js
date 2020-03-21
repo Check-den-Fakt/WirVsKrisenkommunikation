@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import './Report.css';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+//import Reaptcha from 'reaptcha';
 
 export default class Report extends Component {
+  state = {
+    text: ''
+  }
+
   render () {
     const { text } = this.state; 
     // Declare a new state variable, which we'll call "count"
