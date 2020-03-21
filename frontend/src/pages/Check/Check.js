@@ -17,14 +17,14 @@ export default function Check() {
   return (
     <>
       {checkResult ? <Result result={checkResult} /> : <div>
-          <h1></h1>
+          {/* <h1></h1>
           <div className="container">
               <div className="raw">
                 <div className="text-center">
                   <Diagram />
                 </div>
               </div>
-          </div>
+          </div> */}
         <h1 className="display-4">Check deine Corona-News</h1>
         <p className="lead">Bevor du Nachrichten glaubst oder weiterleitest, überprüfe erst ob sie wahr sind!</p>
         <AddNews onSubmit={handleSendData} />
