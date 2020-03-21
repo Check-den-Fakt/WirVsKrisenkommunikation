@@ -13,10 +13,10 @@ export class Footer extends Component {
                         </div>
                         <div className="col">
                             <a href="/impressum">Impressum </a>
-                            <a href="/datenschutzerklaerung">Datenschutzerklärung</a>
+                            <a href="/datenschutzerklaerung">Datenschutzerkl&auml;rung</a>
                         </div>
                         <div className="col">
-                            <span className="text-muted">Copyright© 2020</span>
+                            <span className="text-muted">Copyright © 2020</span>
                         </div>
                     </div>
                 </div>

@@ -18,7 +18,7 @@ import Trending from './pages/Trending/Trending';
 import Landing from './pages/Landing/Landing';
 import Report from './pages/Report/Report';
 import Impressum from "./pages/Impressum/Impressum";
-import Datenschutzerklaerung from "./pages/Rechtliches/Datenschutzerklaerung";
+import Datenschutzerklaerung from "./pages/Datenschutzerklaerung/Datenschutzerklaerung";
 
 function App() {
   return (
