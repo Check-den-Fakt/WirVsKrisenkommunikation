@@ -8,18 +8,44 @@ public class Publisher {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    public Long  id;
+    public Integer idPublisher;
+
+    public String title;
 
     public double trustScore;
 
     @OneToMany
     public List<TrustUri> knownUris;
 
-    public long getId() {
-        return id;
+    public Integer getIdPublisher() {
+        return idPublisher;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIdPublisher(Integer idPublisher) {
+        this.idPublisher = idPublisher;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public double getTrustScore() {
+        return trustScore;
+    }
+
+    public void setTrustScore(double trustScore) {
+        this.trustScore = trustScore;
+    }
+
+    public List<TrustUri> getKnownUris() {
+        return knownUris;
+    }
+
+    public void setKnownUris(List<TrustUri> knownUris) {
+        this.knownUris = knownUris;
     }
 }

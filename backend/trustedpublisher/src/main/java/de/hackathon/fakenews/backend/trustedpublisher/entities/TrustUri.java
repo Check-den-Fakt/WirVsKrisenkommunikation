@@ -5,31 +5,31 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name="url")
 public class TrustUri {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    public Long id;
+    public Integer idurl;
 
-    public String uri;
+    public String url;
 
     public TrustUri() {
     }
 
-    public Long getId() {
-        return id;
+    public Integer getIdurl() {
+        return idurl;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdurl(Integer idurl) {
+        this.idurl = idurl;
     }
 
-    public String getUri() {
-        return uri;
+    public String getUrl() {
+        return url;
     }
 
-    public void setUri(String uri) {
-        this.uri = uri;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
