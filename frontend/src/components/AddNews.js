@@ -4,6 +4,8 @@ import { Nav } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import fetchAPI from '../utils/fetchAPI';
+import apisdk from '../constants/apisdk';
 
 export class AddNews extends Component {
   state = {
@@ -17,8 +19,15 @@ export class AddNews extends Component {
     this.setState({ [property]: value });
   }
 
-  handleSubmit = () => {
-    console.log(this.state);
+  handleSubmit = async () => {
+    
+    const response2 = await fetchAPI.getData(apisdk.VALIDATE, {
+      text: this.state.text,
+    });
+    const response = await fetchAPI.postData(apisdk.VALIDATE, {
+      text: this.state.text,
+    });
+    console.log(this.state, response);
   }
 
   render () {
