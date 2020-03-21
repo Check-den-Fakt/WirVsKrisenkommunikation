@@ -7,7 +7,7 @@ export default function Landing() {
   return (
     <div className="container">
      <>
-         <img src="../img/logo.eps" />
+         <img src="/img/logo.svg"/>
         <h1 className="display-4">Finde und widerlege Corona-Fake-News</h1>
         <Button href="/check" variant="primary" size="lg" block>
           Nachricht überprüfen
