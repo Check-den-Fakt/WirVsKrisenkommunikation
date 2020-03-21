@@ -14,7 +14,6 @@ import lombok.Setter;
 public class Publisher {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     public Integer idPublisher;
 
     public String title;
