@@ -20,14 +20,9 @@ export class AddNews extends Component {
   }
 
   handleSubmit = async () => {
-    
-    const response = await fetchAPI.getData(apisdk.VALIDATE, {
+    this.props.onSubmit({
       text: this.state.text,
-    });
-    // const response = await fetchAPI.postData(apisdk.VALIDATE, {
-    //   text: this.state.text,
-    // });
-    console.log(this.state, response);
+    })
   }
 
   render () {

@@ -13,6 +13,7 @@
     "react-scripts": "3.4.0",
     "serve": "^11.3.0"
   },
+  "proxy": "https://we-komorchstrator-func.azurewebsites.net",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

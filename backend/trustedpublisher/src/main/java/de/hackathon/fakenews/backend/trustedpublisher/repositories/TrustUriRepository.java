@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface TrustUriRepository extends CrudRepository<TrustUri, Long> {
 
-   List<TrustUri> findAllByUrl(String url);
+   List<TrustUri> findAllByUrlStartingWith(String url);
 }

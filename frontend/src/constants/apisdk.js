@@ -4,6 +4,10 @@ const apiMethodsNames = {
   VALIDATE: 'VALIDATE'
 }
 
+// export default {
+//   'VALIDATE' :`${BASE_URL}validate`
+// }
+
 export default {
-  'VALIDATE' :`${BASE_URL}validate`
+  'VALIDATE' :`/api/validate`
 }
