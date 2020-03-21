@@ -9,15 +9,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @RestController
 public class TrustedPublisherController {
@@ -27,9 +26,9 @@ public class TrustedPublisherController {
     @Autowired
     PublisherRepository publisherRepository;
 
-    @PostMapping
+    @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public TrustedAnswerDTO getTrustScore(@RequestBody TrustedPublisherDTO trustedPublisherDTO){
+    public TrustedAnswerDTO getTrustScore(@RequestBody final TrustedPublisherDTO trustedPublisherDTO){
 
         log.info(trustedPublisherDTO.toString());
 
