@@ -26,6 +26,7 @@ export class AddNews extends Component {
   }
 
   render () {
+    const { text } = this.state; 
     return (
     <Form>
       {/* <Form.Group controlId="exampleForm.ControlInput1">
@@ -45,7 +46,11 @@ export class AddNews extends Component {
           placeholder="Füge hier eine URL oder Textnachricht ein"
         />
       </Form.Group>
-      <Button onClick={this.handleSubmit} variant="primary">
+      <Button 
+        disabled={!text} 
+        onClick={this.handleSubmit} 
+        variant="primary"
+      >
         Nachricht überprüfen
       </Button>
     </Form>
