@@ -1,0 +1,6 @@
+POST http://localhost:5000/check
+Content-Type: application/json
+
+{"mydata": "mydata"}
+
+###
