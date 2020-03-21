@@ -101,4 +101,4 @@ stages:
               appName: $(webAppName)
               runtimeStack: 'NODE|12'
               packageForLinux: $(Pipeline.Workspace)/drop
-              startUpCommand: 'npm run start'
+              startUpCommand: 'npm run serve'
