@@ -1,6 +1,7 @@
 package de.hackathon.fakenews.backend.trustedpublisher.entities;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class Publisher {
 
     public String title;
 
-    public double trustScore;
+    public BigDecimal trustScore;
 
     @OneToMany(mappedBy = "publisher")
     @Setter(AccessLevel.NONE)
