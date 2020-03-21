@@ -57,11 +57,16 @@ stages:
         versionSpec: '12.x'
       displayName: 'Install Node.js'
 
-    - script: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
-      displayName: 'npm install, build and test'
+    - task: Npm@1
+      inputs:
+        command: 'install'
+        workingDir: '$(Build.SourcesDirectory)/frontend'
+
+    - task: Npm@1
+      inputs:
+        command: 'custom'
+        workingDir: '$(Build.SourcesDirectory)/frontend'
+        customCommand: 'run build'
       
     - task: ArchiveFiles@2
       displayName: 'Archive files'
