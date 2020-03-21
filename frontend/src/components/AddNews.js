@@ -19,9 +19,21 @@ export class AddNews extends Component {
     this.setState({ [property]: value });
   }
 
+  isURL = (str) => {
+    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    return pattern.test(str);
+  }
+
   handleSubmit = async () => {
+    const { text } = this.state;
+    const key = this.isURL(text) ? 'url' : 'text'; 
     this.props.onSubmit({
-      text: this.state.text,
+      [key]: text,
     })
   }
 
@@ -29,14 +41,7 @@ export class AddNews extends Component {
     const { text } = this.state; 
     return (
     <Form>
-      {/* <Form.Group controlId="exampleForm.ControlInput1">
-        <Form.Label>Url</Form.Label>
-        <Form.Control 
-          onChange={(e, ee) => this.onChangeValue('url', e, ee)} 
-          type="url" 
-          placeholder="name@example.com" 
-        />
-      </Form.Group> */}
+
       <Form.Group controlId="exampleForm.ControlTextarea1">
         <Form.Label></Form.Label>
         <Form.Control
@@ -51,7 +56,7 @@ export class AddNews extends Component {
         onClick={this.handleSubmit} 
         variant="primary"
       >
-        Nachricht überprüfen
+        Nachricht checken
       </Button>
     </Form>
     );

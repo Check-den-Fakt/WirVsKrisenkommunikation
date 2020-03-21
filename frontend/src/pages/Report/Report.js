@@ -4,18 +4,24 @@ import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 //import Reaptcha from 'reaptcha';
 
+window.id = 0;
+
 export default class Report extends Component {
+<<<<<<< HEAD
   state = {
     text: ''
   }
+=======
+
+>>>>>>> cb1fc01fb842b6859ceec0bb2c52c07e1118b22d
 
   render () {
     const { text } = this.state; 
     // Declare a new state variable, which we'll call "count"
     return (
     <div>
-      <h1 className="display-4">Fake-News reporten</h1>
-      <p className="lead">Du hast ein eindeutigen Fake endeckt? Reiche diesen ein!</p>
+      <h1 className="display-4">Falschnachricht melden</h1>
+      <p className="lead">Du hast eine Falschnachricht entdeckt? Teile sie hier mit uns!</p>
       <Form>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label></Form.Label>
@@ -26,13 +32,19 @@ export default class Report extends Component {
             placeholder="Füge hier eine URL oder Textnachricht ein"
           />
         </Form.Group>
-        <p className="lead">Warum glaubst du, dass das Fake ist? Hast du dafür Belege?</p>
+        <p className="lead">Warum ist die Nachricht falsch? Unterstütze uns mit deinen Gegenbeweisen.</p>
+        *<Form.Control
+            onChange={(e, ee) => this.onChangeValue('text', e, ee)}
+            as="textarea"
+            rows="10"
+            placeholder="Beweis 1"
+        />
         <Button 
           disabled={!text} 
           onClick={this.handleSubmit} 
           variant="primary"
         >
-          Report
+          Nachricht einreichen
         </Button>
       </Form>
     </div>

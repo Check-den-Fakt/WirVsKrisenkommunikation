@@ -9,7 +9,9 @@ export default function Check() {
   const [checkResult, setCheckResult] = useState(null);
 
   const handleSendData = async (data) => {
-    const response = await fetchAPI.getData(apisdk.VALIDATE, data);
+    console.log(data);
+    const response = await fetchAPI.postData(apisdk.VALIDATE, data);
+    console.log(response);
     setCheckResult(response);
   } 
 
@@ -17,16 +19,8 @@ export default function Check() {
   return (
     <>
       {checkResult ? <Result result={checkResult} /> : <div>
-          {/* <h1></h1>
-          <div className="container">
-              <div className="raw">
-                <div className="text-center">
-                  <Diagram />
-                </div>
-              </div>
-          </div> */}
-        <h1 className="display-4">Check deine Corona-News</h1>
-        <p className="lead">Bevor du Nachrichten glaubst oder weiterleitest, überprüfe erst ob sie wahr sind!</p>
+        <h1 className="display-4">Ist da was dran?</h1>
+        <p className="lead">Du bist nicht sicher, ob eine Nachricht wahr ist? Wir helfen dir! </p>
         <AddNews onSubmit={handleSendData} />
       </div>}
     </>
