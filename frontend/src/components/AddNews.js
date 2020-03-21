@@ -33,15 +33,16 @@ export class AddNews extends Component {
         />
       </Form.Group> */}
       <Form.Group controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Text</Form.Label>
+        <Form.Label></Form.Label>
         <Form.Control
           onChange={(e, ee) => this.onChangeValue('text', e, ee)} 
           as="textarea" 
-          rows="10" 
+          rows="10"
+          placeholder="Füge hier eine URL oder Textnachricht ein"
         />
       </Form.Group>
       <Button onClick={this.handleSubmit} variant="primary">
-        Submit
+        Nachricht überprüfen
       </Button>
     </Form>
     );

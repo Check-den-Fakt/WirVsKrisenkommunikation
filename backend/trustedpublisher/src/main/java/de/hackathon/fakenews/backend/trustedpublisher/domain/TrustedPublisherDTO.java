@@ -22,4 +22,12 @@ public class TrustedPublisherDTO {
     public void setText(String text) {
         this.text = text;
     }
+
+    @Override
+    public String toString() {
+        return "TrustedPublisherDTO{" +
+                "uri='" + uri + '\'' +
+                ", text='" + text + '\'' +
+                '}';
+    }
 }
