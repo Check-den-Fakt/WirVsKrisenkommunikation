@@ -8,7 +8,9 @@ export default function Result() {
     <div>
       <h1 className="display-4">Check deine Corona-News</h1>
       <p className="lead">Bevor du Nachrichten glaubst oder weiterleitest, überprüfe erst ob sie wahr sind!</p>
-      <Diagram />
+      <div className="text-center">
+          <Diagram className="text-center" />
+      </div>
     </div>
   );
 }
