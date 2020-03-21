@@ -6,14 +6,26 @@ import { FormControl } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import './Diagram.css';
 import 'react-circular-progressbar/dist/styles.css';
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 export class Diagram extends Component {
   render () {
-    const value = 50;
-
+    const { name, confidense, reason } = this.props;
+    const value = (confidense || 0.33) * 100;
+    let styles = {};
+    if (name) {
+      styles = {
+        pathColor: 'green',
+        textColor: 'green',
+      }
+    } else {
+      styles = {
+        pathColor: 'red',
+        textColor: 'red',
+      }
+    }
     return (
-      <CircularProgressbar className="progressbar" value={value} maxValue={100} text={`${value}%`} />
+      <CircularProgressbar styles={buildStyles(styles)} className="progressbar" value={value} maxValue={100} text={`${value}%`} />
     );
   }
 }
