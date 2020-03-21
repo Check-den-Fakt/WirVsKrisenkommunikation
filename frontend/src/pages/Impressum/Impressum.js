@@ -3,11 +3,7 @@ import { AddNews } from '../../components/AddNews';
 import { Diagram } from '../../components/Diagram';
 import { ProgressBar } from 'react-bootstrap';
 
-<<<<<<< HEAD
-export default function Impressum({ result }) {
-=======
-export default function Impressum({ impressum }) {
->>>>>>> 278b5a89500daf8b3dad5a9b0d438e9943f630ce
+export default function Impressum() {
   // Declare a new state variable, which we'll call "count"
   return (
     <div>
