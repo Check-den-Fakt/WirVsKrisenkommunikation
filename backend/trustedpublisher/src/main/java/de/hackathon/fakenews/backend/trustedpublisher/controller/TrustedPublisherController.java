@@ -9,8 +9,6 @@ import de.hackathon.fakenews.backend.trustedpublisher.exception.ElementNotFoundE
 import de.hackathon.fakenews.backend.trustedpublisher.repositories.PublisherRepository;
 import de.hackathon.fakenews.backend.trustedpublisher.repositories.TrustUriRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,8 +21,6 @@ import java.util.stream.Collectors;
 @RestController
 @Slf4j
 public class TrustedPublisherController {
-
-    private final static Logger log = LoggerFactory.getLogger(TrustedPublisherController.class);
 
     PublisherRepository publisherRepository;
     TrustUriRepository trustUriRepository;
