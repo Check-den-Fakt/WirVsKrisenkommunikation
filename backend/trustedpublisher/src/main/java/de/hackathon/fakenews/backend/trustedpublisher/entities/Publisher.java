@@ -2,8 +2,15 @@ package de.hackathon.fakenews.backend.trustedpublisher.entities;
 
 import javax.persistence.*;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
 public class Publisher {
 
     @Id
@@ -14,38 +21,8 @@ public class Publisher {
 
     public double trustScore;
 
-    @OneToMany
+    @OneToMany(mappedBy = "publisher")
+    @Setter(AccessLevel.NONE)
     public List<TrustUri> knownUris;
 
-    public Integer getIdPublisher() {
-        return idPublisher;
-    }
-
-    public void setIdPublisher(Integer idPublisher) {
-        this.idPublisher = idPublisher;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public double getTrustScore() {
-        return trustScore;
-    }
-
-    public void setTrustScore(double trustScore) {
-        this.trustScore = trustScore;
-    }
-
-    public List<TrustUri> getKnownUris() {
-        return knownUris;
-    }
-
-    public void setKnownUris(List<TrustUri> knownUris) {
-        this.knownUris = knownUris;
-    }
 }
