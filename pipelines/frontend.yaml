@@ -68,43 +68,38 @@ stages:
         workingDir: '$(Build.SourcesDirectory)/frontend'
         customCommand: 'run build'
 
-    - task: AzureRmWebAppDeployment@3
-      displayName: 'Azure App Service Deploy: <YourWebAppNameHere>'
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
       inputs:
-        azureSubscription: $(azureSubscription)
-        WebAppName: $(webAppName)
-        Package: '$(System.DefaultWorkingDirectory/build'
-#
-#    - task: ArchiveFiles@2
-#      displayName: 'Archive files'
-#      inputs:
-#        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend/build'
-#        includeRootFolder: false
-#        archiveType: zip
-#        archiveFile: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
-#        replaceExistingArchive: true
-#
-#    - publish: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
-#      artifact: drop
-#
-#- stage: Deploy
-#  displayName: Deploy stage
-#  dependsOn: Build
-#  condition: succeeded()
-#  jobs:
-#  - deployment: Deploy
-#    displayName: Deploy
-#    environment: $(environmentName)
-#    pool:
-#      vmImage: $(vmImageName)
-#    strategy:
-#      runOnce:
-#        deploy:
-#          steps:
-#          - task: AzureRmWebAppDeployment@3
-#            displayName: 'Azure Web App Deploy: we-komfront-web'
-#            inputs:
-#              azureSubscription: $(azureSubscription)
-#              WebAppName: $(webAppName)
-#              appType: webAppLinux
-#              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+        rootFolderOrFile: '$(Build.SourcesDirectory)/frontend'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
+        replaceExistingArchive: true
+
+    - publish: $(Build.ArtifactStagingDirectory)/frontend/$(Build.BuildId).zip
+      artifact: drop
+
+- stage: Deploy
+  displayName: Deploy stage
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - deployment: Deploy
+    displayName: Deploy
+    environment: $(environmentName)
+    pool:
+      vmImage: $(vmImageName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureWebApp@1
+            displayName: 'Azure Web App Deploy: we-komfront-web'
+            inputs:
+              azureSubscription: $(azureSubscription)
+              appType: webAppLinux
+              appName: $(webAppName)
+              runtimeStack: 'NODE|12'
+              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+              startUpCommand: 'npm run start'
