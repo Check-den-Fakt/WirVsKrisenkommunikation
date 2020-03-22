@@ -1,0 +1,8 @@
+.share-buttons-item .share-icon {
+  cursor: pointer !important;
+  font-size: 200% !important;
+}
+
+.share-buttons-item a {
+  cursor: pointer !important;
+}
