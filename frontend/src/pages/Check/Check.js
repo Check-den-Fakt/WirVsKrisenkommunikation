@@ -16,6 +16,12 @@ export default function Check() {
       text: '',
       ...data
     });
+
+    if (response.search && response.search.value && response.search.value.length) {
+      const scores = response.search.value.map(val => val['@search.score']);
+      response.fakeCount = scores.length;
+      response.maxValue = Math.max(...scores);
+    }
     console.log(response);
     setCheckResult(response);
   } 
