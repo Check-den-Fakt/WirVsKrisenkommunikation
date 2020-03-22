@@ -6,3 +6,8 @@
 .share-buttons-item a {
   cursor: pointer !important;
 }
+
+.trigger-container {
+  display: inline-flex;
+  margin-top: 20px;
+}
