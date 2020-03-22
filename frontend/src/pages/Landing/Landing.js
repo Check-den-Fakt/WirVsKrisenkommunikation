@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
-import Carousel from 'react-bootstrap/Carousel';
 import "./Landing.css";
 import fetchAPI from '../../utils/fetchAPI';
+import Carousel from "react-bootstrap/Carousel";
 
 export default function Landing() {
   const [index, setIndex] = useState(0);
@@ -22,7 +22,6 @@ export default function Landing() {
   // Declare a new state variable, which we'll call "count"
   return (
     <div className="container">
-      <>
         <div className="d-flex justify-content-around m-3">
           <img src="/img/logo.svg" width="40%" height="40%" />
         </div>
@@ -31,17 +30,16 @@ export default function Landing() {
         <p className="text-center">Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland* haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten*. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
       
 
-      <div className="w-75 center">
-      <div className="row">
-        <Button href="/check" variant="primary" size="lg" block className="m-3">
-          Nachricht überprüfen
-        </Button>
-            <Button href="/report" variant="secondary" size="lg" block className="m-3">
-              Falschnachricht melden
-        </Button>
+        <div className="w-75 center">
+          <div className="row">
+            <Button href="/check" variant="primary" size="lg" block className="m-3">
+              Nachricht überprüfen
+            </Button>
+                <Button href="/report" variant="secondary" size="lg" block className="m-3">
+                  Falschnachricht melden
+            </Button>
           </div>
         </div>
-
 
         <div className="pt-5 d-flex justify-content-center">
           <div className="polygon background-color-1">
@@ -52,6 +50,7 @@ export default function Landing() {
             </div>
           </div>
         </div>
+        
         <h1>So prüfst Du Deine Nachricht?</h1>
         <div className="row mt-5">
           <div className="col-3">
@@ -72,6 +71,7 @@ export default function Landing() {
             </ul>
           </div>
         </div>
+        
         <div className="row mt-5">
           <div className="col-3">
             <span className="material-icons">
@@ -88,6 +88,7 @@ export default function Landing() {
           </p>
           </div>
         </div>
+        
         <div className="row mt-5">
           <div className="col-3">
             <span className="material-icons">
@@ -100,6 +101,7 @@ export default function Landing() {
           </p>
           </div>
         </div>
+
         <div className="pt-5 d-flex justify-content-center">
           <div className="polygon background-color-2">
             <div className="raw">
@@ -112,90 +114,90 @@ export default function Landing() {
             </ul>
           </div>
         </div>
-        <div className="raw">
-          <div className="col-md-11">
-            <Carousel controls={false} activeIndex={index} onSelect={handleSelect}>
+
+        <div className="picCarousel">
+          <div className="text-center">
+            <Carousel activeIndex={index} onSelect={handleSelect}>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/logo_klein.png"
-                  alt="Check the Fact"
+                    className="d-block w-100"
+                    src="/img/carousel/logo_klein.png"
+                    alt="Check the Fact"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/hashtag.png"
-                  alt="Wir bleiben für euch Zuhause #wirvsvirushack"
+                    className="d-block w-100"
+                    src="/img/carousel/hashtag.png"
+                    alt="Wir bleiben für euch Zuhause #wirvsvirushack"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/Logo_Projekt.png"
-                  alt="Wir vs Virus Hackathon"
+                    className="d-block w-100"
+                    src="/img/carousel/Logo_Projekt.png"
+                    alt="Wir vs Virus Hackathon"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/Bund_Logo.png"
-                  alt="Bundesregierung"
+                    className="d-block w-100"
+                    src="/img/carousel/Bund_Logo.png"
+                    alt="Bundesregierung"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/CFG_logo.png"
-                  alt="Code for Germany"
+                    className="d-block w-100"
+                    src="/img/carousel/CFG_logo.png"
+                    alt="Code for Germany"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/D21_Logo.png"
-                  alt="Initiative D21"
+                    className="d-block w-100"
+                    src="/img/carousel/D21_Logo.png"
+                    alt="Initiative D21"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/hub-Berlin.png"
-                  alt="Impact Hub Berlin"
+                    className="d-block w-100"
+                    src="/img/carousel/hub-Berlin.png"
+                    alt="Impact Hub Berlin"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/pt-logo.png"
-                  alt="project together"
+                    className="d-block w-100"
+                    src="/img/carousel/pt-logo.png"
+                    alt="project together"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/PF.png"
-                  alt="Prototype Fund"
+                    className="d-block w-100"
+                    src="/img/carousel/PF.png"
+                    alt="Prototype Fund"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/sendLOGO.png"
-                  alt="Send"
+                    className="d-block w-100"
+                    src="/img/carousel/sendLOGO.png"
+                    alt="Send"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/img/carousel/t4g.png"
-                  alt="Tech4Germany"
+                    className="d-block w-100"
+                    src="/img/carousel/t4g.png"
+                    alt="Tech4Germany"
                 />
               </Carousel.Item>
             </Carousel>
           </div>
-        </div>
-      </>
+          </div>
     </div>
   );
 }
