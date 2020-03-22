@@ -65,7 +65,7 @@ export default function Result({ result, requestData }) {
           <p>"{requestData && (requestData.text || requestData.url)}"</p>
         </Card>
       </div>
-      {/* <ResultDetails /> */}
+      {result.fakeCount && <ResultDetails fakeNewsCount={result.fakeCount} maxValue={result.maxValue} />}
       <a className="fact-link" href="/about">Wer wir sind?</a>
     </div>
   );

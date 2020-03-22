@@ -20,12 +20,12 @@ function CustomToggle({ children, eventKey }) {
   );
 }
 
-export default function ResultDetails({ result, requestData, trustScore, userScore }) {
+export default function ResultDetails({ fakeNewsCount, maxValue, result, requestData, trustScore, userScore }) {
 
   return (
     <div>
-      <h1>Wie kommt diese Einschätzung zustande:</h1>  
-      <div>
+      {/* <h1>Wie kommt diese Einschätzung zustande:</h1>   */}
+      {/* <div>
         <Diagram text={16} isFull confidense={100} />
         <Accordion defaultActiveKey="0">
           <CustomToggle eventKey="0">Details anzeigen</CustomToggle>
@@ -34,16 +34,10 @@ export default function ResultDetails({ result, requestData, trustScore, userSco
           </Accordion.Collapse>
         </Accordion>
         <p>{trustScore || 16} seriöse Quellen haben diese Nachricht als glaubwürdig bestätigt.</p>
-      </div>
+      </div> */}
       <div>
         <Diagram text={121} isFull confidense={83} />
-        <Accordion defaultActiveKey="0">
-          <CustomToggle eventKey="0">Details anzeigen</CustomToggle>
-          <Accordion.Collapse eventKey="0">
-            <Card.Body>Hello! I'm the body</Card.Body>
-          </Accordion.Collapse>
-        </Accordion>
-        <p>121 Nutzer haben diese Nachricht als glaubwürdig bestätigt.</p>
+        <p>Wir haben in unser FakeNews Datenbank {fakeNewsCount} results mit einer Übereinstimmung von bis zu {maxValue}%</p>
       </div>
     </div>
   );
