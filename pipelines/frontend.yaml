@@ -72,10 +72,12 @@ stages:
       displayName: Build Image
       inputs:
         containerRegistry: 'acrConnection'
-        repository: 'wirvsvirus.azurecr.io/frontend'
+        repository: 'frontend'
         command: 'buildAndPush'
         Dockerfile: 'frontend/Dockerfile'
         buildContext: 'frontend'
+        tags: |
+          'wirvsvirus.azurecr.io/frontend'
 
 #- stage: Deploy
 #  displayName: Deploy stage
