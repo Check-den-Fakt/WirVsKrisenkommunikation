@@ -2,15 +2,15 @@
 #Frag bei der Azure CogService Api an und wandelt text in keywords um
 import requests
 import json
+from subkey import sub_key
 
 from collections import Counter
 
 #Gibt eine Liste von keywords nach anzahl im Text zurück
 def az_get_keywords(text, menge):
-    sub_key = 'a8dadd0c8d6d4d2280a576e6976b1317'
     endpunkt = 'https://westeurope.api.cognitive.microsoft.com/'
     language_api = endpunkt + "/text/analytics/v2.1/keyphrases"
-
+    sub_key = sub_key()
 
     payload = {"documents": [
     {"id": "1", "text": text}]}
