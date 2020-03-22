@@ -25,10 +25,10 @@ export default function Landing() {
         </div>
 
         <div className="pt-5 d-flex justify-content-center">
-        <div className="polygon background-color-1">
-        <h2 className="display-4">Wer sind wir?</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </div>
+          <div className="polygon background-color-1">
+            <h2 className="display-4">Wer sind wir?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
         </div>
 
         <h1>So prüfst Du Deine Nachricht?</h1>

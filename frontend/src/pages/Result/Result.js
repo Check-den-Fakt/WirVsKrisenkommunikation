@@ -10,9 +10,12 @@ export default function Result({ result, requestData }) {
   // Declare a new state variable, which we'll call "count"
   let content = null;
   const { trustedPublisher } = result; //result;
+  let bgClass = '';
   if (trustedPublisher) {
+    
     const { trustScore } = trustedPublisher;
     if (trustScore > 0.70) {
+      bgClass = 'bg-color-success';
       console.log('POSITIV')
       content = <Card>
         <Card.Body>
@@ -24,6 +27,7 @@ export default function Result({ result, requestData }) {
         </Card.Body>
       </Card>
     } else {
+      bgClass = 'bg-color-error';
       content = <Card>
       <Card.Body>
         <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
@@ -35,6 +39,7 @@ export default function Result({ result, requestData }) {
     </Card>
     }
   } else {
+    bgClass = 'bg-color-warning';
     content = <Card>
     <Card.Body>
       <Card.Title>nicht verifizierbar</Card.Title>
@@ -49,9 +54,13 @@ export default function Result({ result, requestData }) {
 
   return (
     <div>
-      <h1></h1>
-      {content}
-      <ShareButtons />
+      <h1>Ergebnis:</h1>
+      <div className="pt-5 d-flex justify-content-center">
+          <div className={`polygon ${bgClass}`}>
+            {content}
+            {trustedPublisher && <ShareButtons />}
+          </div>
+        </div>
       <h1>Deine Nachricht:</h1>
       <p>"{requestData && (requestData.text || requestData.url)}"</p>
       {/* <ResultDetails /> */}
