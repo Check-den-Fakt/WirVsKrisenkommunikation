@@ -9,7 +9,7 @@ import ResultDetails from './ResultDetails';
 export default function Result({ result, requestData }) {
   // Declare a new state variable, which we'll call "count"
   let content = null;
-  const { trustedPublisher } = result; //result;
+  const trustedPublisher = result ? result.trustedPublisher : null; //result;
   let bgClass = '';
   if (trustedPublisher) {
     
@@ -53,7 +53,7 @@ export default function Result({ result, requestData }) {
 
 
   return (
-    <div>
+    <div className="text-center">
       <h1>Ergebnis:</h1>
       <div className="pt-5 d-flex justify-content-center">
           <div className={`polygon ${bgClass}`}>
@@ -61,10 +61,10 @@ export default function Result({ result, requestData }) {
             {trustedPublisher && <ShareButtons />}
           </div>
         </div>
-      <h1>Deine Nachricht:</h1>
+      <p className="fact-header">Deine Nachricht:</p>
       <p>"{requestData && (requestData.text || requestData.url)}"</p>
       {/* <ResultDetails /> */}
-      <a href="/about">Wer wir sind</a>
+      <a className="fact-link" href="/about">Wer wir sind</a>
     </div>
   );
 }
