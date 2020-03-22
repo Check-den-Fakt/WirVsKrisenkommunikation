@@ -53,7 +53,7 @@ public class TrustedPublisherController {
             throw new ElementNotFoundException();
         }
         final List<TrustUri> possibleUris = trustUriRepository.findAllByUrlStartingWith(fqdn);
-        final String uriWithoutProtocol = uri.getHost() + uri.getPath();
+        final String uriWithoutProtocol = fqdn + uri.getPath();
         log.debug(uriWithoutProtocol);
         final List<Publisher> matchingPublishers = possibleUris.stream().filter(uriCandidate ->
                 uriWithoutProtocol.toString().startsWith(uriCandidate.url))
@@ -67,9 +67,7 @@ public class TrustedPublisherController {
             throw new RuntimeException("Too Many");
         }
 
-        TrustedAnswerDTO trustedAnswerDTO = new TrustedAnswerDTO(matchingPublishers.get(0).trustScore);
-
-        return trustedAnswerDTO;
+        return new TrustedAnswerDTO(matchingPublishers.get(0).trustScore, matchingPublishers.get(0).getTitle());
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
