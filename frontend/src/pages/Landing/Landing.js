@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import './Landing.css';
 import { Button } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
 
 export default function Landing() {
+    const [index, setIndex] = useState(0);
+
+    const handleSelect = (selectedIndex, e) => {
+        setIndex(selectedIndex);
+    };
+
   // Declare a new state variable, which we'll call "count"
   return (
     <div className="container">
@@ -42,7 +49,7 @@ export default function Landing() {
 
         <div className="row">
           <div className="col-3">
-          <span class="material-icons">
+          <span className="material-icons">
           backup
           </span>
           </div>
@@ -61,7 +68,7 @@ export default function Landing() {
         </div>
         <div className="row">
           <div className="col-3">
-          <span class="material-icons">
+          <span className="material-icons">
           thumb_up_alt
           </span>
           </div>
@@ -77,7 +84,7 @@ export default function Landing() {
         </div>
         <div className="row">
           <div className="col-3">
-          <span class="material-icons">
+          <span className="material-icons">
           share
           </span>
           </div>
@@ -98,8 +105,96 @@ export default function Landing() {
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
              </div>
          </div>
-
-        
+        <div className="raw">
+            <div className="col-md-11">
+                 <Carousel activeIndex={index} onSelect={handleSelect}>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/logo.svg"
+                             alt="Check the Fact"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/hashtag.svg"
+                             alt="Wir bleiben für euch Zuhause #wirvsvirushack"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/Logo_Projekt_01.svg"
+                             alt="Wir vs Virus Hackathon"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/logo.svg"
+                             alt="Check the Fact"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/Bundesregierung_Logo.svg"
+                             alt="Bundesregierung"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/CFG_logo.png"
+                             alt="Code for Germany"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/D21_Logo.jpg"
+                             alt="Initiative D21"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/hub-Berlin.jpg"
+                             alt="Impact Hub Berlin"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/pt-logo.png"
+                             alt="project together"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/PrototypeFund_Logo.png"
+                             alt="Prototype Fund"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/sendLOGO.png"
+                             alt="SEND"
+                         />
+                     </Carousel.Item>
+                     <Carousel.Item>
+                         <img
+                             className="d-block w-100"
+                             src="/img/Tech4Germany-Logopng.png"
+                             alt="Tech4Germany"
+                         />
+                     </Carousel.Item>
+                 </Carousel>
+            </div>
+        </div>
 
 
       </>

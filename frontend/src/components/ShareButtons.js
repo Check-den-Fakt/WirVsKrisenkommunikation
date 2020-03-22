@@ -56,10 +56,10 @@ export default function ShareButtons() {
   return (
       <div className="share-buttons-item text-center">
           <OverlayTrigger trigger="click" placement="bottmm" overlay={popover}>
-            <a onClick={() => setIsShareOpen(true)}>Teile das Ergebnis<span className="material-icons share-icon">
-              share
-            </span>
-          </a>
+            <div className="trigger-container">
+              <a className="fact-link" onClick={() => setIsShareOpen(true)}>Teile das Ergebnis</a>
+              <span className="fact-link material-icons share-icon">share</span>
+            </div>
         </OverlayTrigger>
       </div>
   );
