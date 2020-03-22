@@ -21,17 +21,22 @@ export default function Result({ result, requestData }) {
     content = <Card>
       <Card.Body>
         <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
-        <ProgressBar now={trustScore * 100} />
+        <ProgressBar variant="success" now={trustScore * 100} />
         <Card.Text>
-          Die Check-the-Fact-Prüfung bestätigt, dass die Nachricht seriös ist. Du kannst die Nachricht gerne weiter verbreiten!.
+          Die Check-the-Fact-Prüfung bestätigt, dass die Nachricht seriös ist. Du kannst die Nachricht gerne weiter verbreiten!
         </Card.Text>
       </Card.Body>
     </Card>
   } else {
-    content = <>
-      <h1 className="display-4">Diese Nachricht scheint ein Fake zu sein</h1>
-      <p className="lead pink">Diese Nachricht entspricht nicht der Wahrheit... blablabla</p>
-    </>
+    content = <Card>
+    <Card.Body>
+      <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
+      <ProgressBar variant="danger" now={trustScore * 100} />
+      <Card.Text>
+      Die Check-the-Fact-Prüfung konnte kaum seriöse Quellen finden, die diese Nachricht bestätigen. Bitte leite sie nicht weiter.
+      </Card.Text>
+    </Card.Body>
+  </Card>
   }
 
   return (
