@@ -9,12 +9,12 @@ data = json.loads(request.read().decode())
 #json_File = json.load(request.decode())
 
 #connect to azure cosmosdb
-uri = "mongodb://pagecrawlerdb:TdhFfiPGVDveqYgXaDS3uRGvumzm79GLvs6AulOg8h0FxiISCCrOvKwFWIHDfE5IG54IQbe96nQhnl4dbwkLKw==@pagecrawlerdb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@pagecrawlerdb@&retrywrites=false"
+uri = "ENTER_URI_HERE"
 client = pymongo.MongoClient(uri)
 db = client.tagesschau
 
 #endpoint and key for azure cognitive services
-cognitiveKey = "a8dadd0c8d6d4d2280a576e6976b1317"
+cognitiveKey = "ENTER_KEY_HERE"
 cognitiveEndPoint = "https://westeurope.api.cognitive.microsoft.com/"
 
 #parser from html-code to text
@@ -45,7 +45,7 @@ def sliceTextToChunks(text, chunksize):
         lastPos = pos
         if(reachedEnd):
             break
-       
+
     if(len(chunks) == 0):
         return text
     else:
@@ -70,7 +70,7 @@ def loadTagesschauNews():
                 article['keyPhrases'] = keyPhrasesResult.key_phrases
             articleList.append(article)
 
-        
+
     return articleList
 
 def getArticleFromJson(articleJson):
@@ -119,7 +119,7 @@ client = authenticate_cognitivClient()
 def keyPhraseExtraction(document):
 
     try:
-        
+
 
         response = client.extract_key_phrases(inputs= document)[0]
 
@@ -130,7 +130,7 @@ def keyPhraseExtraction(document):
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
-        
+
 
 
 
@@ -148,5 +148,3 @@ pushArticelsToMongo(articles)
 #    print(news['details'])
 
 sprint("ende")
-
-
