@@ -8,11 +8,18 @@ window.id = 0;
 
 export default class Report extends Component {
   state = {
-    text: ''
+    text: '',
+    sources: [],
+    tempSource: '',
+  }
+
+  handleAddNew = () => {
+    const { sources, tempSource } = this.state;
+    this.setState({ sources: [...sources, tempSource], tempSource: '' })
   }
 
   render () {
-    const { text } = this.state; 
+    const { text, tempSource, sources } = this.state; 
     // Declare a new state variable, which we'll call "count"
     return (
     <div>
@@ -22,19 +29,23 @@ export default class Report extends Component {
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label></Form.Label>
           <Form.Control
-            onChange={(e, ee) => this.onChangeValue('text', e, ee)} 
+            onChange={({ currentTarget }) => this.setState({ text: currentTarget.value })} 
             as="textarea" 
             rows="10"
+            value={text}
             placeholder="Füge hier eine URL oder Textnachricht ein"
           />
         </Form.Group>
-        <p className="lead">Warum ist die Nachricht falsch? Unterstütze uns mit deinen Gegenbeweisen.</p>
-        *<Form.Control
-            onChange={(e, ee) => this.onChangeValue('text', e, ee)}
-            as="textarea"
-            rows="10"
-            placeholder="Beweis 1"
-        />
+        <div>
+          <p className="lead">Deine Belege:</p>
+          {sources.map(source => <p>{source}</p>)}
+          <Form.Control
+              onChange={({ currentTarget }) => this.setState({ tempSource: currentTarget.value })}
+              value={tempSource}
+              placeholder="Quellen einfügen"
+          />
+          <a onClick={this.handleAddNew}>Weiteren Beleg hinzufügen +</a>
+        </div>
         <Button 
           disabled={!text} 
           onClick={this.handleSubmit} 
