@@ -8,58 +8,53 @@ import ResultDetails from './ResultDetails';
 
 export default function Result({ result, requestData }) {
   // Declare a new state variable, which we'll call "count"
-  const isPositive = false;
   let content = null;
-  const mokeResult = { trustScore: 0.75 };
-  const { trustScore } = mokeResult; //result;
-  if (trustScore > 0.70) {
-    console.log('POSITIV')
-    // content = <>
-    //   <h1 className="display-4">Diese Nachricht ist mit großer wahrscheinlichkeit OK</h1>
-    //   <p className="lead pink">Diese Nachricht is verifiziert... blablabal durch was, wen, wie?</p>      
-    // </>;
-    content = <Card>
+  const { trustedPublisher } = result; //result;
+  if (trustedPublisher) {
+    const { trustScore } = trustedPublisher;
+    if (trustScore > 0.70) {
+      console.log('POSITIV')
+      content = <Card>
+        <Card.Body>
+          <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
+          <ProgressBar variant="success" now={trustScore * 100} />
+          <Card.Text>
+            Die Check-the-Fact-Prüfung bestätigt, dass die Nachricht seriös ist. Du kannst die Nachricht gerne weiter verbreiten!
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    } else {
+      content = <Card>
       <Card.Body>
         <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
-        <ProgressBar variant="success" now={trustScore * 100} />
+        <ProgressBar variant="danger" now={trustScore * 100} />
         <Card.Text>
-          Die Check-the-Fact-Prüfung bestätigt, dass die Nachricht seriös ist. Du kannst die Nachricht gerne weiter verbreiten!
+        Die Check-the-Fact-Prüfung konnte kaum seriöse Quellen finden, die diese Nachricht bestätigen. Bitte leite sie nicht weiter.
         </Card.Text>
       </Card.Body>
     </Card>
+    }
   } else {
     content = <Card>
     <Card.Body>
-      <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
-      <ProgressBar variant="danger" now={trustScore * 100} />
+      <Card.Title>nicht verifizierbar</Card.Title>
+      <ProgressBar variant="danger" now={0} />
       <Card.Text>
-      Die Check-the-Fact-Prüfung konnte kaum seriöse Quellen finden, die diese Nachricht bestätigen. Bitte leite sie nicht weiter.
+        Die Check-the-Fact-Prüfung konnte keine Quellen finden. Vielleicht hast du mehr Erfolg in der Eigenrecherche.
       </Card.Text>
     </Card.Body>
   </Card>
   }
 
+
   return (
     <div>
-      {/* <h1></h1>
-      <div className="container">
-        <div className="raw">
-            <div className="text-center">
-                <Diagram confidense={trustScore} />
-            </div>
-        </div>
-      </div> */}
       <h1></h1>
       {content}
       <ShareButtons />
       <h1>Deine Nachricht:</h1>
       <p>"{requestData && (requestData.text || requestData.url)}"</p>
-      <ResultDetails />
-        {/*<ProgressBar now={60} />
-      {JSON.stringify(result, null, 2)}
-      <div className="text-center">
-          <Diagram className="text-center" />
-      </div> */}
+      {/* <ResultDetails /> */}
       <a href="/about">Wer wir sind</a>
     </div>
   );
