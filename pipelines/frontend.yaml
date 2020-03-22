@@ -20,9 +20,6 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
-  # Image name
-  imageName: 'wirvsvirus.azurecr.io/frontend'
-
 stages:
 - stage: ARM
   displayName: Deploy ARM
@@ -75,11 +72,10 @@ stages:
       displayName: Build Image
       inputs:
         containerRegistry: 'acrConnection'
-        repository: '$(imageName)'
+        repository: 'wirvsvirus.azurecr.io/frontend'
         command: 'buildAndPush'
         Dockerfile: 'frontend/Dockerfile'
-        tags: |
-          wirvsvirus.azurecr.io/frontend
+        buildContext: 'frontend'
 
 #- stage: Deploy
 #  displayName: Deploy stage
