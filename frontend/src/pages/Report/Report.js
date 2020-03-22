@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Report.css';
-import { Form } from 'react-bootstrap';
+import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
 import apisdk from '../../constants/apisdk';
@@ -13,6 +13,8 @@ export default class Report extends Component {
     text: '',
     sources: [],
     tempSource: '',
+    isReported: false,
+    isLoading: false,
   }
 
   handleAddNew = () => {
@@ -21,18 +23,24 @@ export default class Report extends Component {
   }
 
   handleSubmit = async () => {
-    const response = fetchAPI.postData(apisdk.REPORT, { text: this.state.text })
-    console.log(response);
+    this.setState({ isLoading: true });
+    try {
+      await fetchAPI.postData('https://we-sendfact-fa.azurewebsites.net/api/messagearchive', { text: this.state.text })
+    } catch (e) {
+      this.setState({ isReported: true, isLoading: false })
+    } finally {
+      this.setState({ isReported: true, isLoading: false })
+    }
   }
 
   render () {
-    const { text, tempSource, sources } = this.state; 
+    const { text, tempSource, sources, isReported, isLoading } = this.state; 
     // Declare a new state variable, which we'll call "count"
     return (
     <div>
       <h1 className="display-4">Falschnachricht melden</h1>
       <p className="lead">Du hast eine Falschnachricht entdeckt? Teile sie hier mit uns!</p>
-      <Form>
+      {isReported ? <h3>Danke!</h3> : <Form>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label></Form.Label>
           <Form.Control
@@ -53,14 +61,14 @@ export default class Report extends Component {
           />
           <a onClick={this.handleAddNew}>Weiteren Beleg hinzufügen +</a>
         </div> */}
-        <Button 
+        {isLoading ? <Spinner animation="border" /> : <Button 
           disabled={!text} 
           onClick={this.handleSubmit} 
           variant="primary"
         >
           Nachricht einreichen
-        </Button>
-      </Form>
+        </Button>}
+      </Form>}
     </div>
     );
   }

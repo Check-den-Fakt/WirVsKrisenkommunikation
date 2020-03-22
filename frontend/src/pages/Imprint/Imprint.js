@@ -1,33 +1,22 @@
 import React, { useState } from 'react';
 
-export default function Impressum() {
+export default function Imprint() {
   // Declare a new state variable, which we'll call "count"
   return (
     <div>
         <h1>Impressum</h1>
 
         <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
-        <p>Check the Fact<br />
-            Musterstra&szlig;e 111<br />
-            90210 Musterstadt</p>
+        <p>Check den Fakt<br />
+            Kammergasse 9<br />
+            85354 Freising</p>
 
         <p><strong>Vertreten durch:</strong><br />
-            Dr. Harry Mustermann<br />
-            Luise Beispiel</p>
+            Antonella Lorenz</p>
 
         <h2>Kontakt</h2>
-        <p>Telefon: +49 (0) 123 44 55 66<br />
-            Telefax: +49 (0) 123 44 55 99<br />
-            E-Mail: info@check-den-fakt.de</p>
-
-        <h2>Umsatzsteuer-ID</h2>
-        <p>Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect; 27 a Umsatzsteuergesetz:<br />
-            DE 999 999 999</p>
-
-        <h2>Aufsichtsbeh&ouml;rde</h2>
-        <p>Musterkammer Musterstadt<br />
-            Musterweg 10<br />
-            90210 Musterstadt</p>
+        <p>Telefon: +49 (0) 171 7472075<br />
+            E-Mail: welcome@check-den-fakt.de</p>
 
         <h2>EU-Streitschlichtung</h2>
         <p>Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a>.<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>

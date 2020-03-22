@@ -22,7 +22,8 @@ export class NavMenu extends Component {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             {/*<Nav.Link href="/trending">Trends</Nav.Link>*/}
-            <Nav.Link href="/sources">Unseriöse Seiten/Quellen</Nav.Link>
+            <Nav.Link href="/rules">Goldene Regeln</Nav.Link>
+            {/*<Nav.Link href="/sources">Unseriöse Seiten/Quellen</Nav.Link>*/}
             <Nav.Link href="/about">About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>

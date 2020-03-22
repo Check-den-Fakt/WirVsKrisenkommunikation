@@ -6,3 +6,11 @@ footer{
     width: 100%;
     margin-bottom: 0;
 }
+
+.fact-footer-col {
+    padding-top: 20px !important;
+}
+
+div footer.mt-5 {
+    margin-bottom: 5px !important;
+}
