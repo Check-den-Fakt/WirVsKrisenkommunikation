@@ -77,7 +77,7 @@ stages:
         containerRegistry: 'acrConnection'
         repository: '$(imageName)'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: 'frontend/Dockerfile'
 
 #- stage: Deploy
 #  displayName: Deploy stage
