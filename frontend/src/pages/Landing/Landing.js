@@ -17,22 +17,30 @@ export default function Landing() {
         <div className="d-flex justify-content-around m-3">
           <img src="/img/logo.svg" width="40%" height="40%" />
         </div>
-        <h1>Finde und widerlege Corona-Falschnachrichten</h1>
-        <p>Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland* haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten*. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
-        <div className="w-75 center">
-          <div className="row">
-            <Button href="/check" variant="primary" size="lg" block className="m-3">
-              Nachricht überprüfen
+
+        <h1 className="text-center">Finde und widerlege Corona-Falschnachrichten</h1>
+        <p className="text-center">Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland* haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten*. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
+      
+
+      <div className="w-75 center">
+      <div className="row">
+        <Button href="/check" variant="primary" size="lg" block className="m-3">
+          Nachricht überprüfen
         </Button>
             <Button href="/report" variant="secondary" size="lg" block className="m-3">
               Falschnachricht melden
         </Button>
           </div>
         </div>
+
+
         <div className="pt-5 d-flex justify-content-center">
           <div className="polygon background-color-1">
-            <h2 className="display-4">Wer sind wir?</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <div className="container">
+            <h2>Worum geht es hier?</h2>
+            <p>Check the Fact ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung. 
+             Ganz nach dem Motto: Erst klären, dann sharen!</p>
+            </div>
           </div>
         </div>
         <h1>So prüfst Du Deine Nachricht?</h1>

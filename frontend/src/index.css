@@ -26,11 +26,15 @@ h2 {
 
 h3 {
   font-family: 'Open Sans';
-  font-size: 16px;
+  font-size: 16px !important;
   line-height: 18px;
   color: #333;
-  font-weight: bold;
-  font-size: 22px !important;
+  font-weight: bold !important;
+}
+
+.middle-text {
+  text-align: center;
+  vertical-align: middle;
 }
 
 .fact-header {
@@ -69,8 +73,8 @@ h3 {
 .polygon {
   width: 100vw !important;
   flex-shrink: 0;
-  clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
-  -webkit-clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
+  clip-path: polygon(100% calc(0% + 6vw), 100% 100%, 0 calc(100% - 6vw), 0 0);
+  -webkit-clip-path: polygon(100% calc(0% + 6vw), 100% 100%, 0 calc(100% - 6vw), 0 0);
   margin-top: -2vw;
   padding: 10%;
 }
@@ -96,4 +100,8 @@ h3 {
 .material-icons {
   font-size: 400% !important;
   /* Preferred icon size */
+}
+
+.w-100 {
+  height: 200px !important;  
 }

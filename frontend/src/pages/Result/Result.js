@@ -59,7 +59,7 @@ export default function Result({ result, requestData }) {
             {trustedPublisher && <ShareButtons />}
           {/* </div>
         </div> */}
-      <div className="text-left">
+      <div className="text-left margin-top-40">
         <p className="fact-header">Deine Nachricht:</p>
         <Card className="your-message-card">
           <p>"{requestData && (requestData.text || requestData.url)}"</p>
