@@ -35,7 +35,7 @@ export default function Landing() {
         <div className="row">
         <div className="row">
           <div className="col-3">
-          <span class="material-icons">
+          <span className="material-icons">
           backup
           </span>
           </div>
@@ -54,7 +54,7 @@ export default function Landing() {
         </div>
         <div className="row">
           <div className="col-3">
-          <span class="material-icons">
+          <span className="material-icons">
           thumb_up_alt
           </span>
           </div>
@@ -70,7 +70,7 @@ export default function Landing() {
         </div>
         <div className="row">
           <div className="col-3">
-          <span class="material-icons">
+          <span className="material-icons">
           share
           </span>
           </div>
