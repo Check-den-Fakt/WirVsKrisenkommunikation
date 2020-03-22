@@ -11,6 +11,6 @@ footer{
     padding-top: 20px !important;
 }
 
-div footer {
+div footer.mt-5 {
     margin-bottom: 5px !important;
 }
