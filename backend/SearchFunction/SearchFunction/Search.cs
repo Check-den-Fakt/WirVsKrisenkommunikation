@@ -33,8 +33,7 @@ namespace SearchFunction
 
             SearchParameters parameters = new SearchParameters()
             {
-                SearchFields = new[] { "Content" },
-                Top = 10
+                SearchFields = new[] { "Content" }
             };
 
             var result = await indexClient.Documents.SearchAsync(requestData.query, parameters);
