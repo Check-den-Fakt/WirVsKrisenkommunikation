@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './Report.css';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import fetchAPI from '../../utils/fetchAPI';
+import apisdk from '../../constants/apisdk';
 //import Reaptcha from 'reaptcha';
 
 window.id = 0;
@@ -16,6 +18,11 @@ export default class Report extends Component {
   handleAddNew = () => {
     const { sources, tempSource } = this.state;
     this.setState({ sources: [...sources, tempSource], tempSource: '' })
+  }
+
+  handleSubmit = async () => {
+    const response = fetchAPI.postData(apisdk.REPORT, { text: this.state.text })
+    console.log(response);
   }
 
   render () {
@@ -36,7 +43,7 @@ export default class Report extends Component {
             placeholder="Füge hier eine URL oder Textnachricht ein"
           />
         </Form.Group>
-        <div>
+        {/* <div>
           <p className="lead">Deine Belege:</p>
           {sources.map(source => <p>{source}</p>)}
           <Form.Control
@@ -45,7 +52,7 @@ export default class Report extends Component {
               placeholder="Quellen einfügen"
           />
           <a onClick={this.handleAddNew}>Weiteren Beleg hinzufügen +</a>
-        </div>
+        </div> */}
         <Button 
           disabled={!text} 
           onClick={this.handleSubmit} 
