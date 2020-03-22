@@ -25,8 +25,8 @@ export default function Check() {
   return (
     <>
       {checkResult ? <Result requestData={requestData} result={checkResult} /> : <div>
-        <h1 className="display-4">Ist da was dran?</h1>
-        <p className="lead">Du bist nicht sicher, ob eine Nachricht wahr ist? Wir helfen dir! </p>
+        <h1 className="display-4">Check deine Corona-News</h1>
+        <p className="lead">Du bist Dir nicht sicher, ob eine Nachricht wahr ist? Wir helfen Dir!</p>
         <AddNews onSubmit={handleSendData} />
       </div>}
     </>
