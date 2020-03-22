@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { AddNews } from '../../components/AddNews';
-import { Diagram } from '../../components/Diagram';
 import Result from '../Result/Result';
 import fetchAPI from '../../utils/fetchAPI';
 import apisdk from '../../constants/apisdk';

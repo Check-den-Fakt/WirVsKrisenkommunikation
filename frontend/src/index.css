@@ -12,7 +12,6 @@ code {
 }
 
 
-
 h1 {
   font-family: 'Vollkorn', serif !important;
   color: #333;
@@ -57,6 +56,11 @@ h3 {
 .lead {
   font-family: 'Open Sans', sans-serif;
   color: #565D64;
+}
+
+
+.center {
+  margin: auto;
 }
 
 /*Hier werden die schrägen Elemente generiert*/

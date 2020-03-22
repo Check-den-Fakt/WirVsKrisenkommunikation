@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { AddNews } from '../../components/AddNews';
-import { Diagram } from '../../components/Diagram';
-import { ProgressBar } from 'react-bootstrap';
 
 export default function Impressum() {
   // Declare a new state variable, which we'll call "count"
