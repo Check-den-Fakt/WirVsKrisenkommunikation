@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Spinner } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
@@ -12,6 +12,7 @@ export class AddNews extends Component {
     url: '',
     text: '',
     type: '',
+    isLoading: false,
   }
 
   onChangeValue = (property, { currentTarget }) => {
@@ -27,32 +28,33 @@ export class AddNews extends Component {
   handleSubmit = async () => {
     const { text } = this.state;
     const key = this.isURL(text) ? 'url' : 'text'; 
+    this.setState({ isLoading: true })
     this.props.onSubmit({
       [key]: text,
     })
   }
 
   render () {
-    const { text } = this.state; 
+    const { text, isLoading } = this.state; 
     return (
     <Form>
-
       <Form.Group controlId="exampleForm.ControlTextarea1">
         <Form.Label></Form.Label>
         <Form.Control
           onChange={(e, ee) => this.onChangeValue('text', e, ee)} 
           as="textarea" 
           rows="10"
+          disabled={isLoading}
           placeholder="Füge hier eine URL oder Textnachricht ein"
         />
       </Form.Group>
-      <Button 
+      {isLoading ? <Spinner animation="border" /> : <Button 
         disabled={!text} 
         onClick={this.handleSubmit} 
         variant="primary"
       >
         Nachricht checken
-      </Button>
+      </Button>}
     </Form>
     );
   }
