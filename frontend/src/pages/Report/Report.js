@@ -21,8 +21,11 @@ export default class Report extends Component {
   }
 
   handleSubmit = async () => {
-    const response = fetchAPI.postData(apisdk.REPORT, { text: this.state.text })
-    console.log(response);
+    try {
+      fetchAPI.postData('https://we-sendfact-fa.azurewebsites.net/api/messagearchive', { text: this.state.text })
+    } catch (e) {
+      
+    }
   }
 
   render () {

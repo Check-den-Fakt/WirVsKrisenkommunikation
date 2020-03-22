@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 import "./Landing.css";
+import fetchAPI from '../../utils/fetchAPI';
 
 export default function Landing() {
   const [index, setIndex] = useState(0);
+  const [news, setNews] = useState([]);
 
+  useEffect(async () => {
+    // Update the document title using the browser API
+    const response = await fetchAPI.postData('https://we-komnews-fa.azurewebsites.net/api/GetNews', {
+      query : "corona"
+    })
+    setNews(response.news.value.map(({ name, url }) => ({ name, url }) ));
+  }, []);
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
@@ -91,19 +100,21 @@ export default function Landing() {
           </p>
           </div>
         </div>
-        {/*<div className="pt-5 d-flex justify-content-center">
+        <div className="pt-5 d-flex justify-content-center">
           <div className="polygon background-color-2">
             <div className="raw">
               <div className="col-9">
                 <h2 className="display-4">Trending News</h2>
               </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <ul>
+              {news.map(({ name, url }, index) => <li>{index + 1}. <a href={url}>{name}</a></li>)}
+            </ul>
           </div>
-        </div>*/}
+        </div>
         <div className="raw">
           <div className="col-md-11">
-            <Carousel activeIndex={index} onSelect={handleSelect}>
+            <Carousel controls={false} activeIndex={index} onSelect={handleSelect}>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
