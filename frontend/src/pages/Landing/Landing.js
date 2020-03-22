@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
+import "./Landing.css";
 
 export default function Landing() {
   const [index, setIndex] = useState(0);
@@ -82,7 +83,7 @@ export default function Landing() {
           </p>
           </div>
         </div>
-        <div className="pt-5 d-flex justify-content-center">
+        {/*<div className="pt-5 d-flex justify-content-center">
           <div className="polygon background-color-2">
             <div className="raw">
               <div className="col-9">
@@ -91,84 +92,84 @@ export default function Landing() {
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           </div>
-        </div>
+        </div>*/}
         <div className="raw">
           <div className="col-md-11">
             <Carousel activeIndex={index} onSelect={handleSelect}>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/logo_klein.png"
+                  src="/img/carousel/logo_klein.png"
                   alt="Check the Fact"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/hashtag.png"
+                  src="/img/carousel/hashtag.png"
                   alt="Wir bleiben für euch Zuhause #wirvsvirushack"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/Logo_Projekt_.png"
+                  src="/img/carousel/Logo_Projekt.png"
                   alt="Wir vs Virus Hackathon"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/Bund_Logo.png"
+                  src="/img/carousel/Bund_Logo.png"
                   alt="Bundesregierung"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/CFG_logo.png"
+                  src="/img/carousel/CFG_logo.png"
                   alt="Code for Germany"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/D21_Logo.png"
+                  src="/img/carousel/D21_Logo.png"
                   alt="Initiative D21"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/hub-Berlin.png"
+                  src="/img/carousel/hub-Berlin.png"
                   alt="Impact Hub Berlin"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/pt-logo.png"
+                  src="/img/carousel/pt-logo.png"
                   alt="project together"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/PF.png"
+                  src="/img/carousel/PF.png"
                   alt="Prototype Fund"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/sendLOGO.png"
+                  src="/img/carousel/sendLOGO.png"
                   alt="Send"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/t4g.png"
+                  src="/img/carousel/t4g.png"
                   alt="Tech4Germany"
                 />
               </Carousel.Item>
