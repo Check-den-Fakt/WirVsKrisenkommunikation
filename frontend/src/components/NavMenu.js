@@ -13,7 +13,7 @@ export class NavMenu extends Component {
       <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
         <Navbar.Brand href="/"><img
         alt=""
-        src="/img/header_logo_lite.svg"
+        src="/img/header_logo.svg"
         width="200"
         height="60"
         className="d-inline-block align-top"

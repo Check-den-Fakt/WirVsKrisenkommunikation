@@ -1,0 +1,4 @@
+flask
+requests 
+virtualenv 
+azure-cognitiveservices-search-websearch
