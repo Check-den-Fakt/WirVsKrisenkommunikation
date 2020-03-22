@@ -74,10 +74,10 @@ stages:
     - task: Docker@2
       displayName: Build Image
       inputs:
-        command: buildAndPush
-        repository: $(imageName)
-        dockerfile: frontend/Dockerfile
-        containerRegistry: $(acrConnection)
+        containerRegistry: 'acrConnection'
+        repository: '$(imageName)'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
 
 #- stage: Deploy
 #  displayName: Deploy stage
