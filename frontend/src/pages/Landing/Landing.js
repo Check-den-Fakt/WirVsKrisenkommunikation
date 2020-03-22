@@ -44,9 +44,11 @@ export default function Landing() {
         <div className="pt-5 d-flex justify-content-center">
           <div className="polygon background-color-1">
             <div className="container">
-            <h2 className="display-4">Wer sind wir?</h2>
+            <h2 className="display-4">Worum geht’s hier?</h2>
             <p>
-              Wir sind ein interdisziplinäres Team, bestehend aus 36 Spezialisten aus aller Welt. <a href="/about">Hier gibt es mehr von uns</a>
+            Check the Fact ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung. 
+            </p><p>
+            Ganz nach dem Motto: Erst klären, dann sharen!
             </p>
             </div>
             </div>
