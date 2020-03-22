@@ -70,14 +70,31 @@ h3 {
 /*Hier werden die schrägen Elemente generiert*/
 
 /*Negative Steigung*/
+:root{
+  --screen-sm-min: 0;
+  --screen-md-min: 768px;
+}
+
 .polygon {
   width: 100vw !important;
   /* flex-shrink: 0; */
-  clip-path: polygon(100% calc(0% + 6vw), 100% 100%, 0 calc(100% - 6vw), 0 0);
-  -webkit-clip-path: polygon(100% calc(0% + 6vw), 100% 100%, 0 calc(100% - 6vw), 0 0);
+  clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
+  -webkit-clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
   margin-top: -2vw;
-  padding: 10%;
+  padding: 13%;
   /* margin-left: -20px !important; */
+}  
+
+@media (min-width: 768px) {
+  .polygon {
+    width: 100vw !important;
+    /* flex-shrink: 0; */
+    clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
+    -webkit-clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
+    margin-top: -2vw;
+    padding: 10%;
+    /* margin-left: -20px !important; */
+  }  
 }
 
 .background-color-1 {
