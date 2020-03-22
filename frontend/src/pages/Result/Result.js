@@ -47,7 +47,7 @@ export default function Result({ result, requestData }) {
       {content}
       <ShareButtons />
       <h1>Deine Nachricht:</h1>
-      <p>"{requestData}"</p>
+      <p>"{requestData.text || requestData.url}"</p>
         {/*<ProgressBar now={60} />
       {JSON.stringify(result, null, 2)}
       <div className="text-center">

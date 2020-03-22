@@ -12,7 +12,11 @@ export default function Check() {
   const handleSendData = async (data) => {
     console.log(data);
     setRequestData(data);
-    const response = await fetchAPI.postData(apisdk.VALIDATE, data);
+    const response = await fetchAPI.postData(apisdk.VALIDATE, {
+      url: '',
+      text: '',
+      ...data
+    });
     console.log(response);
     setCheckResult(response);
   } 
