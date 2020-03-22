@@ -6,11 +6,14 @@ using Microsoft.Azure.WebJobs.Extensions.DurableTask;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace Entity
 {
     public static class Orchestrator
     {
+        private static RestSharp.RestClient client;
+
         [FunctionName("Orchestrator")]
         public static async Task<string> RunOrchestrator(
             [OrchestrationTrigger] IDurableOrchestrationContext context,
@@ -34,20 +37,41 @@ namespace Entity
             var resultCountDb = await context.CallActivityAsync<string>("CosmosSearch", keyPhraseResponse);
             log.LogInformation("Completed CosmosSearch");
 
-            // Get Twitter API
-            //DurableHttpResponse response = await context.CallHttpAsync(HttpMethod.Get, new System.Uri(""));
+            var resultTwitter = await context.CallActivityAsync<string>("GetTwitter", keyPhraseResponse);
 
-            //if ((int)response.StatusCode >= 400)
-            //{
-            //    // handling of error codes goes here
-            //}
-
-            var resultTwiter = "[ {\"Key\":\"reinigung\", \"Tweeter\": { } }]";
-
-            string output = "{\"InternalHitCount\" : " + resultCountDb + ",  \"TwitterHitCount\" : " + resultTwiter + " }";
+            string output = "{\"InternalHitCount\" : " + resultCountDb + ",  \"TwitterHitCount\" : " + resultTwitter + " }";
 
 
             return output;
+        }
+
+        [FunctionName("GetTwitter")]
+        public static async Task<string> GetTwitter([ActivityTrigger] string request,
+            ILogger log)
+        {
+            client = new RestSharp.RestClient("https://we-factsearch-fa.azurewebsites.net");
+
+            RestSharp.RestRequest restRequest = new RestSharp.RestRequest("/api/SearchTwitter", RestSharp.Method.POST);
+
+            restRequest.AddHeader("Content-Type", "application/json");
+            Model.RootObject requestData = JsonConvert.DeserializeObject<Model.RootObject>(request);
+
+            string query = string.Empty;
+            foreach (var item in requestData.documents[0].keyPhrases)
+            {
+                query += item + " ";
+            }
+
+            Model.SearchQuery searchQuery = new Model.SearchQuery()
+            {
+                query = query
+            };
+
+            restRequest.AddJsonBody(searchQuery);
+
+            var response = await client.ExecuteAsync(restRequest).ConfigureAwait(false);
+
+            return response.Content;
         }
 
         [FunctionName("Orchestrator_HttpStart")]

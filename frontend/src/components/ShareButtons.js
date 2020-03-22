@@ -54,7 +54,7 @@ export default function ShareButtons() {
   const [isShareOpen, setIsShareOpen] = useState(false);
 
   return (
-      <div className="share-buttons-item text-center">
+      <div className="share-buttons-item text-right">
           <OverlayTrigger trigger="click" placement="bottmm" overlay={popover}>
             <div className="trigger-container">
               <a className="fact-link" onClick={() => setIsShareOpen(true)}>Teile das Ergebnis</a>

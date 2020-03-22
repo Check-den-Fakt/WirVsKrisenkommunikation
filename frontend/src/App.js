@@ -18,8 +18,8 @@ import Trending from './pages/Trending/Trending';
 import Landing from './pages/Landing/Landing';
 import Report from './pages/Report/Report';
 import Sources from './pages/Sources/Sources';
-import Impressum from "./pages/Impressum/Impressum";
-import Datenschutzerklaerung from "./pages/Datenschutzerklaerung/Datenschutzerklaerung";
+import Imprint from "./pages/Imprint/Imprint";
+import DSGVO from "./pages/DSGVO/DSGVO";
 
 function App() {
   return (
@@ -47,11 +47,11 @@ function App() {
           <Route path="/sources">
             <Sources />
           </Route>
-          <Route path="/impressum">
-            <Impressum />
+          <Route path="/imprint">
+            <Imprint />
           </Route>
-          <Route path="/datenschutzerklaerung">
-            <Datenschutzerklaerung />
+          <Route path="/dsgvo">
+            <DSGVO />
           </Route>
           <Route path="/">
             <Landing />

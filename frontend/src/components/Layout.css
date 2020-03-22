@@ -1,0 +1,3 @@
+.fact-layout {
+  min-height: calc(100vh - 250px) !important;
+}

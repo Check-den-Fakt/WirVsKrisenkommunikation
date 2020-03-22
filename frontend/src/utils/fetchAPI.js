@@ -14,7 +14,13 @@ export default {
       referrerPolicy: 'no-referrer', // no-referrer, *client
       body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
-    return await response.json(); // parses JSON response into native JavaScript objects
+    let res = null;
+    try {
+      res = await response.json();
+    } catch {
+
+    }
+    return res; // parses JSON response into native JavaScript objects
   },
   postMultiData: async (url = '', postData = {}) => {
     function buildFormData(formData, data, parentKey) {
