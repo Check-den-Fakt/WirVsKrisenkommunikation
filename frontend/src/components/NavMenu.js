@@ -21,7 +21,7 @@ export class NavMenu extends Component {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/trending">Trends</Nav.Link>
+            {/*<Nav.Link href="/trending">Trends</Nav.Link>*/}
             <Nav.Link href="/sources">Unseriöse Seiten/Quellen</Nav.Link>
             <Nav.Link href="/about">About Us</Nav.Link>
           </Nav>
