@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { AddNews } from '../../components/AddNews';
-import { Diagram } from '../../components/Diagram';
-import { ProgressBar } from 'react-bootstrap';
 import './Datenschutzerklaerung.css';
 
 export default function Datenschutzerklaerung() {
