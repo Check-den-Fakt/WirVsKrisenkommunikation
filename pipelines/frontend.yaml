@@ -76,9 +76,7 @@ stages:
         command: 'buildAndPush'
         Dockerfile: 'frontend/Dockerfile'
         buildContext: 'frontend'
-        tags: |
-          'wirvsvirus.azurecr.io/frontend'
-
+        
 #- stage: Deploy
 #  displayName: Deploy stage
 #  dependsOn: Build
