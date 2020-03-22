@@ -67,9 +67,7 @@ public class TrustedPublisherController {
             throw new RuntimeException("Too Many");
         }
 
-        TrustedAnswerDTO trustedAnswerDTO = new TrustedAnswerDTO(matchingPublishers.get(0).trustScore);
-
-        return trustedAnswerDTO;
+        return new TrustedAnswerDTO(matchingPublishers.get(0).trustScore, matchingPublishers.get(0).getTitle());
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
