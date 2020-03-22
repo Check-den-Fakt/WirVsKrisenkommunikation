@@ -53,7 +53,7 @@ export class AddNews extends Component {
         onClick={this.handleSubmit} 
         variant="primary"
       >
-        Nachricht checken
+        Check den Fakt
       </Button>}
     </Form>
     );

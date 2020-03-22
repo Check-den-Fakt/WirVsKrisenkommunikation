@@ -37,7 +37,25 @@ h3 {
   vertical-align: middle;
 }
 
+.fact-header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  /* identical to box height, or 112% */
+  color: #3E049D;
+}
 
+.fact-link {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #3E049D !important; 
+}
 
 .lead {
   font-family: 'Open Sans', sans-serif;
