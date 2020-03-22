@@ -111,7 +111,7 @@ export default function Landing() {
               </div>
             </div>
             <ul>
-              {news.map(({ name, url }, index) => <li>{index + 1}. <a href={url}>{name}</a></li>)}
+              {news.map(({ name, url }, index) => <li><a href={url}>{name}</a></li>)}
             </ul>
           </div>
         </div>
