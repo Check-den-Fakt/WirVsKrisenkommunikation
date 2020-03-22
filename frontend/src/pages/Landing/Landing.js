@@ -88,7 +88,8 @@ export default function Landing() {
               Grau: Nicht auswertbar. Hinweise beachten!
           </p>
           </div>
-        
+        </div>
+
         <div className="row mt-5">
           <div className="col-3">
             <span className="material-icons">
@@ -100,8 +101,6 @@ export default function Landing() {
             <p>Teile das Prüfergebnis mit deinen Kontakten, um sie zu informieren.
           </p>
           </div>
-        </div>
-
         </div>
 
         <div className="pt-5 d-flex justify-content-center">
