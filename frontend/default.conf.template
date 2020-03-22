@@ -16,12 +16,15 @@ server {
     listen 80;
     root /usr/share/nginx/html;
 
-
-    location / {
-        try_files $uri$args $uri$args/ $uri/ /index.html;
+    location /workflows {
+        proxy_set_header Host prod-56.westeurope.logic.azure.com;
+        proxy_pass https://prod-56.westeurope.logic.azure.com:443/workflows;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_http_version 1.1;
     }
 
-    location /static {
+    location / {
         try_files $uri$args $uri$args/ $uri/ /index.html;
     }
 }
