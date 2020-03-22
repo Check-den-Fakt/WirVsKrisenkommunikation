@@ -25,7 +25,19 @@ export class Diagram extends Component {
       }
     }
     return (
-      <CircularProgressbar styles={buildStyles(styles)} className="progressbar" value={value} maxValue={100} text={`${value}%`} />
+      <div className="container">
+        <div className="raw">
+          <div className="text-center">
+            <CircularProgressbar 
+              styles={buildStyles(styles)} 
+              className="progressbar" 
+              value={value} 
+              maxValue={100} 
+              text={`${value}%`} 
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 }
