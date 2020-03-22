@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  font-family: Open Sans; font-size: 14px; line-height: 24px;
+  font-family: 'Open Sans', sans-serif!important;
+  font-size: 14px;
+  line-height: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,7 +14,7 @@ code {
 
 
 h1 {
-  font-family: 'Vollkorn', serif;
+  font-family: 'Vollkorn', serif !important;
   color: #333;
   font-size: 26px !important;
 }
@@ -24,8 +26,8 @@ h2 {
 }
 
 h3 {
-  font-family: 'Open Sans'; 
-  font-size: 16px; 
+  font-family: 'Open Sans';
+  font-size: 16px;
   line-height: 18px;
   color: #333;
   font-weight: bold;
@@ -42,7 +44,7 @@ h3 {
 /*Hier werden die schrägen Elemente generiert*/
 
 /*Negative Steigung*/
-.polygon{
+.polygon {
   width: 100vw !important;
   flex-shrink: 0;
   clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
@@ -51,30 +53,11 @@ h3 {
   padding: 10%;
 }
 
-.fact-header {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 18px;
-  /* identical to box height, or 112% */
-  color: #3E049D;
-}
-
-.fact-link {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 24px;
-  /* identical to box height, or 171% */
-  text-align: center;
-  letter-spacing: 0.2px;
-  color: #3E049D !important; 
-}
-.background-color-1{
+.background-color-1 {
   background-color: #D9D8F0;
 }
 
-.background-color-2{
+.background-color-2 {
   background-color: #FFEFB6;
 }
 
@@ -89,5 +72,6 @@ h3 {
 }
 
 .material-icons {
-  font-size: 400% !important;  /* Preferred icon size */
- }
+  font-size: 400% !important;
+  /* Preferred icon size */
+}
