@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import {Nav} from "react-bootstrap";
+import "./Footer.css";
 
 
 export class Footer extends Component {
     render () {
         return (
-            <footer className="footer">
+            <footer className="footer mt-5 mb-5">
                 <div className="container">
                     <div className="row">
                         <div className="col">
-
+                            <img alt="" src="/img/header_logo_lite.svg" width="200" height="60" className="d-inline-block align-top"/>
                         </div>
                         <div className="col">
                             <a href="/impressum">Impressum </a>

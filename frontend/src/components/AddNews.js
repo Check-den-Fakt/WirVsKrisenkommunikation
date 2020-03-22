@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Spinner } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
@@ -12,6 +12,7 @@ export class AddNews extends Component {
     url: '',
     text: '',
     type: '',
+    isLoading: false,
   }
 
   onChangeValue = (property, { currentTarget }) => {
@@ -20,44 +21,40 @@ export class AddNews extends Component {
   }
 
   isURL = (str) => {
-    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
-    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-    return pattern.test(str);
+    var res = str.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+    return (res !== null)
   }
 
   handleSubmit = async () => {
     const { text } = this.state;
     const key = this.isURL(text) ? 'url' : 'text'; 
+    this.setState({ isLoading: true })
     this.props.onSubmit({
       [key]: text,
     })
   }
 
   render () {
-    const { text } = this.state; 
+    const { text, isLoading } = this.state; 
     return (
     <Form>
-
       <Form.Group controlId="exampleForm.ControlTextarea1">
         <Form.Label></Form.Label>
         <Form.Control
           onChange={(e, ee) => this.onChangeValue('text', e, ee)} 
           as="textarea" 
           rows="10"
+          disabled={isLoading}
           placeholder="Füge hier eine URL oder Textnachricht ein"
         />
       </Form.Group>
-      <Button 
+      {isLoading ? <Spinner animation="border" /> : <Button 
         disabled={!text} 
         onClick={this.handleSubmit} 
         variant="primary"
       >
         Nachricht checken
-      </Button>
+      </Button>}
     </Form>
     );
   }

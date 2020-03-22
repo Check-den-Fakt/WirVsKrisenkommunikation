@@ -10,22 +10,37 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 export class Diagram extends Component {
   render () {
-    const { name, confidense, reason } = this.props;
-    const value = (confidense || 0.33) * 100;
+    const { name, confidense, reason, isFull, text } = this.props;
+    let value = (confidense || 0.33);
     let styles = {};
-    if (name) {
-      styles = {
-        pathColor: 'green',
-        textColor: 'green',
-      }
-    } else {
-      styles = {
-        pathColor: 'red',
-        textColor: 'red',
+    if (!isFull) {
+      value *= 100;
+      if (name) {
+        styles = {
+          pathColor: 'green',
+          textColor: 'green',
+        }
+      } else {
+        styles = {
+          pathColor: 'red',
+          textColor: 'red',
+        }
       }
     }
     return (
-      <CircularProgressbar styles={buildStyles(styles)} className="progressbar" value={value} maxValue={100} text={`${value}%`} />
+      <div className="container">
+        <div className="raw">
+          <div className="text-center">
+            <CircularProgressbar 
+              styles={buildStyles(styles)} 
+              className="progressbar" 
+              value={value} 
+              maxValue={100} 
+              text={text ? text : `${value}%`} 
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -9,6 +9,7 @@ export default {
       headers: {
         'Content-Type': 'application/json'
       },
+      timeout: 40000,
       redirect: 'follow', // manual, *follow, error
       referrerPolicy: 'no-referrer', // no-referrer, *client
       body: JSON.stringify(data) // body data type must match "Content-Type" header
