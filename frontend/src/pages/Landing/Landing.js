@@ -88,6 +88,20 @@ export default function Landing() {
               Grau: Nicht auswertbar. Hinweise beachten!
           </p>
           </div>
+        
+        <div className="row mt-5">
+          <div className="col-3">
+            <span className="material-icons">
+              share
+          </span>
+          </div>
+          <div className="col-9">
+            <h3>3. Auswertung weiterleiten </h3>
+            <p>Teile das Prüfergebnis mit deinen Kontakten, um sie zu informieren.
+          </p>
+          </div>
+        </div>
+
         </div>
 
         <div className="pt-5 d-flex justify-content-center">
@@ -100,19 +114,6 @@ export default function Landing() {
             <ul>
               {news.map(({ name, url }, index) => <li>{index + 1}. <a href={url}>{name}</a></li>)}
             </ul>
-          </div>
-        </div>
-        
-        <div className="row mt-5">
-          <div className="col-3">
-            <span className="material-icons">
-              share
-          </span>
-          </div>
-          <div className="col-9">
-            <h3>3. Auswertung weiterleiten </h3>
-            <p>Teile das Prüfergebnis mit deinen Kontakten, um sie zu informieren.
-          </p>
           </div>
         </div>
 
