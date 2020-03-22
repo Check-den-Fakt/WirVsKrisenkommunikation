@@ -72,11 +72,12 @@ h3 {
 /*Negative Steigung*/
 .polygon {
   width: 100vw !important;
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
   clip-path: polygon(100% calc(0% + 6vw), 100% 100%, 0 calc(100% - 6vw), 0 0);
   -webkit-clip-path: polygon(100% calc(0% + 6vw), 100% 100%, 0 calc(100% - 6vw), 0 0);
   margin-top: -2vw;
   padding: 10%;
+  /* margin-left: -20px !important; */
 }
 
 .background-color-1 {
