@@ -20,28 +20,28 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
-stages:
-- stage: ARM
-  displayName: Deploy ARM
-  jobs:  
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: $(vmImageName)
-      
-    steps:
-    - task: AzureResourceManagerTemplateDeployment@3
-      inputs:
-        deploymentScope: 'Resource Group'
-        azureResourceManagerConnection: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)'
-        subscriptionId: 'db59ff20-bbda-4c19-a433-d5f11767ea07'
-        action: 'Create Or Update Resource Group'
-        resourceGroupName: 'we-komfront-rg'
-        location: 'West Europe'
-        templateLocation: 'Linked artifact'
-        csmFile: '$(Build.SourcesDirectory)/arm/frontend.json'
-        csmParametersFile: '$(Build.SourcesDirectory)/arm/frontend.parameters.json'
-        deploymentMode: 'Incremental'
+#stages:
+#- stage: ARM
+#  displayName: Deploy ARM
+#  jobs:  
+#  - job: Build
+#    displayName: Build
+#    pool:
+#      vmImage: $(vmImageName)
+#      
+#    steps:
+#    - task: AzureResourceManagerTemplateDeployment@3
+#      inputs:
+#        deploymentScope: 'Resource Group'
+#        azureResourceManagerConnection: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)'
+#        subscriptionId: 'db59ff20-bbda-4c19-a433-d5f11767ea07'
+#        action: 'Create Or Update Resource Group'
+#        resourceGroupName: 'we-komfront-rg'
+#        location: 'West Europe'
+#        templateLocation: 'Linked artifact'
+#        csmFile: '$(Build.SourcesDirectory)/arm/frontend.json'
+#        csmParametersFile: '$(Build.SourcesDirectory)/arm/frontend.parameters.json'
+#        deploymentMode: 'Incremental'
 
 - stage: Build
   displayName: Build stage
