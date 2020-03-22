@@ -78,6 +78,8 @@ stages:
         repository: '$(imageName)'
         command: 'buildAndPush'
         Dockerfile: 'frontend/Dockerfile'
+        tags: |
+          wirvsvirus.azurecr.io/frontend
 
 #- stage: Deploy
 #  displayName: Deploy stage
