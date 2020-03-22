@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Landing.css';
 import { Button } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 

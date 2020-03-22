@@ -9,7 +9,6 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './logo.svg';
 import './App.css';
-import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Rules from './pages/Rules/Rules';
 import { Layout } from './components/Layout';
@@ -32,9 +31,6 @@ function App() {
           </Route>
           <Route path="/rules">
             <Rules />
-          </Route>
-          <Route path="/home">
-            <Home />
           </Route>
           <Route path="/result">
             <Result />
