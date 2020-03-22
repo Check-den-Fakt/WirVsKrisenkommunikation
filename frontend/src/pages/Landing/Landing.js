@@ -22,13 +22,13 @@ export default function Landing() {
         <p className="text-center">Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland* haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten*. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
       
 
-      <div className="w-75 center">
+      <div className="center">
       <div className="row">
-        <Button href="/check" variant="primary" size="lg" block className="m-3">
-          Nachricht überprüfen
+        <Button href="/check" variant="primary" size="lg" block className="m-2">
+          <b>Nachricht überprüfen</b>
         </Button>
-            <Button href="/report" variant="secondary" size="lg" block className="m-3">
-              Falschnachricht melden
+            <Button href="/report" variant="secondary" size="lg" block className="m-2">
+              <b>Falschnachricht melden</b>
         </Button>
           </div>
         </div>
