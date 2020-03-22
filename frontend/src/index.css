@@ -68,7 +68,7 @@ h3 {
   /* identical to box height, or 171% */
   text-align: center;
   letter-spacing: 0.2px;
-  color: #3E049D; 
+  color: #3E049D !important; 
 }
 .background-color-1{
   background-color: #D9D8F0;

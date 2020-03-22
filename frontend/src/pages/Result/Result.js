@@ -16,7 +16,6 @@ export default function Result({ result, requestData }) {
     const { trustScore } = trustedPublisher;
     if (trustScore > 0.70) {
       bgClass = 'bg-color-success';
-      console.log('POSITIV')
       content = <Card>
         <Card.Body>
           <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
@@ -64,7 +63,7 @@ export default function Result({ result, requestData }) {
       <p className="fact-header">Deine Nachricht:</p>
       <p>"{requestData && (requestData.text || requestData.url)}"</p>
       {/* <ResultDetails /> */}
-      <a className="fact-link" href="/about">Wer wir sind</a>
+      <a className="fact-link" href="/about">Wer wir sind?</a>
     </div>
   );
 }
