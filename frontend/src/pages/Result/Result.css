@@ -8,3 +8,11 @@
 .bg-color-warning {
   background-color: #EDEDED;
 }
+
+.your-message-card {
+  padding: 15px !important;
+}
+
+.cart-top-margin {
+  margin-top: 15px;
+}

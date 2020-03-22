@@ -16,11 +16,11 @@ export default function Result({ result, requestData }) {
     const { trustScore } = trustedPublisher;
     if (trustScore > 0.70) {
       bgClass = 'bg-color-success';
-      content = <Card>
+      content = <Card className="cart-top-margin">
         <Card.Body>
           <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
           <ProgressBar variant="success" now={trustScore * 100} />
-          <Card.Text>
+          <Card.Text className="cart-top-margin">
             Die Check-the-Fact-Prüfung bestätigt, dass die Nachricht seriös ist. Du kannst die Nachricht gerne weiter verbreiten!
           </Card.Text>
         </Card.Body>
@@ -31,8 +31,8 @@ export default function Result({ result, requestData }) {
       <Card.Body>
         <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
         <ProgressBar variant="danger" now={trustScore * 100} />
-        <Card.Text>
-        Die Check-the-Fact-Prüfung konnte kaum seriöse Quellen finden, die diese Nachricht bestätigen. Bitte leite sie nicht weiter.
+        <Card.Text className="cart-top-margin">
+          Die Check-the-Fact-Prüfung konnte kaum seriöse Quellen finden, die diese Nachricht bestätigen. Bitte leite sie nicht weiter.
         </Card.Text>
       </Card.Body>
     </Card>
@@ -43,25 +43,28 @@ export default function Result({ result, requestData }) {
     <Card.Body>
       <Card.Title>nicht verifizierbar</Card.Title>
       <ProgressBar variant="danger" now={0} />
-      <Card.Text>
+      <Card.Text className="cart-top-margin">
         Die Check-the-Fact-Prüfung konnte keine Quellen finden. Vielleicht hast du mehr Erfolg in der Eigenrecherche.
       </Card.Text>
     </Card.Body>
   </Card>
   }
 
-
   return (
     <div className="text-center">
       <h1>Ergebnis:</h1>
-      <div className="pt-5 d-flex justify-content-center">
-          <div className={`polygon ${bgClass}`}>
+      {/* <div className="pt-5 d-flex justify-content-center">
+          <div className={`polygon ${bgClass}`}> */}
             {content}
             {trustedPublisher && <ShareButtons />}
-          </div>
-        </div>
-      <p className="fact-header">Deine Nachricht:</p>
-      <p>"{requestData && (requestData.text || requestData.url)}"</p>
+          {/* </div>
+        </div> */}
+      <div className="text-left">
+        <p className="fact-header">Deine Nachricht:</p>
+        <Card className="your-message-card">
+          <p>"{requestData && (requestData.text || requestData.url)}"</p>
+        </Card>
+      </div>
       {/* <ResultDetails /> */}
       <a className="fact-link" href="/about">Wer wir sind?</a>
     </div>
