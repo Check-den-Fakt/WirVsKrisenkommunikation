@@ -1,3 +1,6 @@
+$primary: purple;
+$danger: red;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -21,18 +24,31 @@ code {
 }
 
 /*Hier werden die schrägen Elemente generiert*/
-/*Positive Steigung*/
-.polygon-up {
-  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(0% + 2vw));
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 calc(0% + 2vw));
-  padding: 5%;
-  margin-top: -2vw;
-}
 
 /*Negative Steigung*/
-.polygon-down{
-  clip-path: polygon(100% calc(0% + 2vw), 100% 100%, 0 100%, 0 0);
-  -webkit-clip-path: polygon(100% calc(0% + 2vw), 100% 100%, 0 100%, 0 0);
+.polygon{
+  width: 100vw !important;
+  flex-shrink: 0;
+  clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
+  -webkit-clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
   margin-top: -2vw;
-  padding: 5%;
+  padding: 10%;
+}
+
+.background-color-1{
+  background-color: #D9D8F0;
+}
+
+.background-color-2{
+  background-color: #FFEFB6;
+}
+
+/*Bootstrap overwrites*/
+.btn-primary {
+  background-color: #3E049D !important;
+}
+
+.btn-secondary {
+  color: black !important;
+  background-color: #FFEFB6 !important;
 }

@@ -7,14 +7,32 @@ export default function Landing() {
   return (
     <div className="container">
      <>
-         <img src="/img/logo.svg" width="30%" height="30%"/>
+        <div className="d-flex justify-content-around m-3">
+          <img src="/img/logo.svg" width="40%" height="40%"/>
+        </div>
+
         <h1 className="display-4">Finde und widerlege Corona-Fake-News</h1>
+
+        
         <Button href="/check" variant="primary" size="lg" block>
           Nachricht überprüfen
         </Button>
         <Button href="/report" variant="secondary" size="lg" block>
-          Fake Nachricht melden
+          Falschnachricht melden
         </Button>
+        
+
+
+
+        <div className="row d-flex justify-content-center">
+        <div className="polygon background-color-1">
+        <h2 className="display-4">Worum geht’s hier?</h2>
+        <p>Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland* haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten*. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen.</p>
+        </div>
+        </div>
+
+        
+       
          <h2>Worum geht's hier?</h2>
          <p className="lead">
              Die Flut falscher Nachrichten zum <u><i>Coronavirus</i></u> verwirrt uns und macht Angst, denn falsche Informationen sind selbst ein Virus.
