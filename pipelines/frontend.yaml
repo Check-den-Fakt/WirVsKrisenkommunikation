@@ -77,7 +77,8 @@ stages:
         command: buildAndPush
         repository: $(imageName)
         dockerfile: frontend/Dockerfile
-        
+        containerRegistry: $(dockerRegistryServiceConnection)
+
 - stage: Deploy
   displayName: Deploy stage
   dependsOn: Build
