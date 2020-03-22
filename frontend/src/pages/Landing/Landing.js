@@ -98,35 +98,28 @@ export default function Landing() {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/logo.svg"
+                  src="/img/logo_klein.png"
                   alt="Check the Fact"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/hashtag.svg"
+                  src="/img/hashtag.png"
                   alt="Wir bleiben für euch Zuhause #wirvsvirushack"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/Logo_Projekt_01.svg"
+                  src="/img/Logo_Projekt_.png"
                   alt="Wir vs Virus Hackathon"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/logo.svg"
-                  alt="Check the Fact"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src="/img/Bundesregierung_Logo.svg"
+                  src="/img/Bund_Logo.png"
                   alt="Bundesregierung"
                 />
               </Carousel.Item>
@@ -140,14 +133,14 @@ export default function Landing() {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/D21_Logo.jpg"
+                  src="/img/D21_Logo.png"
                   alt="Initiative D21"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/hub-Berlin.jpg"
+                  src="/img/hub-Berlin.png"
                   alt="Impact Hub Berlin"
                 />
               </Carousel.Item>
@@ -161,7 +154,7 @@ export default function Landing() {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/PrototypeFund_Logo.png"
+                  src="/img/PF.png"
                   alt="Prototype Fund"
                 />
               </Carousel.Item>
@@ -175,7 +168,7 @@ export default function Landing() {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/img/Tech4Germany-Logopng.png"
+                  src="/img/t4g.png"
                   alt="Tech4Germany"
                 />
               </Carousel.Item>
