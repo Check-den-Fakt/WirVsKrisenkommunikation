@@ -89,6 +89,19 @@ export default function Landing() {
           </p>
           </div>
         </div>
+
+        <div className="pt-5 d-flex justify-content-center">
+          <div className="polygon background-color-2">
+            <div className="raw">
+              <div className="col-9">
+                <h2 className="display-4">Trending News</h2>
+              </div>
+            </div>
+            <ul>
+              {news.map(({ name, url }, index) => <li>{index + 1}. <a href={url}>{name}</a></li>)}
+            </ul>
+          </div>
+        </div>
         
         <div className="row mt-5">
           <div className="col-3">
