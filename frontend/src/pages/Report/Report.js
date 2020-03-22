@@ -13,6 +13,7 @@ export default class Report extends Component {
     text: '',
     sources: [],
     tempSource: '',
+    isReported: false
   }
 
   handleAddNew = () => {
@@ -24,17 +25,18 @@ export default class Report extends Component {
     try {
       fetchAPI.postData('https://we-sendfact-fa.azurewebsites.net/api/messagearchive', { text: this.state.text })
     } catch (e) {
-      
+      this.setState({ isReported: true })
     }
   }
 
   render () {
-    const { text, tempSource, sources } = this.state; 
+    const { text, tempSource, sources, isReported } = this.state; 
     // Declare a new state variable, which we'll call "count"
     return (
     <div>
       <h1 className="display-4">Falschnachricht melden</h1>
       <p className="lead">Du hast eine Falschnachricht entdeckt? Teile sie hier mit uns!</p>
+      {isReported && 'Danke'}
       <Form>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label></Form.Label>
