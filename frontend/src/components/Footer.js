@@ -13,8 +13,8 @@ export class Footer extends Component {
                             <img alt="" src="/img/header_logo_lite.svg" width="200" height="60" className="d-inline-block align-top"/>
                         </div>
                         <div className="col">
-                            <a href="/impressum">Impressum </a>
-                            <a href="/datenschutzerklaerung">Datenschutzerkl&auml;rung</a>
+                            <a href="/imprint">Impressum </a>
+                            <a href="/dsgvo">Datenschutzerkl&auml;rung</a>
                         </div>
                         <div className="col">
                             <span className="text-muted">Copyright © 2020</span>

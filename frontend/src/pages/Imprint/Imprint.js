@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Impressum() {
+export default function Imprint() {
   // Declare a new state variable, which we'll call "count"
   return (
     <div>
