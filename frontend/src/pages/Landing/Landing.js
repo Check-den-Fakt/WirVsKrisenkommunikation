@@ -13,16 +13,23 @@ export default function Landing() {
 
         <h1>Finde und widerlege Corona-Falschnachrichten</h1>
         <p>Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland* haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten*. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
-        <div>
+      
 
-          
-        <Button href="/check" variant="primary" size="lg" block>
+      <div className="w-75 center">
+      <div className="row">
+        <Button href="/check" variant="primary" size="lg" block className="m-3">
           Nachricht überprüfen
         </Button>
-        <Button href="/report" variant="secondary" size="lg" block>
+        
+
+        <Button href="/report" variant="secondary" size="lg" block className="m-3">
           Falschnachricht melden
         </Button>
         </div>
+      </div>
+
+
+
 
         <div className="pt-5 d-flex justify-content-center">
           <div className="polygon background-color-1">
@@ -32,7 +39,7 @@ export default function Landing() {
         </div>
 
         <h1>So prüfst Du Deine Nachricht?</h1>
-        <div className="row">
+
         <div className="row">
           <div className="col-3">
           <span class="material-icons">
@@ -78,7 +85,6 @@ export default function Landing() {
         <h3>3. Auswertung weiterleiten </h3>
         <p>Teile das Prüfergebnis mit deinen Kontakten, um sie zu informieren. 
           </p>
-        </div>
         </div>
         </div>
 

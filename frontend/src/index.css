@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  font-family: Open Sans; font-size: 14px; line-height: 24px;
+  font-family: 'Open Sans'; 
+  font-size: 14px; 
+  line-height: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -8,7 +10,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-
 
 
 h1 {
@@ -37,6 +38,11 @@ h3 {
 .lead {
   font-family: 'Open Sans', sans-serif;
   color: #565D64;
+}
+
+
+.center {
+  margin: auto;
 }
 
 /*Hier werden die schrägen Elemente generiert*/
