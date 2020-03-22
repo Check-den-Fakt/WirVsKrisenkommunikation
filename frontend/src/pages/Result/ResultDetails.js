@@ -23,7 +23,8 @@ function CustomToggle({ children, eventKey }) {
 export default function ResultDetails({ fakeNewsCount, maxValue, result, requestData, trustScore, userScore }) {
 
   return (
-    <div>
+    <div className="text-left margin-top-40">
+      <p className="fact-header">FakeNews Datenbank search:</p>
       {/* <h1>Wie kommt diese Einschätzung zustande:</h1>   */}
       {/* <div>
         <Diagram text={16} isFull confidense={100} />
@@ -36,8 +37,8 @@ export default function ResultDetails({ fakeNewsCount, maxValue, result, request
         <p>{trustScore || 16} seriöse Quellen haben diese Nachricht als glaubwürdig bestätigt.</p>
       </div> */}
       <div>
-        <Diagram text={121} isFull confidense={83} />
-        <p>Wir haben in unser FakeNews Datenbank {fakeNewsCount} results mit einer Übereinstimmung von bis zu {maxValue}%</p>
+        <Diagram text={fakeNewsCount} isFull confidense={maxValue} />
+        <p className="margin-top-40">Wir haben in unser FakeNews Datenbank {fakeNewsCount} results mit einer Übereinstimmung von bis zu {maxValue}%</p>
       </div>
     </div>
   );
