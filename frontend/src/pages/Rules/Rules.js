@@ -10,7 +10,7 @@ export default function Rules() {
             <div className="polygon background-color-1">
                 <div className="container">
                     <h2>Fake-News verlieren ihre Macht, wenn Du sie nicht mehr teilst</h2>
-                    <p>CDie Flut falscher Nachrichten zum <u><i>Coronavirus verwirrt</i></u> und richtet Schaden an. Falsche Nachrichten verbreiten sich schnell und wirken selbst wie ein Virus. Mit unserer App kannst Du Corona-Meldungen auf Ihren Wahrheitsgehalt prüfen und von Dir entdeckte Falschmeldungen mitteilen.
+                    <p>CDie Flut falscher Nachrichten zum <u><i>Coronavirus</i></u> verwirrt und richtet Schaden an. Falsche Nachrichten verbreiten sich schnell und wirken selbst wie ein Virus. Mit unserer App kannst Du Corona-Meldungen auf Ihren Wahrheitsgehalt prüfen und von Dir entdeckte Falschmeldungen mitteilen.
                     </p>
                 </div>
             </div>
