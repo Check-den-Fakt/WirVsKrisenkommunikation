@@ -86,7 +86,7 @@ h3 {
 
 @media (min-width: 768px) {
   .polygon {
-    width: 100vw !important;
+    width: 99vw !important;
     flex-shrink: 0;
     clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
     -webkit-clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
