@@ -18,7 +18,8 @@ namespace Bot.CognitiveModels
             Welcome,
             None,
             Check,
-            Report
+            Report,
+            FAQ
         }
 
         public Dictionary<Intent, IntentScore> Intents;

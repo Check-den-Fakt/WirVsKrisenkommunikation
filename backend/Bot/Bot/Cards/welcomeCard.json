@@ -41,6 +41,11 @@
       "type": "Action.OpenUrl",
       "title": "Unsere Webseite",
       "url": "https://check-den-fakt.de"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "FAQ",
+      "data": "FAQ"
     }
   ]
 }

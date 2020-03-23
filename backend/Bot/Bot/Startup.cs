@@ -44,8 +44,14 @@ namespace Bot
             // Register LUIS recognizer
             services.AddSingleton<FactCheckRecognizer>();
 
-            // Register the BookingDialog.
+            // Register the FactCheck.
             services.AddSingleton<CheckFactDialog>();
+
+            // Register the FAQDialog.
+            services.AddSingleton<QnADialog>();
+
+            // Register the FAQDialog.
+            services.AddSingleton<ReportDialog>();
 
             // The MainDialog that will be run by the bot.
             services.AddSingleton<MainDialog>();
