@@ -208,6 +208,7 @@ export default function Landing() {
                   src="/img/carousel/sendLOGO.png"
                   alt="Send"
                 />
+                
               </Carousel.Item>
               <Carousel.Item>
                 <img

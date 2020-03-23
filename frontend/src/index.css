@@ -123,7 +123,7 @@ h3 {
 }
 
 .carousel-img{
-  max-width: 90vw;
+  max-width: 100% !important;
 }
 
 .img-container{
