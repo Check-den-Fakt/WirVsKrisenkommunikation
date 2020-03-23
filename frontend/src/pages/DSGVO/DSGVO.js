@@ -5,18 +5,7 @@ export default function DSGVO() {
   // Declare a new state variable, which we'll call "count"
   return (
     <div className="dsgvo">
-        <div id="dsg-lc-missing-generated-de" className="dsg-lc-missing dsg-license-content-info-shop">
-            <div className="title"><a href="https://datenschutz-generator.de/produkt-kategorie/datenschutzerklaerung/"
-                                      target="shop" title="Produkt im Shop aufrufen">Bitte erwerben Sie hier den
-                Lizenzschlüssel</a> für das Dokument "Datenschutzerklärung", um es vollständig zu erstellen.
-            </div>
-            <div className="dsg-license-content-info-shop-left"><p>Sie haben schon einen Lizenzschlüssel? <a
-                title="Lizenzschlüssel im Premiumbereich eingeben." target="help" href="#dsg-group-premium">Geben Sie
-                ihn bitte oben im Premiumbereich ein</a></p>                <p>Sie möchten wissen wie der Lizenzerwerb
-                funktioniert? Schauen Sie dazu bitte <a href="https://datenschutz-generator.de/help-premium/"
-                                                        target="help-license" title="Anleitung für den Lizenzerwerb">in
-                    unsere Anleitung</a>.</p></div>
-            <a className="dsg-license-content-info-shop-right"></a></div>
+
         <h1>Datenschutzerklärung</h1>
         <h2>Einleitung</h2>
         <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer
@@ -26,31 +15,14 @@ export default function DSGVO() {
             unseren Webseiten, in mobilen Applikationen sowie innerhalb externer Onlinepräsenzen, wie z.B. unserer
             Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als "Onlineangebot“).</p>
         <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
-        <p>Stand: 23. März 2020</p><h2>Inhaltsübersicht</h2>
-        <ul className="index">
-            <li><a className="index-link" href="#m14">Einleitung</a></li>
-            <li><a className="index-link" href="#m3">Verantwortlicher</a></li>
-            <li><a className="index-link" href="#mOverview">Übersicht der Verarbeitungen</a></li>
-            <li><a className="index-link" href="#m13">Maßgebliche Rechtsgrundlagen</a></li>
-            <li><a className="index-link" href="#m27">Sicherheitsmaßnahmen</a></li>
-            <li><a className="index-link" href="#m25">Übermittlung und Offenbarung von personenbezogenen Daten</a></li>
-            <li><a className="index-link" href="#m24">Datenverarbeitung in Drittländern</a></li>
-            <li><a className="index-link" href="#m134">Einsatz von Cookies</a></li>
-            <li><a className="index-link" href="#m182">Kontaktaufnahme</a></li>
-            <li><a className="index-link" href="#m391">Kommunikation via Messenger</a></li>
-            <li><a className="index-link" href="#m406">Chatbots und Chatfunktionen</a></li>
-            <li><a className="index-link" href="#m225">Bereitstellung des Onlineangebotes und Webhosting</a></li>
-            <li><a className="index-link" href="#m263">Webanalyse und Optimierung</a></li>
-            <li><a className="index-link" href="#m264">Onlinemarketing</a></li>
-            <li><a className="index-link" href="#m136">Präsenzen in sozialen Netzwerken</a></li>
-            <li><a className="index-link" href="#m328">Plugins und eingebettete Funktionen sowie Inhalte</a></li>
-            <li><a className="index-link" href="#m723">Planung, Organisation und Hilfswerkzeuge</a></li>
-            <li><a className="index-link" href="#m12">Löschung von Daten</a></li>
-            <li><a className="index-link" href="#m15">Änderung und Aktualisierung der Datenschutzerklärung</a></li>
-            <li><a className="index-link" href="#m10">Rechte der betroffenen Personen</a></li>
-            <li><a className="index-link" href="#m42">Begriffsdefinitionen</a></li>
-        </ul>
-        <h2 id="m3">Verantwortlicher</h2> <p>Check den Fakt<br>Kammergasse 9<br>85354 Freising<br>Deutschland</p>
+
+
+        <h2 id="m3">Verantwortlicher</h2>
+        <p>
+            Check den Fakt<br/>
+            Kammergasse 9<br/>
+            85354 Freising<br/>
+            Deutschland</p>
         <p><strong>Vertretungsberechtigte Personen</strong>: Antonella Lorenz</p>
         <p><strong>E-Mail-Adresse</strong>: welcome@check-den-fakt.de</p>
         <p><strong>Telefon</strong>: +49 (0) 171 7472075</p>
