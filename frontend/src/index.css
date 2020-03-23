@@ -77,23 +77,21 @@ h3 {
 
 .polygon {
   width: 100vw !important;
-  /* flex-shrink: 0; */
+  flex-shrink: 0;
   clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
   -webkit-clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
   margin-top: -2vw;
   padding: 13%;
-  /* margin-left: -20px !important; */
 }  
 
 @media (min-width: 768px) {
   .polygon {
     width: 100vw !important;
-    /* flex-shrink: 0; */
+    flex-shrink: 0;
     clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
     -webkit-clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
     margin-top: -2vw;
     padding: 10%;
-    /* margin-left: -20px !important; */
   }  
 }
 
@@ -120,7 +118,15 @@ h3 {
   /* Preferred icon size */
 }
 
-.carousel-item .w-100 {
+.carousel-item {
   height: 150px !important;  
-  width: auto !important;
+  width: 100vw !important;
+}
+
+.carousel-img{
+  max-width: 90vw;
+}
+
+.img-container{
+  height: 150px !important;
 }

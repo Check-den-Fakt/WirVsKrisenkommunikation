@@ -30,16 +30,6 @@ export default function Landing() {
         <p className="text-center">Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland* haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten*. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
       
 
-<<<<<<< HEAD
-      <div className="center">
-      <div className="row">
-        <Button href="/check" variant="primary" size="lg" block className="m-2">
-          <b>Nachricht überprüfen</b>
-        </Button>
-            <Button href="/report" variant="secondary" size="lg" block className="m-2">
-              <b>Falschnachricht melden</b>
-        </Button>
-=======
         <div className="w-75 center">
           <div className="row">
             <Button href="/check" variant="primary" size="lg" block className="m-3">
@@ -48,7 +38,6 @@ export default function Landing() {
                 <Button href="/report" variant="secondary" size="lg" block className="m-3">
                   Falschnachricht melden
             </Button>
->>>>>>> 198dc269149c7742e747798d4c00cfa4a40890c5
           </div>
         </div>
 
@@ -129,82 +118,102 @@ export default function Landing() {
           </div>
         </div>
 
-        <div className="picCarousel">
+
+
+        <div className="picCarousel pt-5">
           <div className="text-center">
             <Carousel activeIndex={index} onSelect={handleSelect}>
               <Carousel.Item>
+                <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/logo_klein.png"
                   alt="Check the Fact"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/hashtag.png"
                   alt="Wir bleiben für euch Zuhause #wirvsvirushack"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/Logo_Projekt.png"
                   alt="Wir vs Virus Hackathon"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/Bund_Logo.png"
                   alt="Bundesregierung"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/CFG_logo.png"
                   alt="Code for Germany"
                 />
+              </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/D21_Logo.png"
                   alt="Initiative D21"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/hub-Berlin.png"
                   alt="Impact Hub Berlin"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/pt-logo.png"
                   alt="project together"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/PF.png"
                   alt="Prototype Fund"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/sendLOGO.png"
                   alt="Send"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/t4g.png"
                   alt="Tech4Germany"
                 />
