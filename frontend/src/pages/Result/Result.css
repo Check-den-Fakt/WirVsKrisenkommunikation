@@ -20,3 +20,15 @@
 .margin-top-40 {
   margin-top: 40px;
 }
+
+.material-icons.success {
+  color: #28a745;
+}
+
+.material-icons.danger {
+  color: #dc3545;
+}
+
+.material-icons.undef {
+  color: #3E049D;
+}

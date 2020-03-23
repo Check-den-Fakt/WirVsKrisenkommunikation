@@ -57,12 +57,12 @@ export default function DSGVO() {
         <h4>2. Name und Anschrift des für die Verarbeitung Verantwortlichen</h4>
         <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung, sonstiger in den Mitgliedstaaten der Europäischen Union geltenden Datenschutzgesetze und anderer Bestimmungen mit datenschutzrechtlichem Charakter ist die:</p>
 
-        <p>Check the Fact</p>
-        <p>Musterstraße 111</p>
-        <p>90210 Musterstradt</p>
-        <p>Deutschalnd</p>
-        <p>Tel.: +49 (0) 123 44 55 66</p>
-        <p>E-Mail: info@check-den-fakt.de</p>
+        <p>Check den Fakt</p>
+        <p>Kammergasse 9</p>
+        <p>85354 Freising</p>
+        <p>Deutschland</p>
+        <p>Tel.: +49 (0) 171 7472075</p>
+        <p>E-Mail: welcome@check-den-fakt.de</p>
         <p>Website: check-den-fakt.de und check-the-fact.com</p>
 
         <h4>3. Erfassung von allgemeinen Daten und Informationen</h4>

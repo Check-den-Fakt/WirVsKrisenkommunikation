@@ -1,10 +1,10 @@
 from azure.cognitiveservices.search.websearch import WebSearchClient
 from azure.cognitiveservices.search.websearch.models import SafeSearch
 from msrest.authentication import CognitiveServicesCredentials
-
+from subkey import sub_key
 import re
 
-subscription_key = "a8dadd0c8d6d4d2280a576e6976b1317"
+subscription_key = sub_key()
 client = WebSearchClient("https://westeurope.api.cognitive.microsoft.com/", CognitiveServicesCredentials(subscription_key))
 
 
@@ -30,6 +30,6 @@ def lc_clean_url(url):
         return ""
 
 if __name__ == "__main__":
-    sites = az_get_links_for_key("corona")
+    sites = az_get_links_for_key("corona",10)
     for s in sites:
         print(s)

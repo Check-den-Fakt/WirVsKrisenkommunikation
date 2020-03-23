@@ -46,6 +46,7 @@ export class AddNews extends Component {
           rows="10"
           disabled={isLoading}
           placeholder="Füge hier eine URL oder Textnachricht ein"
+          maxlength="5099"
         />
       </Form.Group>
       {isLoading ? <Spinner animation="border" /> : <Button 
