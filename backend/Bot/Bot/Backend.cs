@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker;
+using Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker.Models;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +12,7 @@ namespace Bot
     public static class Backend
     {
         private static RestSharp.RestClient client;
+        private static QnAMakerRuntimeClient qnAMakerClient;
 
         public static async Task<Models.FakeAPIResponse> GetFakeNews(string message)
         {
@@ -53,6 +57,27 @@ namespace Bot
 
                 throw;
             }
+        }
+
+        public static async Task<IList<QnASearchResult>> GetQnAResponse(string question, IConfiguration configuration)
+        {
+            var subscriptionKey = configuration["QnAMakerAPIKey"];
+            qnAMakerClient = new QnAMakerRuntimeClient(new EndpointKeyServiceClientCredentials(subscriptionKey)) { RuntimeEndpoint = configuration["QnAMakerEndpoint"] };
+
+            var result = await qnAMakerClient.Runtime.GenerateAnswerAsync("5a60db98-441c-44b4-bbc0-59f70e960d54", new QueryDTO { Question = question });
+
+            return result.Answers;
+        }
+
+        public static async Task ReportMessage(Models.ReportDetails details, IConfiguration configuration)
+        {
+            client = new RestSharp.RestClient("https://we-sendfact-fa.azurewebsites.net");
+            RestSharp.RestRequest restRequest = new RestSharp.RestRequest("/api/messagearchive", RestSharp.Method.POST);
+
+            restRequest.AddHeader("Content-Type", "application/json");
+            restRequest.AddJsonBody(details);
+
+            await client.ExecuteAsync(restRequest).ConfigureAwait(false);
         }
     }
 }
