@@ -117,7 +117,7 @@ export default function Landing() {
             </ul>
           </div>
         </div>
-
+        <div className="container">
         <div className="picCarousel">
           <div className="text-center">
             <Carousel activeIndex={index} onSelect={handleSelect}>
@@ -201,6 +201,7 @@ export default function Landing() {
             </Carousel>
           </div>
           </div>
+        </div>
     </div>
   );
 }
