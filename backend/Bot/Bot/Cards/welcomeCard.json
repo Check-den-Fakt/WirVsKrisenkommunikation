@@ -1,0 +1,46 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "Image",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtB3AwMUeNoq4gUBGe6Ocj8kyh3bXa9ZbV7u1fVKQoyKFHdkqU",
+      "size": "stretch"
+    },
+    {
+      "type": "TextBlock",
+      "spacing": "medium",
+      "size": "default",
+      "weight": "bolder",
+      "text": "Wilkommen bei Check-den-Fakt!",
+      "wrap": true,
+      "maxLines": 0
+    },
+    {
+      "type": "TextBlock",
+      "size": "default",
+      "isSubtle": true,
+      "text": "Hier kannst du Fakten pr&uuml;fen und reporten.",
+      "wrap": true,
+      "maxLines": 0
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Prüfe einen Fakt",
+      "data": "prüfe Fakt"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Reporte Fake News",
+      "data": "report FakeNews"
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "Unsere Webseite",
+      "url": "https://check-den-fakt.de"
+    }
+  ]
+}
