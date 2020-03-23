@@ -22,7 +22,8 @@ namespace Bot.Dialogs
         protected readonly ILogger Logger;
         private IConfiguration configuration;
 
-        public MainDialog(FactCheckRecognizer luisRecognizer, CheckFactDialog checkFactDialog, QnADialog qnADialog, ILogger<MainDialog> logger, IConfiguration configuration) : base(nameof(MainDialog))
+        public MainDialog(FactCheckRecognizer luisRecognizer, CheckFactDialog checkFactDialog, QnADialog qnADialog, ReportDialog reportDialog,
+            ILogger<MainDialog> logger, IConfiguration configuration) : base(nameof(MainDialog))
         {
             this.luisRecognizer = luisRecognizer;
             this.configuration = configuration;
@@ -31,6 +32,7 @@ namespace Bot.Dialogs
             AddDialog(new TextPrompt(nameof(TextPrompt)));
             AddDialog(checkFactDialog);
             AddDialog(qnADialog);
+            AddDialog(reportDialog);
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
                 IntroStepAsync,
@@ -86,11 +88,9 @@ namespace Bot.Dialogs
 
                     return await stepContext.BeginDialogAsync(nameof(CheckFactDialog), factDetails, cancellationToken);
                 case ChatIntents.Intent.Report:
-                    string reportText = $"Dieses Feature steht noch nicht zur Verfügung";
+                    var reportDetails = new Models.ReportDetails();
 
-                    var reportMessage = MessageFactory.Text(reportText, reportText, InputHints.IgnoringInput);
-                    await stepContext.Context.SendActivityAsync(reportMessage, cancellationToken);
-                    break;
+                    return await stepContext.BeginDialogAsync(nameof(ReportDialog), reportDetails, cancellationToken);
 
                 case ChatIntents.Intent.Welcome:
                     string welcomeText = $"Hallo, willkommen bei Check-den-Fakt.de";
@@ -99,12 +99,10 @@ namespace Bot.Dialogs
                     await stepContext.Context.SendActivityAsync(welcomeMessage, cancellationToken);
                     break;
 
-
                 case ChatIntents.Intent.FAQ:
                     
                     var qnaDetails = new Models.QnADetails()
                     {
-
                     };
 
                     return await stepContext.BeginDialogAsync(nameof(QnADialog), qnaDetails, cancellationToken);
@@ -124,6 +122,7 @@ namespace Bot.Dialogs
         {
             // If the child dialog ("CheckFactDialog") was cancelled, the user failed to confirm or if the intent wasn't BookFlight
             // the Result here will be null.
+
             if (stepContext.Result is Models.FactDetails result)
             {
                 await stepContext.Context.SendActivityAsync(MessageFactory.Text("Einen Moment bitte, ich befrage unsere Datenbank"));
@@ -194,6 +193,25 @@ namespace Bot.Dialogs
 
                 var qnaMessageText = MessageFactory.Text(qnaMessage, qnaMessage, InputHints.IgnoringInput);
                 await stepContext.Context.SendActivityAsync(qnaMessageText, cancellationToken);
+            }
+
+            if (stepContext.Result is Models.ReportDetails reportDetails)
+            {
+                string reportMessage = "Vielen Dank für deine Meldung";
+                
+                await stepContext.Context.SendActivityAsync(MessageFactory.Text("Einen Moment bitte, ich befrage unsere Datenbank"));
+
+                Activity typing = new Activity
+                {
+                    Type = ActivityTypes.Typing,
+                    Text = null
+                };
+                await stepContext.Context.SendActivityAsync(typing);
+
+                await Backend.ReportMessage(reportDetails, configuration);
+
+                var reportMessageText = MessageFactory.Text(reportMessage, reportMessage, InputHints.IgnoringInput);
+                await stepContext.Context.SendActivityAsync(reportMessageText, cancellationToken);
             }
 
             // Restart the main dialog with a different message the second time around

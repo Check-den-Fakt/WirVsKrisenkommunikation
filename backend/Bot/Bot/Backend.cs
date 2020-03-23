@@ -68,5 +68,16 @@ namespace Bot
 
             return result.Answers;
         }
+
+        public static async Task ReportMessage(Models.ReportDetails details, IConfiguration configuration)
+        {
+            client = new RestSharp.RestClient("https://we-sendfact-fa.azurewebsites.net");
+            RestSharp.RestRequest restRequest = new RestSharp.RestRequest("/api/messagearchive", RestSharp.Method.POST);
+
+            restRequest.AddHeader("Content-Type", "application/json");
+            restRequest.AddJsonBody(details);
+
+            await client.ExecuteAsync(restRequest).ConfigureAwait(false);
+        }
     }
 }

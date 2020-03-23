@@ -50,6 +50,9 @@ namespace Bot
             // Register the FAQDialog.
             services.AddSingleton<QnADialog>();
 
+            // Register the FAQDialog.
+            services.AddSingleton<ReportDialog>();
+
             // The MainDialog that will be run by the bot.
             services.AddSingleton<MainDialog>();
 
