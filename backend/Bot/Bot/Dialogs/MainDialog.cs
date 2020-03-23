@@ -199,7 +199,7 @@ namespace Bot.Dialogs
             {
                 string reportMessage = "Vielen Dank für deine Meldung";
                 
-                await stepContext.Context.SendActivityAsync(MessageFactory.Text("Einen Moment bitte, ich befrage unsere Datenbank"));
+                await stepContext.Context.SendActivityAsync(MessageFactory.Text("Einen Moment bitte"));
 
                 Activity typing = new Activity
                 {
