@@ -49,6 +49,7 @@ export default class Report extends Component {
             rows="10"
             value={text}
             placeholder="Füge hier eine URL oder Textnachricht ein"
+            maxlength="5099"
           />
         </Form.Group>
         {/* <div>
