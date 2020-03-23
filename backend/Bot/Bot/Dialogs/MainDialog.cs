@@ -12,6 +12,7 @@ using Bot.CognitiveModels;
 using System.Text;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using Microsoft.Extensions.Configuration;
 
 namespace Bot.Dialogs
 {
@@ -19,14 +20,17 @@ namespace Bot.Dialogs
     {
         private readonly FactCheckRecognizer luisRecognizer;
         protected readonly ILogger Logger;
+        private IConfiguration configuration;
 
-        public MainDialog(FactCheckRecognizer luisRecognizer, CheckFactDialog checkFactDialog, ILogger<MainDialog> logger) : base(nameof(MainDialog))
+        public MainDialog(FactCheckRecognizer luisRecognizer, CheckFactDialog checkFactDialog, QnADialog qnADialog, ILogger<MainDialog> logger, IConfiguration configuration) : base(nameof(MainDialog))
         {
             this.luisRecognizer = luisRecognizer;
+            this.configuration = configuration;
             Logger = logger;
 
             AddDialog(new TextPrompt(nameof(TextPrompt)));
             AddDialog(checkFactDialog);
+            AddDialog(qnADialog);
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
                 IntroStepAsync,
@@ -74,7 +78,7 @@ namespace Bot.Dialogs
                     break;
 
                 case ChatIntents.Intent.Check:
-                    // We haven't implemented the GetWeatherDialog so we just display a TODO message.
+
                     var factDetails = new Models.FactDetails()
                     {
 
@@ -95,6 +99,16 @@ namespace Bot.Dialogs
                     await stepContext.Context.SendActivityAsync(welcomeMessage, cancellationToken);
                     break;
 
+
+                case ChatIntents.Intent.FAQ:
+                    
+                    var qnaDetails = new Models.QnADetails()
+                    {
+
+                    };
+
+                    return await stepContext.BeginDialogAsync(nameof(QnADialog), qnaDetails, cancellationToken);
+
                 default:
                     // Catch all for unhandled intents
                     var didntUnderstandMessageText = $"Sorry, ich habe dich nicht verstanden :(";
@@ -106,24 +120,6 @@ namespace Bot.Dialogs
             return await stepContext.NextAsync(null, cancellationToken);
         }
 
-
-
-        //private async Task<DialogTurnResult> ResultStep(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-        //{
-        //    var factDetails = (Models.FactDetails)stepContext.Result;
-
-        //    //var messageText = $"Wir haben folgendes in unser Datenbank gefunden:\nFolgende Keywörter:\n";
-
-        //    //foreach (var item in factDetails.KeyPhrases)
-        //    //{
-        //    //    messageText += $"{item.Key} mit einer Häufigkeit von {item.Value}";
-        //    //}
-
-        //    //messageText += $"\nIn unserer Fake Datenbank haben wir folgendes Ergebnis gefunden:\n";
-
-        //    //messageText += $"Deine Nachricht hat eine Übereinstimmung bis zu {factDetails.SearchScore}% ergeben.Unsere Suche hat bis zu {factDetails.CountOfSearchHits} Ergebnisse gefunden.";
-        //    //messageText += $"\nDenkst du dass Ergebniss stimmt?";
-
         private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
             // If the child dialog ("CheckFactDialog") was cancelled, the user failed to confirm or if the intent wasn't BookFlight
@@ -131,9 +127,11 @@ namespace Bot.Dialogs
             if (stepContext.Result is Models.FactDetails result)
             {
                 await stepContext.Context.SendActivityAsync(MessageFactory.Text("Einen Moment bitte, ich befrage unsere Datenbank"));
-                Activity typing = new Activity();
-                typing.Type = ActivityTypes.Typing;
-                typing.Text = null;
+                Activity typing = new Activity
+                {
+                    Type = ActivityTypes.Typing,
+                    Text = null
+                };
                 await stepContext.Context.SendActivityAsync(typing);
 
                 var reply = await Backend.GetFakeNews(result.Question.ToLowerInvariant());
@@ -167,6 +165,35 @@ namespace Bot.Dialogs
 
                 var message = MessageFactory.Text(messageText, messageText, InputHints.IgnoringInput);
                 await stepContext.Context.SendActivityAsync(message, cancellationToken);
+            }
+
+            if (stepContext.Result is Models.QnADetails qnaResult)
+            {
+                string qnaMessage = string.Empty;
+
+                var response = await Backend.GetQnAResponse(qnaResult.Question, configuration);
+
+                qnaMessage += "Ich habe folgende Ergebnisse in unserer FAQ gefunden:\n";
+
+                if (response.Count != 0)
+                {
+                    foreach (var item in response)
+                    {
+                        if (item.Score > 30)
+                        {
+                            qnaMessage += item.Answer + "\n";
+                        }
+                    }
+                }
+
+                if(qnaMessage == "Ich habe folgende Ergebnisse in unserer FAQ gefunden:\n")
+                {
+                    qnaMessage += "Tut mir leid, ich habe leider nichts gefunden :(";
+                }
+
+
+                var qnaMessageText = MessageFactory.Text(qnaMessage, qnaMessage, InputHints.IgnoringInput);
+                await stepContext.Context.SendActivityAsync(qnaMessageText, cancellationToken);
             }
 
             // Restart the main dialog with a different message the second time around
