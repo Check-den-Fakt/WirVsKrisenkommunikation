@@ -3,17 +3,16 @@ import React, { useState } from 'react';
 
 
 export default function About() {
-  // Declare a new state variable, which we'll call "count"
   return (
       <div className="container">
           <h1>Das Check-den-Fakt-Team stellt sich vor</h1>
-          <p>Wir sind ein interdisziplinäres Team, bestehend aus 36 Spezialisten aus aller Welt</p>
+          <p>Wir sind ein interdisziplinäres Team, bestehend aus 36 Spezialisten aus aller Welt. Unser Team besteht aus Menschen verschiedenen Alters, Geschlechts und Fachrichtungen, trotz allem haben wir alle dasselbe Ziel.</p>
           <div className="pt-5 d-flex justify-content-center">
               <div className="polygon background-color-1">
                   <div className="container">
                       <h2>Unsere Mission</h2>
                       <p>
-                          Wir wollen Menschen ein Tool an die Hand geben, mit denen Sie Corona-Falschnachrichten identifizieren und widerlegen können.
+                          Wir wollen Menschen ein Tool an die Hand geben, mit denen Sie Corona-Falschnachrichten und andere Falschmeldungen identifizieren und widerlegen können. Und dies mit einem sehr geringen Arbeitsaufwand.
                       </p>
                   </div>
               </div>
