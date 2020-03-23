@@ -1,11 +1,9 @@
 .w-100 {
-    width: auto !important;
+    width: 100% !important;
     max-height: 150px;
 }
 
 .picCarousel{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
 }
 

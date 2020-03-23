@@ -221,6 +221,7 @@ export default function Landing() {
             </Carousel>
           </div>
           </div>
-    </div>
+        </div>
+
   );
 }
