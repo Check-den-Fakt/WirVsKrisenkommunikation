@@ -119,9 +119,7 @@ export default function Landing() {
         </div>
 
 
-
-        <div className="picCarousel pt-5">
-          <div className="text-center">
+        <div className="text-center pt-5">
             <Carousel activeIndex={index} onSelect={handleSelect}>
               <Carousel.Item>
                 <div className="img-container">
@@ -220,8 +218,7 @@ export default function Landing() {
               </Carousel.Item>
             </Carousel>
           </div>
-          </div>
-        </div>
 
+    </div>
   );
 }
