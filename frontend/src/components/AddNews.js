@@ -43,7 +43,7 @@ export class AddNews extends Component {
         <Form.Control
           onChange={(e, ee) => this.onChangeValue('text', e, ee)} 
           as="textarea" 
-          rows="10"
+          rows="6"
           disabled={isLoading}
           placeholder="Füge hier eine URL oder Textnachricht ein"
           maxlength="5099"
@@ -53,8 +53,9 @@ export class AddNews extends Component {
         disabled={!text} 
         onClick={this.handleSubmit} 
         variant="primary"
+        className="submit-btn mb-3"
       >
-        Check den Fakt
+        <b>Check den Fakt</b>
       </Button>}
     </Form>
     );

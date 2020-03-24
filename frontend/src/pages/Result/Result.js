@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AddNews } from '../../components/AddNews';
 import { Diagram } from '../../components/Diagram';
+import { Button } from 'react-bootstrap';
 import './Result.css';
 import { ProgressBar, Card } from 'react-bootstrap';
 import ShareButtons from '../../components/ShareButtons';
@@ -17,11 +18,11 @@ export default function Result({ result, requestData }) {
     if (trustScore > 0.70) {
       bgClass = 'bg-color-success';
       content = <Card className="cart-top-margin">
-        <Card.Body>
+        <Card.Body className="shadow">
           <div class="container">
             <div class="row">
               <div class="col-sm-11">
-                <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
+                <Card.Title><b>{trustScore * 100}% glaubwürdig</b></Card.Title>
                 <ProgressBar variant="success" now={trustScore * 100} class="inline" />
               </div>
               <div class="col-sm-1">
@@ -32,7 +33,7 @@ export default function Result({ result, requestData }) {
             </div>
           </div>
           <Card.Text className="cart-top-margin">
-            Die Check-the-Fact-Prüfung bestätigt, dass die Nachricht seriös ist. Du kannst die Nachricht gerne weiter verbreiten!
+          <b>check-den-fakt.de</b> Prüfung konnte seriöse Quellen bestätigen. Du kannst die Nachricht teilen.
           </Card.Text>
         </Card.Body>
       </Card>
@@ -54,7 +55,7 @@ export default function Result({ result, requestData }) {
           </div>
         </div>
         <Card.Text className="cart-top-margin">
-          Die Check-the-Fact-Prüfung konnte kaum seriöse Quellen finden, die diese Nachricht bestätigen. Bitte leite sie nicht weiter.
+          <b>check-den-fakt.de</b> Prüfung konnte kaum seriöse Quellen bestätigen. Bitte leite diese Nachricht nicht weiter.Nachricht bestätigen. Bitte leite sie nicht weiter.
         </Card.Text>
       </Card.Body>
     </Card>
@@ -77,7 +78,7 @@ export default function Result({ result, requestData }) {
         </div>
       </div>
       <Card.Text className="cart-top-margin">
-        Die Check-the-Fact-Prüfung konnte keine Quellen finden. Vielleicht hast du mehr Erfolg in der Eigenrecherche.
+      <b>check-den-fakt.de</b> Prüfung konnte keine Quellen finden. Bitte leite diese Nachricht nicht weiter.
       </Card.Text>
     </Card.Body>
   </Card>
@@ -85,21 +86,20 @@ export default function Result({ result, requestData }) {
 
   return (
     <div className="text-center">
-      <h1>Ergebnis:</h1>
       <div className="pt-5 d-flex justify-content-center">
           <div className={`polygon ${bgClass}`}>
             {content}
             {trustedPublisher && <ShareButtons />}
           </div>
         </div>
-      <div className="text-left margin-top-40">
+      <div className="text-left">
         <p className="fact-header">Deine Nachricht:</p>
         <Card className="your-message-card">
           <p>"{requestData && (requestData.text || requestData.url)}"</p>
         </Card>
       </div>
       {result.fakeCount && <ResultDetails fakeNewsCount={result.fakeCount} maxValue={result.maxValue} />}
-      <a className="fact-link" href="/about">Wer wir sind?</a>
+      <a className="fact-link pt-5" href="/about">Wer wir sind?</a>
     </div>
   );
 }

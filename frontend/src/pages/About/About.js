@@ -8,7 +8,7 @@ export default function About() {
           <h1>Das Check-den-Fakt-Team stellt sich vor</h1>
           <p>Wir sind ein interdisziplinäres Team, bestehend aus 36 Spezialisten aus aller Welt. Unser Team besteht aus Menschen verschiedenen Alters, Geschlechts und Fachrichtungen, trotz allem haben wir alle dasselbe Ziel.</p>
           <div className="pt-5 d-flex justify-content-center">
-              <div className="polygon background-color-1">
+              <div className="polygon background-color-2">
                   <div className="container">
                       <h2>Unsere Mission</h2>
                       <p>
