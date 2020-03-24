@@ -141,6 +141,7 @@ h3 {
 .btn-secondary {
   color: black !important;
   background-color: #FFEFB6 !important;
+  border-color: #FFEFB6 !important;
 }
 
 button:disabled{
