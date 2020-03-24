@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Nav} from "react-bootstrap";
 import "./Footer.css";
 
 

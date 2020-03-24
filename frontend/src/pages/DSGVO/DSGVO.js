@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import './DSGVO.css';
+import React from 'react';
 
 export default function DSGVO() {
   // Declare a new state variable, which we'll call "count"
   return (
-    <div className="dsgvo">
-
+    <div className="no-bullets">
         <h1>Datenschutzerklärung</h1>
         <h2>Einleitung</h2>
         <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer
@@ -15,15 +13,13 @@ export default function DSGVO() {
             unseren Webseiten, in mobilen Applikationen sowie innerhalb externer Onlinepräsenzen, wie z.B. unserer
             Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als "Onlineangebot“).</p>
         <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
-
-
-        <h2 id="m3">Verantwortlicher</h2>
+        <h2 id="m3">Verantwortliche</h2>
         <p>
-            Check den Fakt<br/>
+            Check the Fact<br/>
             Kammergasse 9<br/>
             85354 Freising<br/>
             Deutschland</p>
-        <p><strong>Vertretungsberechtigte Personen</strong>: Antonella Lorenz</p>
+        <p><strong>Vertretungsberechtigte Person</strong>: Antonella Lorenz</p>
         <p><strong>E-Mail-Adresse</strong>: welcome@check-den-fakt.de</p>
         <p><strong>Telefon</strong>: +49 (0) 171 7472075</p>
         <h2 id="mOverview">Übersicht der Verarbeitungen</h2><p>Die nachfolgende Übersicht fasst die Arten der
@@ -130,7 +126,7 @@ export default function DSGVO() {
             des Vorliegens von Zertifizierungen oder verbindlicher interner Datenschutzvorschriften, verarbeiten (Art.
             44 bis 49 DSGVO, Informationsseite der EU-Kommission: <a
                 href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de"
-                target="_blank">https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de</a> ).
+                target="_blank" rel="noopener noreferrer" >https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de</a> ).
         </p>
         <h2 id="m134">Einsatz von Cookies</h2><p>Cookies sind Textdateien, die Daten von besuchten Websites oder Domains
         enthalten und von einem Browser auf dem Computer des Benutzers gespeichert werden. Ein Cookie dient in erster
@@ -184,8 +180,8 @@ export default function DSGVO() {
             Cookies deaktivieren (wobei hierdurch auch die Funktionsfähigkeit unseres Onlineangebotes eingeschränkt
             werden kann). Ein Widerspruch gegen den Einsatz von Cookies zu Zwecken des Onlinemarketings kann auch
             mittels einer Vielzahl von Diensten, vor allem im Fall des Trackings, über die Webseiten <a
-                href="https://optout.aboutads.info" target="_blank">https://optout.aboutads.info</a> und <a
-                href="https://www.youronlinechoices.com/" target="_blank">https://www.youronlinechoices.com/</a> erklärt
+                href="https://optout.aboutads.info" target="_blank" rel="noopener noreferrer" >https://optout.aboutads.info</a> und <a
+                href="https://www.youronlinechoices.com/" target="_blank" rel="noopener noreferrer" >https://www.youronlinechoices.com/</a> erklärt
             werden. Daneben können Sie weitere Widerspruchshinweise im Rahmen der Angaben zu den eingesetzten
             Dienstleistern und Cookies erhalten.</p>
         <p><strong>Verarbeitung von Cookie-Daten auf Grundlage einer Einwilligung</strong>: Bevor wir Daten im Rahmen
@@ -273,9 +269,9 @@ export default function DSGVO() {
         <ul className="m-elements">
             <li><strong>Telegram Broadcasts:</strong> Telegram Broadcasts - Messenger mit Ende-zu-Ende-Verschlüsselung;
                 Dienstanbieter: Telegram, Dubai; Website: <a href="https://telegram.org/"
-                                                             target="_blank">https://telegram.org/</a>;
+                                                             target="_blank" rel="noopener noreferrer" >https://telegram.org/</a>;
                 Datenschutzerklärung: <a href="https://telegram.org/privacy"
-                                         target="_blank">https://telegram.org/privacy</a>.
+                                         target="_blank" rel="noopener noreferrer" >https://telegram.org/privacy</a>.
             </li>
         </ul>
         <h2 id="m406">Chatbots und Chatfunktionen</h2><p>Wir bieten als Kommunikationsmöglichkeit Online-Chats und
@@ -403,34 +399,34 @@ export default function DSGVO() {
             <li><strong>Adobe Analytics:</strong> Adobe Analytics; Dienstanbieter: Adobe Systems Software Ireland
                 Companies, 4-6 Riverwalk, Citywest Business Campus, Dublin 24, Irland, Mutterunternehmen: ; Website: <a
                     href="https://www.adobe.com/de/analytics/adobe-analytics.html"
-                    target="_blank">https://www.adobe.com/de/analytics/adobe-analytics.html</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.adobe.com/de/analytics/adobe-analytics.html</a>;
                 Datenschutzerklärung: <a href="https://www.adobe.com/de/privacy.html"
-                                         target="_blank">https://www.adobe.com/de/privacy.html</a>; Privacy Shield
+                                         target="_blank" rel="noopener noreferrer" >https://www.adobe.com/de/privacy.html</a>; Privacy Shield
                 (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt0000000TNo9AAG&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt0000000TNo9AAG&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt0000000TNo9AAG&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): <a
                     href="https://www.adobe.com/privacy/marketing.html#online-advertising"
-                    target="_blank">https://www.adobe.com/privacy/marketing.html#online-advertising</a>.
+                    target="_blank" rel="noopener noreferrer" >https://www.adobe.com/privacy/marketing.html#online-advertising</a>.
             </li>
             <li><strong>Google Optimize:</strong> Verwendung von Google-Analytics-Daten zu Zwecken der Verbesserung von
                 Bereichen unseres Onlineangebotes und einer verbesserten Ausrichtung unserer Marketingmaßnahmen an
                 potentiellen Interessen der Nutzer; Dienstanbieter: Google Ireland Limited, Gordon House, Barrow Street,
                 Dublin 4, Irland, Mutterunternehmen: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043,
-                USA; Website: <a href="https://optimize.google.com" target="_blank">https://optimize.google.com</a>;
+                USA; Website: <a href="https://optimize.google.com" target="_blank" rel="noopener noreferrer" >https://optimize.google.com</a>;
                 Datenschutzerklärung: <a href="https://policies.google.com/privacy"
-                                         target="_blank">https://policies.google.com/privacy</a>; Privacy Shield
+                                         target="_blank" rel="noopener noreferrer" >https://policies.google.com/privacy</a>; Privacy Shield
                 (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin: <a
                     href="https://tools.google.com/dlpage/gaoptout?hl=de"
-                    target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die
+                    target="_blank" rel="noopener noreferrer" >https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die
                 Darstellung von Werbeeinblendungen: <a href="https://adssettings.google.com/authenticated"
-                                                       target="_blank">https://adssettings.google.com/authenticated</a>.
+                                                       target="_blank" rel="noopener noreferrer" >https://adssettings.google.com/authenticated</a>.
             </li>
             <li><strong>Azure Application Insights</strong> Diese Website nutzt die Analysedienste von Microsoft Azure Application Insights (<a href="https://docs.microsoft.com/de-de/azure/azure-monitor/app/app-insights-overview"
-                                                                                                                                                target="_blank">https://docs.microsoft.com/de-de/azure/azure-monitor/app/app-insights-overview</a>. Anbieter ist die Microsoft Corporation One Microsoft Way, Redmond, WA 98052, USA. Im Rahmen der Analysen mit  Application Insights können u. a. Besucherzahlen und –verhalten (z. B. Anzahl der Seitenaufrufe, Dauer eines Webseitenbesuchs, Absprungraten), Besucherquellen (d. h., von welcher Seite der Besucher kommt), Besucherstandorte sowie technische Daten (Browser- und Betriebssystemversionen) analysiert werden. Folgende Daten werden erhoben:
+                                                                                                                                                target="_blank" rel="noopener noreferrer" >https://docs.microsoft.com/de-de/azure/azure-monitor/app/app-insights-overview</a>. Anbieter ist die Microsoft Corporation One Microsoft Way, Redmond, WA 98052, USA. Im Rahmen der Analysen mit  Application Insights können u. a. Besucherzahlen und –verhalten (z. B. Anzahl der Seitenaufrufe, Dauer eines Webseitenbesuchs, Absprungraten), Besucherquellen (d. h., von welcher Seite der Besucher kommt), Besucherstandorte sowie technische Daten (Browser- und Betriebssystemversionen) analysiert werden. Folgende Daten werden erhoben:
                 <ul>
                     <li>Referrer (zuvor besuchte Webseite)</li>
                     <li>angeforderte Webseite oder Datei</li>
@@ -445,7 +441,7 @@ export default function DSGVO() {
                 Application Insights verwendet unter anderem Cookies um eine Analyse des Verhaltens, bzw der Benutzung der Webseite durch Sie zu ermöglichen.
                 Die durch das Cookie erzeugte Informationen werden in der Regel an einen Server von Microsoft in West Europa übertragen und dort gespeichert. Ich habe die Möglichkeit diese Daten über verschiedene Reports auszuwerten.
                 Weitere Informationen zur Datenerfassung und Verarbeitung entnehmen Sie folgenden Links: <a href="https://azure.microsoft.com/de-de/support/trust-center/privacy/"
-                                         target="_blank">https://azure.microsoft.com/de-de/support/trust-center/privacy/</a>
+                                         target="_blank" rel="noopener noreferrer" >https://azure.microsoft.com/de-de/support/trust-center/privacy/</a>
             </li>
         </ul>
         <h2 id="m264">Onlinemarketing</h2><p>Wir verarbeiten personenbezogene Daten zu Zwecken des Onlinemarketings,
@@ -507,13 +503,13 @@ export default function DSGVO() {
                 Opt-Out-Möglichkeiten, die zusammenfassend auf jeweilige Gebiete gerichtet angeboten werden:
 
                 a) Europa: <a href="https://www.youronlinechoices.eu"
-                              target="_blank">https://www.youronlinechoices.eu</a>.
+                              target="_blank" rel="noopener noreferrer" >https://www.youronlinechoices.eu</a>.
                 b) Kanada: <a href="https://www.youradchoices.ca/choices"
-                              target="_blank">https://www.youradchoices.ca/choices</a>.
+                              target="_blank" rel="noopener noreferrer" >https://www.youradchoices.ca/choices</a>.
                 c) USA: <a href="https://www.aboutads.info/choices"
-                           target="_blank">https://www.aboutads.info/choices</a>.
+                           target="_blank" rel="noopener noreferrer" >https://www.aboutads.info/choices</a>.
                 d) Gebietsübergreifend: <a href="https://optout.aboutads.info"
-                                           target="_blank">https://optout.aboutads.info</a>.
+                                           target="_blank" rel="noopener noreferrer" >https://optout.aboutads.info</a>.
             </li>
         </ul>
         <p><strong>Eingesetzte Dienste und Diensteanbieter:</strong></p>
@@ -522,20 +518,20 @@ export default function DSGVO() {
                 Limited, Gordon House, Barrow Street, Dublin 4, Irland, Mutterunternehmen: Google LLC, 1600 Amphitheatre
                 Parkway, Mountain View, CA 94043, USA; Website: <a
                     href="https://marketingplatform.google.com/intl/de/about/analytics/"
-                    target="_blank">https://marketingplatform.google.com/intl/de/about/analytics/</a>;
+                    target="_blank" rel="noopener noreferrer" >https://marketingplatform.google.com/intl/de/about/analytics/</a>;
                 Datenschutzerklärung: <a href="https://policies.google.com/privacy"
-                                         target="_blank">https://policies.google.com/privacy</a>; Privacy Shield
+                                         target="_blank" rel="noopener noreferrer" >https://policies.google.com/privacy</a>; Privacy Shield
                 (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin: <a
                     href="https://tools.google.com/dlpage/gaoptout?hl=de"
-                    target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die
+                    target="_blank" rel="noopener noreferrer" >https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die
                 Darstellung von Werbeeinblendungen: <a href="https://adssettings.google.com/authenticated"
-                                                       target="_blank">https://adssettings.google.com/authenticated</a>.
+                                                       target="_blank" rel="noopener noreferrer" >https://adssettings.google.com/authenticated</a>.
             </li>
             <li><strong>Azure Application Insights</strong> Diese Website nutzt die Analysedienste von Microsoft Azure Application Insights (<a href="https://docs.microsoft.com/de-de/azure/azure-monitor/app/app-insights-overview"
-                                                                                                                                                target="_blank">https://docs.microsoft.com/de-de/azure/azure-monitor/app/app-insights-overview</a>. Anbieter ist die Microsoft Corporation One Microsoft Way, Redmond, WA 98052, USA. Im Rahmen der Analysen mit  Application Insights können u. a. Besucherzahlen und –verhalten (z. B. Anzahl der Seitenaufrufe, Dauer eines Webseitenbesuchs, Absprungraten), Besucherquellen (d. h., von welcher Seite der Besucher kommt), Besucherstandorte sowie technische Daten (Browser- und Betriebssystemversionen) analysiert werden. Folgende Daten werden erhoben:
+                                                                                                                                                target="_blank" rel="noopener noreferrer" >https://docs.microsoft.com/de-de/azure/azure-monitor/app/app-insights-overview</a>. Anbieter ist die Microsoft Corporation One Microsoft Way, Redmond, WA 98052, USA. Im Rahmen der Analysen mit  Application Insights können u. a. Besucherzahlen und –verhalten (z. B. Anzahl der Seitenaufrufe, Dauer eines Webseitenbesuchs, Absprungraten), Besucherquellen (d. h., von welcher Seite der Besucher kommt), Besucherstandorte sowie technische Daten (Browser- und Betriebssystemversionen) analysiert werden. Folgende Daten werden erhoben:
                 <ul>
                     <li>Referrer (zuvor besuchte Webseite)</li>
                     <li>angeforderte Webseite oder Datei</li>
@@ -550,33 +546,33 @@ export default function DSGVO() {
                 Application Insights verwendet unter anderem Cookies um eine Analyse des Verhaltens, bzw der Benutzung der Webseite durch Sie zu ermöglichen.
                 Die durch das Cookie erzeugte Informationen werden in der Regel an einen Server von Microsoft in West Europa übertragen und dort gespeichert. Ich habe die Möglichkeit diese Daten über verschiedene Reports auszuwerten.
                 Weitere Informationen zur Datenerfassung und Verarbeitung entnehmen Sie folgenden Links: <a href="https://azure.microsoft.com/de-de/support/trust-center/privacy/"
-                                                                                                            target="_blank">https://azure.microsoft.com/de-de/support/trust-center/privacy/</a>
+                                                                                                            target="_blank" rel="noopener noreferrer" >https://azure.microsoft.com/de-de/support/trust-center/privacy/</a>
             </li>
             <li><strong>LinkedIn:</strong> Insights Tag / Konversionsmessung; Dienstanbieter: LinkedIn Corporation, 2029
                 Stierlin Court, Mountain View, CA 94043, USA; Website: <a href="https://www.linkedin.com"
-                                                                          target="_blank">https://www.linkedin.com</a>;
+                                                                          target="_blank" rel="noopener noreferrer" >https://www.linkedin.com</a>;
                 Sicherheitsmaßnahmen: IP-Masking (Pseudonymisierung der IP-Adresse); Datenschutzerklärung: <a
                     href="https://www.linkedin.com/legal/privacy-policy"
-                    target="_blank">https://www.linkedin.com/legal/privacy-policy</a>, Cookie-Policy: <a
+                    target="_blank" rel="noopener noreferrer" >https://www.linkedin.com/legal/privacy-policy</a>, Cookie-Policy: <a
                     href="https://www.linkedin.com/legal/cookie_policy"
-                    target="_blank">https://www.linkedin.com/legal/cookie_policy</a>; Privacy Shield (Gewährleistung
+                    target="_blank" rel="noopener noreferrer" >https://www.linkedin.com/legal/cookie_policy</a>; Privacy Shield (Gewährleistung
                 Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): <a
                     href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out"
-                    target="_blank">https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>.
+                    target="_blank" rel="noopener noreferrer" >https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>.
             </li>
             <li><strong>Twitter:</strong> Twitter Marketing und Anzeigen; Dienstanbieter: Twitter Inc., 1355 Market
                 Street, Suite 900, San Francisco, CA 94103, USA; Website: <a href="https://twitter.com/de"
-                                                                             target="_blank">https://twitter.com/de</a>;
+                                                                             target="_blank" rel="noopener noreferrer" >https://twitter.com/de</a>;
                 Datenschutzerklärung: <a href="https://www.facebook.com/about/privacy"
-                                         target="_blank">https://www.facebook.com/about/privacy</a>; Privacy Shield
+                                         target="_blank" rel="noopener noreferrer" >https://www.facebook.com/about/privacy</a>; Privacy Shield
                 (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt0000000TORzAAO&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt0000000TORzAAO&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt0000000TORzAAO&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): <a href="https://twitter.com/personalization"
-                                                      target="_blank">https://twitter.com/personalization</a>.
+                                                      target="_blank" rel="noopener noreferrer" >https://twitter.com/personalization</a>.
             </li>
         </ul>
         <h2 id="m136">Präsenzen in sozialen Netzwerken</h2><p>Wir unterhalten Onlinepräsenzen innerhalb sozialer
@@ -620,102 +616,102 @@ export default function DSGVO() {
         <ul className="m-elements">
             <li><strong>Instagram :</strong> Soziales Netzwerk; Dienstanbieter: Instagram Inc., 1601 Willow Road, Menlo
                 Park, CA, 94025, USA; Website: <a href="https://www.instagram.com"
-                                                  target="_blank">https://www.instagram.com</a>;
+                                                  target="_blank" rel="noopener noreferrer" >https://www.instagram.com</a>;
                 Datenschutzerklärung: <a href="https://instagram.com/about/legal/privacy"
-                                         target="_blank">https://instagram.com/about/legal/privacy</a>.
+                                         target="_blank" rel="noopener noreferrer" >https://instagram.com/about/legal/privacy</a>.
             </li>
             <li><strong>Facebook:</strong> Soziales Netzwerk; Dienstanbieter: Facebook Ireland Ltd., 4 Grand Canal
                 Square, Grand Canal Harbour, Dublin 2, Irland, Mutterunternehmen: Facebook, 1 Hacker Way, Menlo Park, CA
-                94025, USA; Website: <a href="https://www.facebook.com" target="_blank">https://www.facebook.com</a>;
+                94025, USA; Website: <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" >https://www.facebook.com</a>;
                 Datenschutzerklärung: <a href="https://www.facebook.com/about/privacy"
-                                         target="_blank">https://www.facebook.com/about/privacy</a>; Privacy Shield
+                                         target="_blank" rel="noopener noreferrer" >https://www.facebook.com/about/privacy</a>; Privacy Shield
                 (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt0000000GnywAAC&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt0000000GnywAAC&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt0000000GnywAAC&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): Einstellungen für Werbeanzeigen: <a
                     href="https://www.facebook.com/settings?tab=ads"
-                    target="_blank">https://www.facebook.com/settings?tab=ads</a>; Zusätzliche Hinweise zum Datenschutz:
+                    target="_blank" rel="noopener noreferrer" >https://www.facebook.com/settings?tab=ads</a>; Zusätzliche Hinweise zum Datenschutz:
                 Vereinbarung über gemeinsame Verarbeitung personenbezogener Daten auf Facebook-Seiten: <a
                     href="https://www.facebook.com/legal/terms/page_controller_addendum"
-                    target="_blank">https://www.facebook.com/legal/terms/page_controller_addendum</a>,
+                    target="_blank" rel="noopener noreferrer" >https://www.facebook.com/legal/terms/page_controller_addendum</a>,
                 Datenschutzhinweise für Facebook-Seiten: <a
                     href="https://www.facebook.com/legal/terms/information_about_page_insights_data"
-                    target="_blank">https://www.facebook.com/legal/terms/information_about_page_insights_data</a>.
+                    target="_blank" rel="noopener noreferrer" >https://www.facebook.com/legal/terms/information_about_page_insights_data</a>.
             </li>
             <li><strong>Flickr:</strong> Soziales Netzwerk; Dienstanbieter: Flickr Inc., 475 Sansome St San Francisco,
                 California 94111, USA; Website: <a href="https://www.flickr.com"
-                                                   target="_blank">https://www.flickr.com</a>; Datenschutzerklärung: <a
-                    href="https://www.flickr.com/help/privacy" target="_blank">https://www.flickr.com/help/privacy</a>.
+                                                   target="_blank" rel="noopener noreferrer" >https://www.flickr.com</a>; Datenschutzerklärung: <a
+                    href="https://www.flickr.com/help/privacy" target="_blank" rel="noopener noreferrer" >https://www.flickr.com/help/privacy</a>.
             </li>
             <li><strong>LinkedIn:</strong> Soziales Netzwerk; Dienstanbieter: LinkedIn Ireland Unlimited Company, Wilton
                 Place, Dublin 2, Irland; Website: <a href="https://www.linkedin.com"
-                                                     target="_blank">https://www.linkedin.com</a>;
+                                                     target="_blank" rel="noopener noreferrer" >https://www.linkedin.com</a>;
                 Datenschutzerklärung: <a href="https://www.linkedin.com/legal/privacy-policy"
-                                         target="_blank">https://www.linkedin.com/legal/privacy-policy</a>; Privacy
+                                         target="_blank" rel="noopener noreferrer" >https://www.linkedin.com/legal/privacy-policy</a>; Privacy
                 Shield (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): <a
                     href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out"
-                    target="_blank">https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>.
+                    target="_blank" rel="noopener noreferrer" >https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>.
             </li>
             <li><strong>Pinterest:</strong> Soziales Netzwerk; Dienstanbieter: Pinterest Inc., 635 High Street, Palo
                 Alto, CA, 94301, USA,; Website: <a href="https://www.pinterest.com"
-                                                   target="_blank">https://www.pinterest.com</a>;
+                                                   target="_blank" rel="noopener noreferrer" >https://www.pinterest.com</a>;
                 Datenschutzerklärung: <a href="https://about.pinterest.com/de/privacy-policy"
-                                         target="_blank">https://about.pinterest.com/de/privacy-policy</a>;
+                                         target="_blank" rel="noopener noreferrer" >https://about.pinterest.com/de/privacy-policy</a>;
                 Widerspruchsmöglichkeit (Opt-Out): <a href="https://about.pinterest.com/de/privacy-policy"
-                                                      target="_blank">https://about.pinterest.com/de/privacy-policy</a>.
+                                                      target="_blank" rel="noopener noreferrer" >https://about.pinterest.com/de/privacy-policy</a>.
             </li>
             <li><strong>SlideShare:</strong> Plattform für Präsentationen; Dienstanbieter: LinkedIn Ireland Unlimited
                 Company, Wilton Place, Dublin 2, Irland; Website: <a href="https://www.linkedin.com"
-                                                                     target="_blank">https://www.linkedin.com</a>;
+                                                                     target="_blank" rel="noopener noreferrer" >https://www.linkedin.com</a>;
                 Datenschutzerklärung: <a href="https://www.linkedin.com/legal/privacy-policy"
-                                         target="_blank">https://www.linkedin.com/legal/privacy-policy</a>; Privacy
+                                         target="_blank" rel="noopener noreferrer" >https://www.linkedin.com/legal/privacy-policy</a>; Privacy
                 Shield (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active</a>.
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active</a>.
             </li>
             <li><strong>Snapchat:</strong> Soziales Netzwerk; Dienstanbieter: Snap Inc., 3000 31st Street, Santa Monica,
                 California 90405, USA; Website: <a href="https://www.snapchat.com/"
-                                                   target="_blank">https://www.snapchat.com/</a>;
+                                                   target="_blank" rel="noopener noreferrer" >https://www.snapchat.com/</a>;
                 Datenschutzerklärung: <a href="https://www.snap.com/de-DE/privacy/privacy-policy"
-                                         target="_blank">https://www.snap.com/de-DE/privacy/privacy-policy</a>,
+                                         target="_blank" rel="noopener noreferrer" >https://www.snap.com/de-DE/privacy/privacy-policy</a>,
                 Cookie-Richtlinie: <a href="https://www.snap.com/de-DE/cookie-policy"
-                                      target="_blank">https://www.snap.com/de-DE/cookie-policy</a>;
+                                      target="_blank" rel="noopener noreferrer" >https://www.snap.com/de-DE/cookie-policy</a>;
                 Standardvertragsklauseln (Gewährleistung Datenschutzniveau bei Verarbeitung im Drittland): <a
                     href="https://businesshelp.snapchat.com/en-US/article/standard-contractual-clauses"
-                    target="_blank">https://businesshelp.snapchat.com/en-US/article/standard-contractual-clauses</a>.
+                    target="_blank" rel="noopener noreferrer" >https://businesshelp.snapchat.com/en-US/article/standard-contractual-clauses</a>.
             </li>
             <li><strong>TikTok:</strong> Soziales Netzwerk / Video-Plattform; Dienstanbieter: musical.ly Inc., 10351
                 Santa Monica Blvd #310, Los Angeles, CA 90025 USA; Website: <a href="https://www.tiktok.com"
-                                                                               target="_blank">https://www.tiktok.com</a>;
+                                                                               target="_blank" rel="noopener noreferrer" >https://www.tiktok.com</a>;
                 Datenschutzerklärung: <a href="https://www.tiktok.com/de/privacy-policy"
-                                         target="_blank">https://www.tiktok.com/de/privacy-policy</a>.
+                                         target="_blank" rel="noopener noreferrer" >https://www.tiktok.com/de/privacy-policy</a>.
             </li>
             <li><strong>Twitter:</strong> Soziales Netzwerk; Dienstanbieter: Twitter Inc., 1355 Market Street, Suite
                 900, San Francisco, CA 94103, USA; Datenschutzerklärung: <a href="https://twitter.com/de/privacy"
-                                                                            target="_blank">https://twitter.com/de/privacy</a>,
+                                                                            target="_blank" rel="noopener noreferrer" >https://twitter.com/de/privacy</a>,
                 (Einstellungen) <a href="https://twitter.com/personalization"
-                                   target="_blank">https://twitter.com/personalization</a>; Privacy Shield
+                                   target="_blank" rel="noopener noreferrer" >https://twitter.com/personalization</a>; Privacy Shield
                 (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt0000000TORzAAO&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt0000000TORzAAO&status=Active</a>.
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt0000000TORzAAO&status=Active</a>.
             </li>
             <li><strong>YouTube:</strong> Soziales Netzwerk; Dienstanbieter: Google Ireland Limited, Gordon House,
                 Barrow Street, Dublin 4, Irland, Mutterunternehmen: Google LLC, 1600 Amphitheatre Parkway, Mountain
                 View, CA 94043, USA; Datenschutzerklärung: <a href="https://policies.google.com/privacy"
-                                                              target="_blank">https://policies.google.com/privacy</a>;
+                                                              target="_blank" rel="noopener noreferrer" >https://policies.google.com/privacy</a>;
                 Privacy Shield (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): <a href="https://adssettings.google.com/authenticated"
-                                                      target="_blank">https://adssettings.google.com/authenticated</a>.
+                                                      target="_blank" rel="noopener noreferrer" >https://adssettings.google.com/authenticated</a>.
             </li>
             <li><strong>Xing:</strong> Soziales Netzwerk; Dienstanbieter: XING AG, Dammtorstraße 29-32, 20354 Hamburg,
-                Deutschland; Website: <a href="https://www.xing.de" target="_blank">https://www.xing.de</a>;
+                Deutschland; Website: <a href="https://www.xing.de" target="_blank" rel="noopener noreferrer" >https://www.xing.de</a>;
                 Datenschutzerklärung: <a href="https://privacy.xing.com/de/datenschutzerklaerung"
-                                         target="_blank">https://privacy.xing.com/de/datenschutzerklaerung</a>.
+                                         target="_blank" rel="noopener noreferrer" >https://privacy.xing.com/de/datenschutzerklaerung</a>.
             </li>
         </ul>
         <h2 id="m328">Plugins und eingebettete Funktionen sowie Inhalte</h2><p>Wir binden in unser Onlineangebot
@@ -773,66 +769,66 @@ export default function DSGVO() {
                 Darstellung sowie unter Berücksichtigung möglicher lizenzrechtlicher Restriktionen für deren Einbindung.
                 Dienstanbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland,
                 Mutterunternehmen: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA; Website: <a
-                    href="https://fonts.google.com/" target="_blank">https://fonts.google.com/</a>;
+                    href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer" >https://fonts.google.com/</a>;
                 Datenschutzerklärung: <a href="https://policies.google.com/privacy"
-                                         target="_blank">https://policies.google.com/privacy</a>; Privacy Shield
+                                         target="_blank" rel="noopener noreferrer" >https://policies.google.com/privacy</a>; Privacy Shield
                 (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active</a>.
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active</a>.
             </li>
             <li><strong>Instagram-Plugins und -Inhalte:</strong> Instagram Plugins und -Inhalte - Hierzu können z.B.
                 Inhalte wie Bilder, Videos oder Texte und Schaltflächen gehören, mit denen Nutzer Inhalte dieses
                 Onlineangebotes innerhalb von Instagram teilen können. Dienstanbieter: <a
-                    href="https://www.instagram.com" target="_blank">https://www.instagram.com</a>, Instagram Inc., 1601
+                    href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" >https://www.instagram.com</a>, Instagram Inc., 1601
                 Willow Road, Menlo Park, CA, 94025, USA; Website: <a href="https://www.instagram.com"
-                                                                     target="_blank">https://www.instagram.com</a>;
+                                                                     target="_blank" rel="noopener noreferrer" >https://www.instagram.com</a>;
                 Datenschutzerklärung: <a href="https://instagram.com/about/legal/privacy"
-                                         target="_blank">https://instagram.com/about/legal/privacy</a>.
+                                         target="_blank" rel="noopener noreferrer" >https://instagram.com/about/legal/privacy</a>.
             </li>
             <li><strong>LinkedIn-Plugins und -Inhalte:</strong> LinkedIn-Plugins und -Inhalte- Hierzu können z.B.
                 Inhalte wie Bilder, Videos oder Texte und Schaltflächen gehören, mit denen Nutzer Inhalte dieses
                 Onlineangebotes innerhalb von LinkedIn teilen können. Dienstanbieter: LinkedIn Ireland Unlimited
                 Company, Wilton Place, Dublin 2, Irland; Website: <a href="https://www.instagram.com"
-                                                                     target="_blank">https://www.instagram.com</a>;
+                                                                     target="_blank" rel="noopener noreferrer" >https://www.instagram.com</a>;
                 Datenschutzerklärung: <a href="https://www.linkedin.com/legal/privacy-policy"
-                                         target="_blank">https://www.linkedin.com/legal/privacy-policy</a>; Privacy
+                                         target="_blank" rel="noopener noreferrer" >https://www.linkedin.com/legal/privacy-policy</a>; Privacy
                 Shield (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt0000000L0UZAA0&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): <a
                     href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out"
-                    target="_blank">https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>.
+                    target="_blank" rel="noopener noreferrer" >https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>.
             </li>
             <li><strong>ReCaptcha:</strong> Wir binden die Funktion "ReCaptcha" zur Erkennung von Bots, z.B. bei
                 Eingaben in Onlineformularen, ein. Die Verhaltensangaben der Nutzer (z.B. Mausbewegungen oder Abfragen)
                 werden ausgewertet, um Menschen von Bots unterscheiden zu können. Dienstanbieter: Google Ireland
                 Limited, Gordon House, Barrow Street, Dublin 4, Irland, Mutterunternehmen: Google LLC, 1600 Amphitheatre
                 Parkway, Mountain View, CA 94043, USA; Website: <a href="https://www.google.com/recaptcha/"
-                                                                   target="_blank">https://www.google.com/recaptcha/</a>;
+                                                                   target="_blank" rel="noopener noreferrer" >https://www.google.com/recaptcha/</a>;
                 Datenschutzerklärung: <a href="https://policies.google.com/privacy"
-                                         target="_blank">https://policies.google.com/privacy</a>; Privacy Shield
+                                         target="_blank" rel="noopener noreferrer" >https://policies.google.com/privacy</a>; Privacy Shield
                 (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt0000000TRkEAAW&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt0000000TRkEAAW&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt0000000TRkEAAW&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin: <a
                     href="https://tools.google.com/dlpage/gaoptout?hl=de"
-                    target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die
+                    target="_blank" rel="noopener noreferrer" >https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die
                 Darstellung von Werbeeinblendungen: <a href="https://adssettings.google.com/authenticated"
-                                                       target="_blank">https://adssettings.google.com/authenticated</a>.
+                                                       target="_blank" rel="noopener noreferrer" >https://adssettings.google.com/authenticated</a>.
             </li>
             <li><strong>YouTube-Videos:</strong> Videoinhalte; Dienstanbieter: Google Ireland Limited, Gordon House,
                 Barrow Street, Dublin 4, Irland, Mutterunternehmen: Google LLC, 1600 Amphitheatre Parkway, Mountain
                 View, CA 94043, USA; Website: <a href="https://www.youtube.com"
-                                                 target="_blank">https://www.youtube.com</a>; Datenschutzerklärung: <a
-                    href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>;
+                                                 target="_blank" rel="noopener noreferrer" >https://www.youtube.com</a>; Datenschutzerklärung: <a
+                    href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" >https://policies.google.com/privacy</a>;
                 Privacy Shield (Gewährleistung Datenschutzniveau bei Verarbeitung von Daten in den USA): <a
                     href="https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active"
-                    target="_blank">https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active</a>;
+                    target="_blank" rel="noopener noreferrer" >https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active</a>;
                 Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin: <a
                     href="https://tools.google.com/dlpage/gaoptout?hl=de"
-                    target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die
+                    target="_blank" rel="noopener noreferrer" >https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die
                 Darstellung von Werbeeinblendungen: <a href="https://adssettings.google.com/authenticated"
-                                                       target="_blank">https://adssettings.google.com/authenticated</a>.
+                                                       target="_blank" rel="noopener noreferrer" >https://adssettings.google.com/authenticated</a>.
             </li>
         </ul>
 
@@ -987,7 +983,7 @@ export default function DSGVO() {
         </ul>
         <p className="seal"><a href="https://datenschutz-generator.de/?l=de"
                                title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
-                               target="_blank">Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas
+                               target="_blank" rel="noopener noreferrer" >Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas
             Schwenke</a></p>
     </div>
   );

@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-
-
+import React from 'react';
 
 export default function Rules() {
   // Declare a new state variable, which we'll call "count"
   return (
     <div className="container">
         <h1>Fake-News entlarven</h1>
-        <p> Fake-News verlieren ihre Macht, wenn Du sie nicht mehr teilst! Die Flut falscher Nachrichten zum <a href="https://www.infektionsschutz.de/cv/coronavirus.html"><u><i>Coronavirus</i></u></a> verwirrt und richtet Schaden an. Falsche Nachrichten verbreiten sich schnell und wirken selbst wie ein Virus. Mit unserer App kannst Du Corona-Meldungen auf Ihren Wahrheitsgehalt prüfen und von Dir entdeckte Falschmeldungen mitteilen.
+        <p> Fake-News verlieren ihre Macht, wenn Du sie nicht mehr teilst! Die Flut falscher Nachrichten zum <a href="https://www.infektionsschutz.de/cv/coronavirus.html" target="_blank" rel="noopener noreferrer">
+          <u><i>Coronavirus</i></u></a> verwirrt und richtet Schaden an. Falsche Nachrichten verbreiten sich schnell und wirken selbst wie ein Virus. Mit unserer App kannst Du Corona-Meldungen auf Ihren Wahrheitsgehalt prüfen und von Dir entdeckte Falschmeldungen mitteilen.
         </p>
     <div className="d-flex justify-content-center">
         <div className="polygon background-color-1">

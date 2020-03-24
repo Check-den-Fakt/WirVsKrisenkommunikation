@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import './Report.css';
 import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
-import apisdk from '../../constants/apisdk';
 //import Reaptcha from 'reaptcha';
 
 window.id = 0;
@@ -34,7 +32,7 @@ export default class Report extends Component {
   }
 
   render () {
-    const { text, tempSource, sources, isReported, isLoading } = this.state; 
+    const { text, isReported, isLoading } = this.state; 
     // Declare a new state variable, which we'll call "count"
     return (
     <div>
@@ -54,7 +52,6 @@ export default class Report extends Component {
             rows="6"
             value={text}
             placeholder="Füge hier eine URL oder Textnachricht ein"
-            maxlength="5099"
           />
         </Form.Group>
         {/* <div>

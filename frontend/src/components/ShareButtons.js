@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Popover, OverlayTrigger } from 'react-bootstrap';
 import { TwitterIcon, TwitterShareButton, FacebookShareButton, FacebookIcon, TelegramShareButton, TelegramIcon, WhatsappShareButton, WhatsappIcon, LinkedinShareButton, LinkedinIcon } from 'react-share';
 import './ShareButtons.css'
@@ -51,13 +51,11 @@ const popover = (
 );
 
 export default function ShareButtons() {
-  const [isShareOpen, setIsShareOpen] = useState(false);
-
   return (
       <div className="share-buttons-item text-right">
-          <OverlayTrigger trigger="click" placement="bottmm" overlay={popover}>
+          <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
             <div className="trigger-container">
-              <a className="fact-link" onClick={() => setIsShareOpen(true)}>Teile das Ergebnis</a>
+              <button className="fact-link">Teile das Ergebnis</button>
               <span className="fact-link material-icons share-icon">share</span>
             </div>
         </OverlayTrigger>

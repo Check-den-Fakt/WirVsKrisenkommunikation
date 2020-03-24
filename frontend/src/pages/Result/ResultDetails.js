@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
-import { AddNews } from '../../components/AddNews';
+import React from 'react';
 import { Diagram } from '../../components/Diagram';
 import './Result.css';
-import { ProgressBar, Card } from 'react-bootstrap';
-import ShareButtons from '../../components/ShareButtons';
-import { Accordion, useAccordionToggle } from 'react-bootstrap';
+// import { useAccordionToggle } from 'react-bootstrap';
 
-function CustomToggle({ children, eventKey }) {
-  const decoratedOnClick = useAccordionToggle(eventKey, () =>
-    console.log('')
-  );
+// function CustomToggle({ children, eventKey }) {
+//   const decoratedOnClick = useAccordionToggle(eventKey, () =>
+//     console.log('')
+//   );
 
-  return (
-    <a
-      onClick={decoratedOnClick}
-    >
-      {children}
-    </a>
-  );
-}
+//   return (
+//     <a onClick={decoratedOnClick}>
+//       {children}
+//     </a>
+//   );
+// }
 
 export default function ResultDetails({ fakeNewsCount, maxValue, result, requestData, trustScore, userScore }) {
 

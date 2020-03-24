@@ -2,19 +2,16 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './logo.svg';
 import './App.css';
 import About from './pages/About/About';
 import Rules from './pages/Rules/Rules';
 import { Layout } from './components/Layout';
 import Check from './pages/Check/Check';
 import Result from './pages/Result/Result';
-import Trending from './pages/Trending/Trending';
 import Landing from './pages/Landing/Landing';
 import Report from './pages/Report/Report';
 import Sources from './pages/Sources/Sources';
@@ -40,9 +37,6 @@ function App() {
           </Route>
           <Route path="/check">
             <Check />
-          </Route>
-          <Route path="/trending">
-            <Trending />
           </Route>
           <Route path="/sources">
             <Sources />

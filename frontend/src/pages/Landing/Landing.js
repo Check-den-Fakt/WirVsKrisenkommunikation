@@ -3,33 +3,34 @@ import { Button } from 'react-bootstrap';
 import "./Landing.css";
 import fetchAPI from '../../utils/fetchAPI';
 import Carousel from 'react-bootstrap/Carousel';
-
 export default function Landing() {
   const [index, setIndex] = useState(0);
   const [news, setNews] = useState([]);
-
-  useEffect(async () => {
-    // Update the document title using the browser API
-    const response = await fetchAPI.postData('https://we-komnews-fa.azurewebsites.net/api/GetNews', {
-      query : "corona"
-    })
-    setNews(response.news.value.map(({ name, url }) => ({ name, url }) ));
-  }, []);
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const response = await fetchAPI.postData('https://we-komnews-fa.azurewebsites.net/api/GetNews', {
+        query : "corona"
+      });
+      setNews(response.news.value);
+    }
+    fetchData();
+  }, []); // Or [] if effect doesn't need props or state
+  
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
-
   // Declare a new state variable, which we'll call "count"
   return (
     <div className="container">
         <div className="d-flex justify-content-around mb-5">
-          <img src="/img/logo.svg" width="200em" height="200em" />
+          <img src="/img/logo.svg" width="200em" height="200em" alt="Check the Fact - Erst klären, dann sharen." />
         </div>
-
-        <h1 className="text-center">Finde und widerlege Corona-Falschnachrichten</h1>
-        <p className="text-center">Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
-      
-
+        <h1 className="text-center">Finde und widerlege <nobr>Corona-Falschnachrichten</nobr></h1>
+        <p className="text-center">
+          Von Falschmeldungen gehen große Risiken aus – vor allem wenn es um unsere Gesundheit geht. Aber wenn wir  sie nicht mehr teilen, verlieren sie ihre Macht. Sieh genau hin und hilf uns Corona Falschmeldung zu widerlegen.<br/>
+          Es kommt auf uns alle an!
+        </p>
         <div className="center mt-5">
           <div className="row">
             <div className="col-sm m-2">
@@ -44,26 +45,25 @@ export default function Landing() {
             </div>
           </div>
         </div>
-
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-1">
             <div className="container polygon-content">
             <h2>Worum geht’s hier?</h2>
             <p>
-            Check den Fakt ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung. 
-            </p><p>
-            Ganz nach dem Motto: Erst klären, dann sharen!
+              Check the Fact ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.
+            </p>
+            <p>
+              Ganz nach dem Motto: Erst klären, dann sharen!
             </p>
             </div>
             </div>
         </div>
-        
         <h1>So prüfst Du Deine Nachricht?</h1>
         <div className="row mt-5 pt-3">
           <div className="col-3">
             <span className="material-icons circle-icon">
               backup
-          </span>
+            </span>
           </div>
           <div className="col-9">
             <h3>1. Nachricht hochladen</h3>
@@ -84,11 +84,10 @@ export default function Landing() {
           <div className="col-9">
             <h3>2. Ergebnis erhalten</h3>
             Nach dem Hochladen erhältst du die Auswertung, mit folgenden Möglichkeit:
-              <li>Grün: Glaubwürdig. Teilen erwünscht!</li>
-              <li>Gelb: Zweifelhaft! Hinweise beachten!</li>
-              <li>Rot: Unglaubwürdig. Nicht weitergeben! Klarstellen!</li>
-              <li>Grau: Nicht auswertbar. Hinweise beachten!</li>
-          
+            <div className="purple">Grün: Glaubwürdig. Teilen erwünscht!</div>
+            <div className="purple">Gelb: Zweifelhaft! Hinweise beachten!</div>
+            <div className="purple">Rot: Unglaubwürdig. Nicht weitergeben! Klarstellen!</div>
+            <div className="purple">Grau: Nicht auswertbar. Hinweise beachten!</div>
           </div>
         </div>
 
@@ -104,21 +103,20 @@ export default function Landing() {
           </p>
           </div>
         </div>
-
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-2">
             <div className="container polygon-content">
-
-                <h2>Trending News</h2>
-                <ul>
-              {news.map(({ name, url }, index) => <li><a href={url}>{name}</a></li>)}
-            </ul>
-
+            <span className="material-icons yellow float-right">
+                    flash_on
+                </span>
+                <h1>Trending News zu Corona</h1>
+                
+                <ul className="no-bullets">
+                  {news.map(({ name, url }, index) => <li key={index}><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></li>)}
+                </ul>
             </div>
           </div>
         </div>
-
-
         <div className="text-center pt-5">
             <Carousel activeIndex={index} onSelect={handleSelect}>
               <Carousel.Item>
@@ -218,7 +216,6 @@ export default function Landing() {
               </Carousel.Item>
             </Carousel>
           </div>
-
     </div>
   );
 }

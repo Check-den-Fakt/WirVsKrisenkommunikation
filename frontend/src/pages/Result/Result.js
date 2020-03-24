@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import { AddNews } from '../../components/AddNews';
-import { Diagram } from '../../components/Diagram';
-import { Button, NavLink } from 'react-bootstrap';
+import React from 'react';
+import { NavLink } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion'
 import './Result.css';
 import { ProgressBar, Card } from 'react-bootstrap';

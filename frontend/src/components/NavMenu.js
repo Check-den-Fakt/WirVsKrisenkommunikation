@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
-import { Form } from 'react-bootstrap';
-import { FormControl } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
-import { NavDropdown } from 'react-bootstrap';
 import "./NavMenu.css";
 
 export class NavMenu extends Component {
@@ -21,9 +17,7 @@ export class NavMenu extends Component {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            {/*<Nav.Link href="/trending">Trends</Nav.Link>*/}
             <Nav.Link href="/rules">Goldene Regeln</Nav.Link>
-            {/*<Nav.Link href="/sources">Unseriöse Seiten/Quellen</Nav.Link>*/}
             <Nav.Link href="/about">About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
