@@ -22,29 +22,33 @@ export default function Landing() {
   // Declare a new state variable, which we'll call "count"
   return (
     <div className="container">
-        <div className="d-flex justify-content-around m-3">
-          <img src="/img/logo.svg" width="40%" height="40%" />
+        <div className="d-flex justify-content-around mb-5">
+          <img src="/img/logo.svg" width="200em" height="200em" />
         </div>
 
         <h1 className="text-center">Finde und widerlege Corona-Falschnachrichten</h1>
-        <p className="text-center">Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland* haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten*. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
+        <p className="text-center">Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
       
 
-        <div className="w-75 center">
+        <div className="center mt-5">
           <div className="row">
-            <Button href="/check" variant="primary" size="lg" block className="m-3">
-              Nachricht überprüfen
+            <div className="col-sm m-2">
+            <Button href="/check" variant="primary" block className="py-3">
+              <b>Nachricht überprüfen</b>
             </Button>
-                <Button href="/report" variant="secondary" size="lg" block className="m-3">
-                  Falschnachricht melden
+            </div>
+            <div className="col-sm m-2">
+            <Button href="/report" variant="secondary" block className="py-3">
+              <b>Falschnachricht melden</b>
             </Button>
+            </div>
           </div>
         </div>
 
-        <div className="pt-5 d-flex justify-content-center">
+        <div className="d-flex justify-content-center">
           <div className="polygon background-color-1">
-            <div className="container">
-            <h2 className="display-4">Worum geht’s hier?</h2>
+            <div className="container polygon-content">
+            <h2>Worum geht’s hier?</h2>
             <p>
             Check the Fact ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung. 
             </p><p>
@@ -55,46 +59,42 @@ export default function Landing() {
         </div>
         
         <h1>So prüfst Du Deine Nachricht?</h1>
-        <div className="row mt-5">
+        <div className="row mt-5 pt-3">
           <div className="col-3">
-            <span className="material-icons">
+            <span className="material-icons circle-icon">
               backup
           </span>
           </div>
           <div className="col-9">
             <h3>1. Nachricht hochladen</h3>
-            <p>Gib deine Nachricht bei Check the Fact ein. Folgende Möglichkeiten hast du:</p>
-            <ul >
+            Gib deine Nachricht bei Check the Fact ein. Folgende Möglichkeiten hast du:
               <li>Links</li>
               <li>Freitexteingabe</li>
               <li>Social Messenger Nachrichten</li>
               <li>Tweets</li>
-              <li>Dokumente</li>
-              <li>Bilder</li>
-            </ul>
           </div>
         </div>
         
         <div className="row mt-5">
           <div className="col-3">
-            <span className="material-icons">
+            <span className="material-icons circle-icon">
               thumb_up_alt
           </span>
           </div>
           <div className="col-9">
             <h3>2. Ergebnis erhalten</h3>
-            <p>Nach dem Hochladen erhältst du die Auswertung, mit folgenden Möglichkeit:
-              Grün: Glaubwürdig. Teilen erwünscht!
-              Gelb: Zweifelhaft! Hinweise beachten!
-              Rot: Unglaubwürdig. Nicht weitergeben! Klarstellen!
-              Grau: Nicht auswertbar. Hinweise beachten!
-          </p>
+            Nach dem Hochladen erhältst du die Auswertung, mit folgenden Möglichkeit:
+              <li>Grün: Glaubwürdig. Teilen erwünscht!</li>
+              <li>Gelb: Zweifelhaft! Hinweise beachten!</li>
+              <li>Rot: Unglaubwürdig. Nicht weitergeben! Klarstellen!</li>
+              <li>Grau: Nicht auswertbar. Hinweise beachten!</li>
+          
           </div>
         </div>
 
         <div className="row mt-5">
           <div className="col-3">
-            <span className="material-icons">
+            <span className="material-icons circle-icon">
               share
           </span>
           </div>
@@ -105,102 +105,120 @@ export default function Landing() {
           </div>
         </div>
 
-        <div className="pt-5 d-flex justify-content-center">
+        <div className="d-flex justify-content-center">
           <div className="polygon background-color-2">
-            <div className="raw">
-              <div className="col-9">
-                <h2 className="display-4">Trending News</h2>
-              </div>
-            </div>
-            <ul>
+            <div className="container polygon-content">
+
+                <h2>Trending News</h2>
+                <ul>
               {news.map(({ name, url }, index) => <li><a href={url}>{name}</a></li>)}
             </ul>
+
+            </div>
           </div>
         </div>
 
-        <div className="picCarousel">
-          <div className="text-center">
+
+        <div className="text-center pt-5">
             <Carousel activeIndex={index} onSelect={handleSelect}>
               <Carousel.Item>
+                <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/logo_klein.png"
                   alt="Check the Fact"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/hashtag.png"
                   alt="Wir bleiben für euch Zuhause #wirvsvirushack"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/Logo_Projekt.png"
                   alt="Wir vs Virus Hackathon"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/Bund_Logo.png"
                   alt="Bundesregierung"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/CFG_logo.png"
                   alt="Code for Germany"
                 />
+              </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/D21_Logo.png"
                   alt="Initiative D21"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/hub-Berlin.png"
                   alt="Impact Hub Berlin"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/pt-logo.png"
                   alt="project together"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
+              <div className="img-container">
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/PF.png"
                   alt="Prototype Fund"
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/sendLOGO.png"
                   alt="Send"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
+                  className="carousel-img"
                   src="/img/carousel/t4g.png"
                   alt="Tech4Germany"
                 />
               </Carousel.Item>
             </Carousel>
           </div>
-          </div>
+
     </div>
   );
 }

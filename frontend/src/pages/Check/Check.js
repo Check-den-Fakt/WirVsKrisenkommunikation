@@ -30,9 +30,15 @@ export default function Check() {
   return (
     <>
       {checkResult ? <Result requestData={requestData} result={checkResult} /> : <div>
-        <h1 className="display-4">Check deine Corona-News</h1>
+        <div className="text-center">
+        <h1>Check deine Corona-News</h1>
         <p className="lead">Du bist Dir nicht sicher, ob eine Nachricht wahr ist? Wir helfen Dir!</p>
-        <AddNews onSubmit={handleSendData} />
+        </div>
+        <div className="d-flex justify-content-center my-n4">
+        <div className="polygon background-color-2">
+          <AddNews onSubmit={handleSendData} />
+        </div>
+        </div>
       </div>}
     </>
   );

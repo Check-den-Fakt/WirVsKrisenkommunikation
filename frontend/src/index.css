@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif!important;
-  font-size: 14px;
+  font-size: 14px !important;
   line-height: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -60,6 +60,7 @@ h3 {
 .lead {
   font-family: 'Open Sans', sans-serif;
   color: #565D64;
+  font-size: 16px !important;
 }
 
 
@@ -76,25 +77,52 @@ h3 {
 }
 
 .polygon {
+  margin-top: 3em;
+  margin-bottom: 3em;
   width: 100vw !important;
-  /* flex-shrink: 0; */
+  flex-shrink: 0;
   clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
   -webkit-clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
-  margin-top: -2vw;
   padding: 13%;
-  /* margin-left: -20px !important; */
 }  
+
+.polygon-content{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+
+
+@media (max-width: 768px) {
+  .submit-btn{
+    display: block;
+    width: 100%;
+  }
+}
 
 @media (min-width: 768px) {
   .polygon {
-    width: 100vw !important;
-    /* flex-shrink: 0; */
+    margin-top: 3em;
+    margin-bottom: 3em;
+    width: 99vw !important;
+    flex-shrink: 0;
     clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
     -webkit-clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
-    margin-top: -2vw;
     padding: 10%;
-    /* margin-left: -20px !important; */
-  }  
+  }
+  .circle-icon {
+    background: #D9D8F0;
+    padding:10px;
+    border-radius: 50%;
+    margin-top: -10% !important;
+}
+}
+
+.circle-icon {
+  background: #D9D8F0;
+  padding:10px;
+  border-radius: 50%;
+  margin-top: -50%;
 }
 
 .background-color-1 {
@@ -113,6 +141,12 @@ h3 {
 .btn-secondary {
   color: black !important;
   background-color: #FFEFB6 !important;
+  border-color: #FFEFB6 !important;
+}
+
+button:disabled{
+  background-color: gray !important;
+  border-color: gray !important;
 }
 
 .material-icons {
@@ -120,7 +154,20 @@ h3 {
   /* Preferred icon size */
 }
 
-.carousel-item .w-100 {
+
+.carousel-item {
   height: 150px !important;  
-  width: auto !important;
 }
+
+.carousel-img{
+  max-width: 100% !important;
+}
+
+.img-container{
+  height: 150px !important;
+}
+
+.carousel-indicators li{
+  background-color: #3E049D !important;
+}
+
