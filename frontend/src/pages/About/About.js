@@ -12,7 +12,7 @@ export default function About() {
                   <div className="container">
                       <h2>Unsere Mission</h2>
                       <p>
-                          Wir wollen Menschen ein Tool an die Hand geben, mit denen Sie Corona-Falschnachrichten und andere Falschmeldungen identifizieren und widerlegen können. Und dies mit einem sehr geringen Arbeitsaufwand.
+                          Wir wollen Menschen ein Tool an die Hand geben, mit denen sie Corona-Falschnachrichten und andere Falschmeldungen identifizieren und widerlegen können. Und dies mit einem sehr geringen Arbeitsaufwand.
                       </p>
                   </div>
               </div>

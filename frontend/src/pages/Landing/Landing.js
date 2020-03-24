@@ -50,7 +50,7 @@ export default function Landing() {
             <div className="container polygon-content">
             <h2>Worum geht’s hier?</h2>
             <p>
-            Check the Fact ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung. 
+            Check den Fakt ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung. 
             </p><p>
             Ganz nach dem Motto: Erst klären, dann sharen!
             </p>
