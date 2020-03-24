@@ -171,3 +171,11 @@ button:disabled{
   background-color: #3E049D !important;
 }
 
+.card-header{
+  background-color:#FFEFB6 !important;
+}
+
+.nav-link{
+  font-size: 16px !important;
+  color: #333 !important;
+}

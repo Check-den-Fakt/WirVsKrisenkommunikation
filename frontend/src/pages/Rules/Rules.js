@@ -27,7 +27,7 @@ export default function Rules() {
         </div>
         <h1>Das sind die Antworten, wie Du falschen Nachrichten entgegen wirkst:</h1>
         <ol>
-            <li>Teile nichts, von dem du nicht weisst, dass es stimmt.</li>
+            <li>Teile nichts, von dem du nicht weißt, dass es stimmt.</li>
             <li>Mache Dich und andere zuerst schlau und entscheide dann, was stimmt.</li>
             <li>Prüfe Deine Informationen mit unserer App, bevor Du sie verbreitest.</li>
         </ol>
