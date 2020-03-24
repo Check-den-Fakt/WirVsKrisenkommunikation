@@ -27,7 +27,7 @@ export default function Landing() {
         </div>
 
         <h1 className="text-center">Finde und widerlege Corona-Falschnachrichten</h1>
-        <p className="text-center">Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland* haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten*. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
+        <p className="text-center">Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Viele Menschen in Deutschland haben Schwierigkeiten, den Wahrheitsgehalt dieser Nachrichten zu bewerten. Dies kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen. </p>
       
 
         <div className="center mt-5">
