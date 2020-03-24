@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif!important;
-  font-size: 14px;
+  font-size: 14px !important;
   line-height: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -76,23 +76,43 @@ h3 {
 }
 
 .polygon {
+  margin-top: 3em;
+  margin-bottom: 3em;
   width: 100vw !important;
   flex-shrink: 0;
   clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
   -webkit-clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
-  margin-top: -2vw;
   padding: 13%;
 }  
 
+.polygon-content{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
 @media (min-width: 768px) {
   .polygon {
+    margin-top: 3em;
+    margin-bottom: 3em;
     width: 99vw !important;
     flex-shrink: 0;
     clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
     -webkit-clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
-    margin-top: -2vw;
     padding: 10%;
-  }  
+  }
+  .circle-icon {
+    background: #D9D8F0;
+    padding:10px;
+    border-radius: 50%;
+    margin-top: -10% !important;
+}
+}
+
+.circle-icon {
+  background: #D9D8F0;
+  padding:10px;
+  border-radius: 50%;
+  margin-top: -50%;
 }
 
 .background-color-1 {
@@ -118,6 +138,7 @@ h3 {
   /* Preferred icon size */
 }
 
+
 .carousel-item {
   height: 150px !important;  
 }
@@ -129,3 +150,8 @@ h3 {
 .img-container{
   height: 150px !important;
 }
+
+.carousel-indicators li{
+  background-color: #3E049D !important;
+}
+
