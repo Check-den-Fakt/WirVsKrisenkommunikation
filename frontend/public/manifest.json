@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Check den Fakt",
+  "name": "Check den Fakt - Finde und widerlege Corona-Falschnachrichten",
   "icons": [
     {
       "src": "favicon.ico",
