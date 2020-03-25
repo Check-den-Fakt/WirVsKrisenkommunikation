@@ -13,12 +13,12 @@ variables:
   
   # Web app name
   webAppName: 'we-komfront-web2'
-  
+
   # Environment name
   environmentName: 'prod'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'windows-latest'
 
 stages:
 #- stage: ARM
@@ -50,7 +50,7 @@ stages:
     displayName: Build
     pool:
       vmImage: $(vmImageName)
-      
+
     steps:
     - task: NodeTool@0
       inputs:
@@ -68,17 +68,16 @@ stages:
         workingDir: '$(Build.SourcesDirectory)/frontend'
         customCommand: 'run build'
 
-    - task: Docker@2
-      displayName: Build Image
-      inputs:
-        containerRegistry: 'acrConnection'
-        repository: 'frontend'
-        command: 'buildAndPush'
-        Dockerfile: 'frontend/Dockerfile'
-        buildContext: 'frontend'
-        tags: |
-          latest
-
+#    - task: Docker@2
+#      displayName: Build Image
+#      inputs:
+#        containerRegistry: 'acrConnection'
+#        repository: 'frontend'
+#        command: 'buildAndPush'
+#        Dockerfile: 'frontend/Dockerfile'
+#        buildContext: 'frontend'
+#        tags: |
+#          latest
     - task: AzureFileCopy@4
       inputs:
         SourcePath: '$(Build.SourcesDirectory)/frontend/build/**'
