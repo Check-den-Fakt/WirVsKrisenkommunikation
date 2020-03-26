@@ -85,3 +85,4 @@ stages:
         Destination: 'AzureBlob'
         storage: 'wekomfrontsa'
         ContainerName: '$web'
+        cleanTargetBeforeCopy: true
