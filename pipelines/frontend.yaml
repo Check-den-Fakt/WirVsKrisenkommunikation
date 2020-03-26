@@ -21,28 +21,6 @@ variables:
   vmImageName: 'windows-latest'
 
 stages:
-#- stage: ARM
-#  displayName: Deploy ARM
-#  jobs:
-#  - job: Build
-#    displayName: Build
-#    pool:
-#      vmImage: $(vmImageName)
-#
-#    steps:
-#    - task: AzureResourceManagerTemplateDeployment@3
-#      inputs:
-#        deploymentScope: 'Resource Group'
-#        azureResourceManagerConnection: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)'
-#        subscriptionId: 'db59ff20-bbda-4c19-a433-d5f11767ea07'
-#        action: 'Create Or Update Resource Group'
-#        resourceGroupName: 'we-komfront-rg'
-#        location: 'West Europe'
-#        templateLocation: 'Linked artifact'
-#        csmFile: '$(Build.SourcesDirectory)/arm/frontend.json'
-#        csmParametersFile: '$(Build.SourcesDirectory)/arm/frontend.parameters.json'
-#        deploymentMode: 'Incremental'
-
 - stage: Build
   displayName: Build stage
   jobs:  
@@ -68,16 +46,6 @@ stages:
         workingDir: '$(Build.SourcesDirectory)/frontend'
         customCommand: 'run build'
 
-#    - task: Docker@2
-#      displayName: Build Image
-#      inputs:
-#        containerRegistry: 'acrConnection'
-#        repository: 'frontend'
-#        command: 'buildAndPush'
-#        Dockerfile: 'frontend/Dockerfile'
-#        buildContext: 'frontend'
-#        tags: |
-#          latest
     - task: AzureFileCopy@3
       inputs:
         SourcePath: '$(Build.SourcesDirectory)/frontend/build/'
