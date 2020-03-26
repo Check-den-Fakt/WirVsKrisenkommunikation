@@ -81,7 +81,7 @@ stages:
     - task: AzureFileCopy@4
       inputs:
         SourcePath: '$(Build.SourcesDirectory)/frontend/build/**'
-        azureSubscription: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)'
+        azureSubscription: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)-5784'
         Destination: 'AzureBlob'
         storage: 'wekomfrontsa'
         ContainerName: '$web'
