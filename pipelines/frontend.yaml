@@ -18,7 +18,7 @@ variables:
   environmentName: 'prod'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'windows-latest'
 
 stages:
 #- stage: ARM
