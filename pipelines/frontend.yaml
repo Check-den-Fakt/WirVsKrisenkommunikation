@@ -13,36 +13,14 @@ variables:
   
   # Web app name
   webAppName: 'we-komfront-web2'
-  
+
   # Environment name
   environmentName: 'prod'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'windows-latest'
 
 stages:
-#- stage: ARM
-#  displayName: Deploy ARM
-#  jobs:
-#  - job: Build
-#    displayName: Build
-#    pool:
-#      vmImage: $(vmImageName)
-#
-#    steps:
-#    - task: AzureResourceManagerTemplateDeployment@3
-#      inputs:
-#        deploymentScope: 'Resource Group'
-#        azureResourceManagerConnection: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)'
-#        subscriptionId: 'db59ff20-bbda-4c19-a433-d5f11767ea07'
-#        action: 'Create Or Update Resource Group'
-#        resourceGroupName: 'we-komfront-rg'
-#        location: 'West Europe'
-#        templateLocation: 'Linked artifact'
-#        csmFile: '$(Build.SourcesDirectory)/arm/frontend.json'
-#        csmParametersFile: '$(Build.SourcesDirectory)/arm/frontend.parameters.json'
-#        deploymentMode: 'Incremental'
-
 - stage: Build
   displayName: Build stage
   jobs:  
@@ -50,7 +28,7 @@ stages:
     displayName: Build
     pool:
       vmImage: $(vmImageName)
-      
+
     steps:
     - task: NodeTool@0
       inputs:
@@ -68,21 +46,11 @@ stages:
         workingDir: '$(Build.SourcesDirectory)/frontend'
         customCommand: 'run build'
 
-    - task: Docker@2
-      displayName: Build Image
+    - task: AzureFileCopy@3
       inputs:
-        containerRegistry: 'acrConnection'
-        repository: 'frontend'
-        command: 'buildAndPush'
-        Dockerfile: 'frontend/Dockerfile'
-        buildContext: 'frontend'
-        tags: |
-          latest
-
-    - task: AzureFileCopy@4
-      inputs:
-        SourcePath: '$(Build.SourcesDirectory)/frontend/build/**'
-        azureSubscription: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)'
+        SourcePath: '$(Build.SourcesDirectory)/frontend/build/'
+        azureSubscription: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)-5784'
         Destination: 'AzureBlob'
         storage: 'wekomfrontsa'
         ContainerName: '$web'
+        cleanTargetBeforeCopy: true
