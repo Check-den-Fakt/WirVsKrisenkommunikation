@@ -3,9 +3,13 @@ import { Button } from 'react-bootstrap';
 import "./Landing.css";
 import fetchAPI from '../../utils/fetchAPI';
 import Carousel from 'react-bootstrap/Carousel';
+import partnerLogos from './partner_img.json';
+
 export default function Landing() {
+  const isMobile = window.innerWidth <= 768;
   const [index, setIndex] = useState(0);
   const [news, setNews] = useState([]);
+  let mobileImages = null;
   useEffect(() => {
     async function fetchData() {
       // You can await here
@@ -20,6 +24,39 @@ export default function Landing() {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+
+
+  if(isMobile){
+    mobileImages =<div className="text-center pt-5">
+      <Carousel activeIndex={index} onSelect={handleSelect}>
+      {partnerLogos.map(({ src, alt }, id) => 
+      <Carousel.Item>
+         <div className="img-container">
+          <img
+            className="carousel-img"
+            src={src}
+            alt={alt}
+          />
+          </div>
+      </Carousel.Item>
+      )}
+      </Carousel>
+    </div>
+  }
+  else{
+    mobileImages = <div className="text-center">
+      <div className="w-100">
+      {partnerLogos.map(({ src, alt }, id) => 
+          <img className ="logo-wall"
+            src={src}
+            alt={alt}
+          />
+      )}
+            </div>
+      </div>
+  }
+
+
   // Declare a new state variable, which we'll call "count"
   return (
     <div className="container">
@@ -28,8 +65,9 @@ export default function Landing() {
         </div>
         <h1 className="text-center">Finde und widerlege <nobr>Corona-Falschnachrichten</nobr></h1>
         <p className="text-center">
-          Von Falschmeldungen gehen große Risiken aus – vor allem wenn es um unsere Gesundheit geht. Aber wenn wir  sie nicht mehr teilen, verlieren sie ihre Macht. Sieh genau hin und hilf uns Corona Falschmeldung zu widerlegen.<br/>
-          Es kommt auf uns alle an!
+        Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. 
+        Dabei sind diese Nachrichten teilweise so professionell verfälscht, dass die Bewertung des Wahrheitsgehalts nicht sofort erkennbar ist.
+        Das kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen.
         </p>
         <div className="center mt-5">
           <div className="row">
@@ -47,7 +85,7 @@ export default function Landing() {
         </div>
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-1">
-            <div className="container polygon-content">
+            <div className="container">
             <h2>Worum geht’s hier?</h2>
             <p>
               Check the Fact ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.
@@ -58,7 +96,7 @@ export default function Landing() {
             </div>
             </div>
         </div>
-        <h1>So prüfst Du Deine Nachricht?</h1>
+        <h1>So prüfst Du Deine Nachricht.</h1>
         <div className="row mt-5 pt-3">
           <div className="col-3">
             <span className="material-icons circle-icon">
@@ -68,10 +106,12 @@ export default function Landing() {
           <div className="col-9">
             <h3>1. Nachricht hochladen</h3>
             Gib deine Nachricht bei Check the Fact ein. Folgende Möglichkeiten hast du:
+            <ul className="purple">
               <li>Links</li>
               <li>Freitexteingabe</li>
               <li>Social Messenger Nachrichten</li>
               <li>Tweets</li>
+            </ul>
           </div>
         </div>
         
@@ -84,10 +124,12 @@ export default function Landing() {
           <div className="col-9">
             <h3>2. Ergebnis erhalten</h3>
             Nach dem Hochladen erhältst du die Auswertung, mit folgenden Möglichkeit:
-            <div className="purple">Grün: Glaubwürdig. Teilen erwünscht!</div>
-            <div className="purple">Gelb: Zweifelhaft! Hinweise beachten!</div>
-            <div className="purple">Rot: Unglaubwürdig. Nicht weitergeben! Klarstellen!</div>
-            <div className="purple">Grau: Nicht auswertbar. Hinweise beachten!</div>
+            <ul className="purple">
+              <li>Grün: Glaubwürdig. Teilen erwünscht!</li>
+              <li>Gelb: Zweifelhaft! Hinweise beachten!</li>
+              <li>Rot: Unglaubwürdig. Nicht weitergeben! Klarstellen!</li>
+              <li>Grau: Nicht auswertbar. Hinweise beachten!</li>
+            </ul>
           </div>
         </div>
 
@@ -105,117 +147,23 @@ export default function Landing() {
         </div>
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-2">
-            <div className="container polygon-content">
-            <span className="material-icons yellow float-right">
-                    flash_on
-                </span>
+            <div className="container">
                 <h1>Trending News zu Corona</h1>
-                
-                <ul className="no-bullets">
-                  {news.map(({ name, url }, index) => <li key={index}><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></li>)}
-                </ul>
+                <ol>
+                  
+                {news.map(({ name, url }, index) => <li key={index}>
+                  <p><a className="purple" href={url} target="_blank" rel="noopener noreferrer">{name}</a></p>
+                  </li>)}
+               
+                </ol>
             </div>
+
           </div>
         </div>
-        <div className="text-center pt-5">
-            <Carousel activeIndex={index} onSelect={handleSelect}>
-              <Carousel.Item>
-                <div className="img-container">
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/logo_klein.png"
-                  alt="Check the Fact"
-                />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-              <div className="img-container">
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/hashtag.png"
-                  alt="Wir bleiben für euch Zuhause #wirvsvirushack"
-                />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-              <div className="img-container">
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/Logo_Projekt.png"
-                  alt="Wir vs Virus Hackathon"
-                />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-              <div className="img-container">
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/Bund_Logo.png"
-                  alt="Bundesregierung"
-                />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-              <div className="img-container">
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/CFG_logo.png"
-                  alt="Code for Germany"
-                />
-              </div>
-              </Carousel.Item>
-              <Carousel.Item>
-              <div className="img-container">
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/D21_Logo.png"
-                  alt="Initiative D21"
-                />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-              <div className="img-container">
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/hub-Berlin.png"
-                  alt="Impact Hub Berlin"
-                />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-              <div className="img-container">
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/pt-logo.png"
-                  alt="project together"
-                />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-              <div className="img-container">
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/PF.png"
-                  alt="Prototype Fund"
-                />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/sendLOGO.png"
-                  alt="Send"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="carousel-img"
-                  src="/img/carousel/t4g.png"
-                  alt="Tech4Germany"
-                />
-              </Carousel.Item>
-            </Carousel>
-          </div>
+
+       {mobileImages}
+
+
     </div>
   );
 }
