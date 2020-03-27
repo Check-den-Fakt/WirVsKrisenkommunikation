@@ -77,15 +77,9 @@ h3 {
   flex-shrink: 0;
   clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
   -webkit-clip-path: polygon(100% calc(0% + 8vw), 100% 100%, 0 calc(100% - 8vw), 0 0);
-  padding: 13%;
+  padding-top: 13%;
+  padding-bottom: 13%;
 }
-
-.polygon-content {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-}
-
-
 
 @media (max-width: 768px) {
   .submit-btn {
@@ -100,9 +94,10 @@ h3 {
     margin-bottom: 3em;
     width: 99vw !important;
     flex-shrink: 0;
-    clip-path: polygon(100% calc(0 + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
-    -webkit-clip-path: polygon(100% calc(0 + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
-    padding: 10%;
+    clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
+    -webkit-clip-path: polygon(100% calc(0% + 4vw), 100% 100%, 0 calc(100% - 4vw), 0 0);
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
 
   .circle-icon {
@@ -154,12 +149,30 @@ button:disabled {
   /* Preferred icon size */
 }
 
+/*Logo Carousel for mobile and Logo wall for desktop*/
 .carousel-item {
   height: 150px !important;
 }
 
 .carousel-img {
   max-width: 100% !important;
+}
+
+.logo-wall {
+  padding: 20px;
+  height: 90px; 
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  opacity: .6;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  transition: .4s;
+}
+
+.logo-wall:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .img-container {
@@ -183,13 +196,8 @@ button:disabled {
   list-style-type: none;
 }
 
-li {
-  color: #3E049D;
-  list-style-type: '- ';
-}
-
 .purple {
-  color: #3E049D;
+  color: #3E049D !important;
 }
 
 .yellow {
